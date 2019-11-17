@@ -1,0 +1,23 @@
+.aside {
+  width: 300px;
+}
+
+.menu {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.menu__item {
+}
+
+.menu__link {
+  display: block;
+  padding: 10px;
+  color: #74788d;
+  text-decoration: none;
+  &:hover, &_active {
+    background: #74788d;
+    color: #ffffff;
+  }
+}

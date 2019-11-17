@@ -1,0 +1,19 @@
+.wrap {
+  flex: auto;
+}
+
+.item {
+  width: calc(100% / 3);
+}
+.link {
+  color: #ffffff;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  &:hover {
+    background: #181818;
+  }
+  &_active {
+    background: #180402;
+  }
+}
