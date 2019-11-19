@@ -2,7 +2,7 @@ import React, {useEffect } from 'react';
 import ArticleListContainer from "../../Article/ArticleList/ArticleListContainer";
 
 
-const Home = props => {
+const Home = () => {
   
     return(
 	  <div className="wrapper">

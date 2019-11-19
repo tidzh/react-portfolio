@@ -7,7 +7,7 @@ const Menu = props => {
     const {menu, menuState} = props;
     
     const menuLists = menu.map((menuList) =>
-      <li key={menuList.id} className={menuStyle.item}>
+      <li key={menuList._id} className={menuStyle.item}>
           <NavLink activeClassName={menuStyle.link_active} exact to={menuList.url} className={menuStyle.link}>{menuList.name}</NavLink>
       </li>
     );

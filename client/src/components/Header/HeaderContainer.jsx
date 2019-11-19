@@ -1,6 +1,6 @@
 import Header from "./Header";
 import {connect} from "react-redux";
-import {updateMenuStatus} from "../../redux/menu-reducer";
+import {setMenu, updateMenuStatus} from "../../redux/menu-reducer";
 
 const mapStateToProps = (state) => {
   return{
@@ -12,6 +12,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
   return{
+    setMenu: (menu) => {
+      dispatch(setMenu(menu));
+    },
     setMenuStatus: () => {
       dispatch(updateMenuStatus());
     }

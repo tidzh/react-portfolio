@@ -1,20 +1,20 @@
 import {connect} from "react-redux";
 import ArticleList from "./ArticleList";
-import axios from 'axios';
-
-
-// axios.get('https://social-network.samuraijs.com/api/1.0/users').then(response => {
-// console.log(response.data.items)
-// });
+import {setPortfolioCreator} from "../../../redux/portfolio-reducer";
 
 
 const mapStateToProps = state => {
-  console.log(state)
   return {
    portfolioList: state.portfolioPage.portfolio
   }
-  
+}
+const mapStateToDispatch = dispatch => {
+  return {
+    setPortfolio: (portfolio) => {
+      dispatch(setPortfolioCreator(portfolio))
+    }
+  }
 }
 
-const ArticleListContainer = connect(mapStateToProps)(ArticleList);
+const ArticleListContainer = connect(mapStateToProps, mapStateToDispatch)(ArticleList);
 export default ArticleListContainer;
