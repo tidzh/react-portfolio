@@ -2,11 +2,20 @@ const express = require("express");
 const router = express.Router();
 const Portfolio = require("../models/Portfolio")
 
+
 router.get("/portfolio", (req, res)=>{
-  Portfolio.find({})
-	.then(portfolio => {
-	  res.send(portfolio);
-	});
+  let pageOptions = {
+	page: Number(req.query.page) || 1,
+	limit: Number(req.query.limit) || 10
+  }
+  Portfolio.count({}, (err,count) => {
+	Portfolio.find({})
+	  .skip((pageOptions.limit * pageOptions.page) - pageOptions.limit)
+	  .limit(pageOptions.limit)
+	  .then(portfolio => {
+		res.send({items: portfolio, totalCount: count});
+	  });
+  })
 });
 
 router.post("/portfolio", (req, res)=>{
@@ -32,5 +41,6 @@ router.delete("/portfolio/:id", (req, res)=>{
 	  res.send(portfolio);
 	});
 });
+
 
 module.exports = router;
