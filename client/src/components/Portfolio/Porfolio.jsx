@@ -1,9 +1,9 @@
 import React from 'react';
-import style from '../Article/Article.module.scss';
+import style from './Portfolio.module.scss';
 import FormButton from "../Form/FormButton/FormButton";
 
 
-const Article = props => {
+const Porfolio = props => {
 	const {articleItem} = props;
 	return(
 		<div className={style.articleList__itemWrap}>
@@ -14,4 +14,4 @@ const Article = props => {
 	)
 }
 
-export default Article;
+export default Porfolio;

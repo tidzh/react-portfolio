@@ -1,6 +1,29 @@
 import Header from "./Header";
 import {connect} from "react-redux";
 import {setMenu, updateMenuStatus} from "../../redux/menu-reducer";
+import React from "react";
+import axios from "axios";
+
+class HeaderContainer extends React.Component {
+  componentDidMount() {
+    axios.get('api/menu').then(response => {
+      this.props.setMenu(response.data)
+    })
+  }
+  
+  burgerState = () => this.props.setMenuStatus();
+  render() {
+    return(
+      <Header
+        menuData={this.props.menuData}
+        isOpen={this.props.isOpen}
+        burgerState={this.burgerState}
+      />
+    )
+  }
+}
+
+
 
 const mapStateToProps = (state) => {
   return{
@@ -8,8 +31,6 @@ const mapStateToProps = (state) => {
     isOpen: state.menu.isOpen
   }
 }
-
-
 const mapDispatchToProps = dispatch => {
   return{
     setMenu: (menu) => {
@@ -21,6 +42,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-const HeaderContainer = connect(mapStateToProps, mapDispatchToProps)(Header)
-
-export default HeaderContainer;
+export default connect(mapStateToProps, mapDispatchToProps)(HeaderContainer);
