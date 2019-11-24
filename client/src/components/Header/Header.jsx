@@ -4,6 +4,7 @@ import Menu from '../Menu/Menu';
 const Header = props => {
  const {menuData, isOpen, burgerState} = props;
  
+ 
   return (
       <header className="header">
         <div className="wrapper">

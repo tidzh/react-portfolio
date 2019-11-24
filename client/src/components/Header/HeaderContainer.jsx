@@ -5,18 +5,24 @@ import React from "react";
 import axios from "axios";
 
 class HeaderContainer extends React.Component {
+  constructor(props) {
+  super(props);
+    this.state = {
+      isOpen: true
+    }
+}
   componentDidMount() {
-    axios.get('api/menu').then(response => {
+    axios.get('/api/menu').then(response => {
       this.props.setMenu(response.data)
     })
   }
   
-  burgerState = () => this.props.setMenuStatus();
+  burgerState = () => this.setState({isOpen: !this.state.isOpen});
   render() {
     return(
       <Header
         menuData={this.props.menuData}
-        isOpen={this.props.isOpen}
+        isOpen={this.state.isOpen}
         burgerState={this.burgerState}
       />
     )
@@ -35,9 +41,6 @@ const mapDispatchToProps = dispatch => {
   return{
     setMenu: (menu) => {
       dispatch(setMenu(menu));
-    },
-    setMenuStatus: () => {
-      dispatch(updateMenuStatus());
     }
   }
 }

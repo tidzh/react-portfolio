@@ -1,24 +1,24 @@
-.articleList {
+.portfolioList {
   display: flex;
   flex-wrap: wrap;
   margin: 20px -10px;
 }
-.articleList__item {
+.portfolioList__item {
   width: calc(100% / 3);
   padding: 0 10px;
   margin-bottom: 10px;
    &:hover {
-     .articleList__itemImg {
+     .portfolioList__itemImg {
        &:after {
          background: #51c22b;
        }
      }
    }
 }
-.articleList__itemWrap {
+.portfolioList__itemWrap {
   margin-bottom: 10px;
 }
-.articleList__itemTitle {
+.portfolioList__itemTitle {
   font-size: 20px;
   font-weight: bold;
   letter-spacing: 2px;
@@ -28,7 +28,7 @@
   margin: 20px 0;
   text-align: center;
 }
-.articleList__itemImg {
+.portfolioList__itemImg {
   position: relative;
   margin-top: 20px;
   display: block;
@@ -65,11 +65,10 @@
     transition: .5s;
   }
 }
-
-.articleList__itemText {
+.portfolioList__itemText {
   margin-top: 10px;
 }
-.articleList__itemDate {
+.portfolioList__itemDate {
   font-size: 12px;
   margin-top: 20px;
 }

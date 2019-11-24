@@ -3,10 +3,10 @@ const router = express.Router();
 const Portfolio = require("../models/Portfolio")
 
 
-router.get("/portfolio", (req, res)=>{
+router.get("/portfolios", (req, res)=>{
   let pageOptions = {
 	page: Number(req.query.page) || 1,
-	limit: Number(req.query.limit) || 10
+	limit: Number(req.query.limit) || 9
   }
   Portfolio.count({}, (err,count) => {
 	Portfolio.find({})
@@ -17,7 +17,12 @@ router.get("/portfolio", (req, res)=>{
 	  });
   })
 });
-
+router.get("/portfolio/:url", (req, res)=>{
+  Portfolio.findOne({url: req.params.url})
+	.then(portfolio => {
+	  res.send(portfolio);
+	});
+});
 router.post("/portfolio", (req, res)=>{
   Portfolio.create(req.body)
 	.then(portfolio => {

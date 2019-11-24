@@ -1,17 +1,17 @@
 import React from 'react';
-import style from '../Portfolio.module.scss';
+import style from './PortfolioListItem.module.scss';
 import stylePag from '../PortfolioPagination/PortfolioPagination.module.scss';
-import Porfolio from "../Porfolio";
+import PorfolioListItem from './PorfolioListItem';
 
 
 const PortfolioList = props => {
   
-  const {portfolioList, pageSize, totalPortfolio, currentPage, handlerPagination} =  props,
+  const {portfolioList, pageSize, totalPortfolio, currentPage, handlerPagination, isFetching} =  props,
          pageCount = Math.ceil(totalPortfolio / pageSize);
   
   const portfolioLists = portfolioList.map((article,index) =>
-    <li key={index} className={style.articleList__item}>
-      <Porfolio articleItem={article}/>
+    <li key={index} className={style.portfolioList__item}>
+      <PorfolioListItem articleItem={article}/>
     </li>
   )
   let paginationArr = [];
@@ -26,7 +26,10 @@ const PortfolioList = props => {
   
   return(
     <>
-      <ul className={style.articleList}>{portfolioLists}</ul>
+      <div className="pos-relative">
+        {isFetching}
+        <ul className={style.portfolioList}>{portfolioLists}</ul>
+      </div>
       <ul className={`${stylePag.pagination} d-flex`}>{pagination}</ul>
     </>
   )

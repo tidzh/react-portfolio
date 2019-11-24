@@ -1,7 +1,6 @@
 const UPDATE_MENU = 'UPDATE-MENU',
       ADD_MENU = 'ADD-MENU',
       ADD_MENU_ITEM = 'ADD-MENU-ITEM',
-      UPDATE_MENU_STATUS = 'UPDATE-MENU-STATUS',
       SET_MENU='SET-MENU';
 
 const initialState = {
@@ -36,7 +35,6 @@ const initialState = {
 	"name":"",
 	"url":""
   },
-  isOpen:true
 }
 
 const menuReducer = (state = initialState, action) => {
@@ -69,10 +67,7 @@ const menuReducer = (state = initialState, action) => {
 		stateCopy.menuNew = {...state.menuNew};
 		stateCopy.menuNew[action.name] = action.value
 	  }
-	  console.log(stateCopy)
 	  return stateCopy;
-	case UPDATE_MENU_STATUS:
-	  return {...state, isOpen: !state.isOpen}
 	default:
 	  return state;
 	  
@@ -82,7 +77,6 @@ export const addMenuCreator = () => ({type: ADD_MENU}),
              addMenuItemCreator = () => ({type: ADD_MENU_ITEM}),
              updateMenuCreator = (menuName, menuValue, menuItem) =>
   ({type: UPDATE_MENU, name: menuName, value: menuValue, item: menuItem}),
-            updateMenuStatus = () => ({type: UPDATE_MENU_STATUS}),
             setMenu = (menu) => ({type: SET_MENU, menu:menu});
 
 export default menuReducer;

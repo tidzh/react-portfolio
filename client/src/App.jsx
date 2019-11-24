@@ -15,6 +15,8 @@ import Admin from "./components/Admin/Admin";
 import AdminPageMenuContainer from "./components/Admin/AdminPage/AdminPageMenu/AdminPageMenuContainer";
 import AdminPagePortfolioContainer from "./components/Admin/AdminPage/AdminPagePortfolio/AdminPagePortfolioContainer";
 import FeedbackContainer from "./components/Page/PageFeedback/FeedbackContainer";
+import PortfolioSingle from "./components/Portfolio/PortfolioSingle/PortfolioSingle";
+import PortfolioSingleContainer from "./components/Portfolio/PortfolioSingle/PortfolioSingleContainer";
 
 
 const App = () => {
@@ -25,7 +27,8 @@ const App = () => {
         <LayoutFront>
           <Switch>
           <Route exact path='/' component={Home}/>
-          <Route path='/portfolio' component={Portfolio}/>
+          <Route exact path='/portfolio' component={Portfolio}/>
+          <Route path='/portfolio/:url.html' component={PortfolioSingleContainer} />
           <Route path='/feedback' component={FeedbackContainer}/>
           <Route path='/services' component={ServicesContainer}/>
           <Route path='/login' component={PageLogin}/>
