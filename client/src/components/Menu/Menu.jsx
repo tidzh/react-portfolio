@@ -3,6 +3,9 @@ import menuStyle from './Menu.module.scss';
 import {NavLink} from "react-router-dom";
 
 const Menu = props => {
+  if (!props.menu) {
+    return false
+  }
   
     const {menu, menuState} = props;
     

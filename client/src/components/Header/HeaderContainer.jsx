@@ -16,7 +16,6 @@ class HeaderContainer extends React.Component {
       this.props.setMenu(response.data)
     })
   }
-  
   burgerState = () => this.setState({isOpen: !this.state.isOpen});
   render() {
     return(

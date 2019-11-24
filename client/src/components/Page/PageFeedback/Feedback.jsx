@@ -3,6 +3,7 @@ import Form from "../../Form/Form";
 import FormButton from "../../Form/FormButton/FormButton";
 import FormTextarea from "../../Form/FormTextarea/FormTextarea";
 import style from '../../Form/Form.module.scss';
+import LayoutFront from "../../Layout/LayoutFront/LayoutFront";
 
 
 const Feedback = props => {

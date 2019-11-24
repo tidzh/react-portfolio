@@ -1,6 +1,7 @@
 import React from "react";
 import PortfolioListContainer from "../../Portfolio/PortfolioList/PortfolioListContainer";
 import PortfolioListSortContainer from "../../Portfolio/PortfolioListSort/PortfolioListSortContainer";
+import LayoutFront from "../../Layout/LayoutFront/LayoutFront";
 
 const Portfolio = props => {
 	return(

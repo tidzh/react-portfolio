@@ -4,16 +4,16 @@ import portfolioReducer from "./portfolio-reducer";
 import serviceReducer from "./service-reducer";
 import adminReducer from "./admin-reducer";
 import newFeedback from "./feedback-reducer";
+import authReducer from "./auth-reducer";
 
 let reducers = combineReducers( {
   menu: menuReducer,
   portfolioPage: portfolioReducer,
   servicePage:serviceReducer,
   adminPage:adminReducer,
-  feedbackPage:newFeedback
+  feedbackPage:newFeedback,
+  auth: authReducer
 });
 
-let store = createStore(reducers);
 
-
-export default store;
+export default createStore(reducers);

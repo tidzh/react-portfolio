@@ -4,33 +4,7 @@ const UPDATE_MENU = 'UPDATE-MENU',
       SET_MENU='SET-MENU';
 
 const initialState = {
-  menuList: [
-	// {
-	//   "id":1,
-	//   "name":"Главная",
-	//   "url":"/"
-	// },
-	// {
-	//   "id":2,
-	//   "name":"Портфолио",
-	//   "url":"/portfolio"
-	// },
-	// {
-	//   "id":3,
-	//   "name":"Обратная связь",
-	//   "url":"/feedback"
-	// },
-	// {
-	//   "id":4,
-	//   "name":"Услуги",
-	//   "url":"/services"
-	// },
-	// {
-	//   "id":5,
-	//   "name":"Войти",
-	//   "url":"/login"
-	// }
-  ],
+  menuList: null,
   menuNew: {
 	"name":"",
 	"url":""
@@ -42,7 +16,7 @@ const menuReducer = (state = initialState, action) => {
 	case SET_MENU:
 	  return {
 	    ...state,
-		menuList:[...state.menuList, ...action.menu]
+		menuList:[...action.menu]
 	  }
 	  
 	case ADD_MENU:

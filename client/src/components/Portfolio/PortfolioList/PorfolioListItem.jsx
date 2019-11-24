@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './PortfolioListItem.module.scss';
 import FormButton from "../../Form/FormButton/FormButton";
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
 
 const PorfolioListItem = props => {
@@ -9,10 +9,10 @@ const PorfolioListItem = props => {
 	return(
 	  <>
 		<div className={style.portfolioList__itemWrap}>
-		  <Link to={`/portfolio/${articleItem.url}.html`} >
+		  <NavLink to={`/portfolio/${articleItem.url}.html`} >
 		  <div className={style.portfolioList__itemImg}><img src={articleItem.img} alt=""/></div>
 		  <div className={style.portfolioList__itemTitle}>{articleItem.title}</div>
-		  </Link>
+		  </NavLink>
 		  <FormButton>Нравится ({articleItem.like})</FormButton>
 		</div>
 	  </>
