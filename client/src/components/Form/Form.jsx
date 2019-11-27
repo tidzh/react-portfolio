@@ -2,9 +2,9 @@ import React from 'react'
 import style from '../Form/Form.module.scss'
 
 const Form = props => {
-	const {formOnSubmit} = props;
+	const {onSubmit} = props;
     return(
-	  <form onSubmit={formOnSubmit} className={style.form}>
+	  <form onSubmit={onSubmit} className={style.form}>
 		{props.children}
 	  </form>
 	)

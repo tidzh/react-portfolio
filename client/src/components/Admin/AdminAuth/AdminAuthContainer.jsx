@@ -1,30 +1,56 @@
 import React from 'react';
-import AdminAuth from "./AdminAuth";
 import {connect} from "react-redux";
-import {setAuthUserData} from "../../../redux/auth-reducer";
+import AdminAuth from "./AdminAuth";
+import {isAuthUser, setAuthUserData, setAuthUserInput} from "../../../redux/auth-reducer";
 import axios from "axios";
 
 class AdminAuthContainer extends React.Component{
-  componentDidMount() {
-	// this.props.setFetching(true)
-	axios.get(`https://social-network.samuraijs.com/api/1.0/auth/me`, {
-	  withCredentials:true
-	}).then(response => {
-	  const {login, email} = response.data.data
-	  this.props.setAuthUserData(login, email);
-	});
-  }
+
+componentDidMount() {
+ axios.get('/api/checkToken').then(res => {
+   if (res.status === 200) {
+	 this.props.isAuthUser(true);
+   } else {
+	 const error = new Error(res.error);
+	 throw error;
+   }
+ }).catch(err => {
+   console.error(err);
+   this.props.isAuthUser(false);
+ });
+}
+
+onSubmit = evt => {
+  evt.preventDefault();
+  axios.post(`/api/auth`,
+	{email: `${this.props.email}`, password:`${this.props.password}`})
+	.then(res => {
+	 if(res.status === 200) {
+	   this.props.setAuthUserData();
+	 } else {
+		 const error = new Error(res.error);
+		 throw error;
+	   }
+  }).catch(err => {
+	console.error(err);
+	console.info('Error logging in please try again');
+  });
+}
+onChange = evt => {
+  const name = evt.target.name,
+		value = evt.target.value;
+  this.props.setAuthUserInput({[name]:value})
+}
   render() {
-    return (
-      <AdminAuth {...this.props}/>
+    return(
+      <AdminAuth {...this.props} onSubmit={this.onSubmit} onChange={this.onChange}/>
 	)
   }
 }
 const mapStateToProps = state => {
   return {
 	email: state.auth.email,
-	login: state.auth.login,
-	isAuth:state.auth.isAuth
+	password: state.auth.password,
   }
 }
-export default connect(mapStateToProps, {setAuthUserData})(AdminAuthContainer);
+export default connect(mapStateToProps, {setAuthUserData, setAuthUserInput, isAuthUser})(AdminAuthContainer)

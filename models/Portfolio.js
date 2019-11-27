@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
 
-const PortfolioSchema = new Schema({
+const PortfolioSchema = new mongoose.Schema({
   title: { type: String, required: true },
   url: { type: String, unique: true },
   img: String,
@@ -11,6 +10,4 @@ const PortfolioSchema = new Schema({
   
 });
 
-const Portfolio = mongoose.model("portfolio", PortfolioSchema);
-
-module.exports = Portfolio;
+module.exports = mongoose.model("portfolio", PortfolioSchema);

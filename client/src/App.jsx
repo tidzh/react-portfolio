@@ -6,11 +6,9 @@ import Home from "./components/Page/PageHome/Home";
 import Portfolio from "./components/Page/PagePortfolio/Portfolio";
 import Error404 from "./components/Error/Error404";
 import ServicesContainer from "./components/Services/ServicesContainer";
-import AdminAuth from './components/Admin/AdminAuth/AdminAuth'
-import Admin from "./components/Admin/Admin";
 import FeedbackContainer from "./components/Page/PageFeedback/FeedbackContainer";
 import PortfolioSingleContainer from "./components/Portfolio/PortfolioSingle/PortfolioSingleContainer";
-import LayoutAdmin from "./components/Layout/LayoutAdmin/LayoutAdmin";
+import AdminContainer from "./components/Admin/AdminContainer";
 
 
 const App = () => {
@@ -33,9 +31,7 @@ return (
         <Route path='/services'>
           <LayoutFront><ServicesContainer/></LayoutFront>
         </Route>
-        <Route path='/admin'>
-          <LayoutAdmin><Admin/></LayoutAdmin>
-        </Route>
+        <Route path='/admin' component={AdminContainer}/>
         <Route path='*'>
           <LayoutFront><Error404/></LayoutFront>
         </Route>

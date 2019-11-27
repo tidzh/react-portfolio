@@ -6,21 +6,25 @@ import FormButton from "../../Form/FormButton/FormButton";
 import FormInput from "../../Form/FormInput/FormInput";
 
 const AdminAuth = props => {
-  const {email,login, isAuth} = props
+  const {onSubmit, onChange, email, password} = props
+  
     return(
-	  <div className="wrapper">
-	  <h1 className="h1">Панель администратора</h1>
+      <>
+	  <h1 className="h1">Авторизироваться</h1>
 		<div className={style2.wrap}>
-	  <Form>
+	  <Form onSubmit={onSubmit}>
 	  <div className={style.form__item}>
-		<FormInput type={'text'} placeholder={'Введите Логин'} required={true}/>
+		<FormInput name='email' type='text' onChange={onChange} value={email} placeholder='Введите Email' required={true}/>
 	  </div>
 		<div className={style.form__item}>
-		  <FormButton btnText={'Войти'} btnClass={'btn_pink'} />
+		<FormInput name='password' type='password' onChange={onChange} value={password} placeholder='Введите пароль' required={true}/>
+	  </div>
+		<div className={style.form__item}>
+		  <FormButton btnClass={'btn_blue'}>Войти</FormButton>
 		</div>
 	  </Form>
 		</div>
-	  </div>
+	</>
 	)
 }
 export default AdminAuth;
