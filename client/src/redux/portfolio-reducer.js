@@ -1,17 +1,18 @@
 const UPDATE_PORTFOLIO = 'UPDATE_PORTFOLIO',
-      NEW_PORTFOLIO = 'NEW_PORTFOLIO',
-      SET_PORTFOLIO ='SET_PORTFOLIO',
-      SET_CURRENT_PAGE = 'SET_CURRENT_PAGE',
-      SET_PORTFOLIO_SINGLE = 'SET_PORTFOLIO_SINGLE',
-      TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING';
+  NEW_PORTFOLIO = 'NEW_PORTFOLIO',
+  SET_PORTFOLIO = 'SET_PORTFOLIO',
+  SET_CURRENT_PAGE = 'SET_CURRENT_PAGE',
+  SET_PORTFOLIO_SINGLE = 'SET_PORTFOLIO_SINGLE',
+  SET_PORTFOLIO_LIKE = 'SET_PORTFOLIO_LIKE',
+  TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING';
 
 const initialState = {
   portfolio: [],
-  pageSize:10,
-  currentPage:1,
+  pageSize: 10,
+  currentPage: 1,
   totalPortfolio: 0,
-  isFetching:false,
-  portfolioSingle:null,
+  isFetching: false,
+  portfolioSingle: null,
   newPortfolio: {
 	"title": '',
 	"text": ''
@@ -25,14 +26,14 @@ const portfolioReducer = (state = initialState, action) => {
   switch (action.type) {
 	case SET_PORTFOLIO:
 	  return {
-	    ...state,
+		...state,
 		portfolio: [...action.portfolios],
-		totalPortfolio: [action.totalCount]
+		totalPortfolio: action.totalCount
 	  }
 	case SET_CURRENT_PAGE:
-	  return  {
-	    ...state,
-		currentPage:action.currentPage
+	  return {
+		...state,
+		currentPage: action.currentPage
 	  }
 	case NEW_PORTFOLIO:
 	  const newPortfolioItem = {
@@ -41,13 +42,22 @@ const portfolioReducer = (state = initialState, action) => {
 		text: state.newPortfolio.text,
 	  }
 	  return {
-	    ...state,
+		...state,
 		newPortfolio: {title: '', text: ''},
 		portfolio: [...state.portfolio, {...newPortfolioItem}]
 	  };
+	case SET_PORTFOLIO_LIKE:
+	  
+	  return {
+		...state,
+		portfolio: state.portfolio.map(portfolio =>
+		  portfolio._id === action.portfolioId ? {...portfolio, like: portfolio.like + 1} : portfolio
+		)
+	  }
+	
 	case UPDATE_PORTFOLIO:
 	  stateCopy = {
-	    ...state,
+		...state,
 		newPortfolio: {...state.newPortfolio}
 	  };
 	  stateCopy.newPortfolio[action.name] = action.value;
@@ -61,10 +71,11 @@ const portfolioReducer = (state = initialState, action) => {
   }
 }
 export const newPortfolioCreator = () => ({type: NEW_PORTFOLIO}),
-             updatePortfolioCreator = (name, value) => ({type:UPDATE_PORTFOLIO, name, value}),
-             setPortfolio = (portfolios, totalCount) => ({type:SET_PORTFOLIO, portfolios, totalCount}),
-             setPortfolioSingle = (portfolioSingle) => ({type:SET_PORTFOLIO_SINGLE, portfolioSingle}),
-             setCurrentPage = (currentPage) => ({type:SET_CURRENT_PAGE, currentPage}),
-             setFetching = (isFetching) => ({type:TOGGLE_IS_FETCHING, isFetching})
+  updatePortfolioCreator = (name, value) => ({type: UPDATE_PORTFOLIO, name, value}),
+  setPortfolio = (portfolios, totalCount) => ({type: SET_PORTFOLIO, portfolios, totalCount}),
+  setPortfolioSingle = (portfolioSingle) => ({type: SET_PORTFOLIO_SINGLE, portfolioSingle}),
+  setCurrentPage = currentPage => ({type: SET_CURRENT_PAGE, currentPage}),
+  setPortfolioLike = portfolioId => ({type: SET_PORTFOLIO_LIKE, portfolioId}),
+  setFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching})
 
 export default portfolioReducer;

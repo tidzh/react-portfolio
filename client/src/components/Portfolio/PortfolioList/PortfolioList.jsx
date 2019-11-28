@@ -6,12 +6,12 @@ import PorfolioListItem from './PorfolioListItem';
 
 const PortfolioList = props => {
   
-  const {portfolioList, pageSize, totalPortfolio, currentPage, handlerPagination, isFetching} =  props,
+  const {portfolioList, pageSize, totalPortfolio, currentPage, handlerPagination, isFetching, setPortfolioLike} =  props,
          pageCount = Math.ceil(totalPortfolio / pageSize);
   
   const portfolioLists = portfolioList.map((article,index) =>
     <li key={index} className={style.portfolioList__item}>
-      <PorfolioListItem articleItem={article}/>
+      <PorfolioListItem index={index} articleItem={article} setPortfolioLike={setPortfolioLike}/>
     </li>
   )
   let paginationArr = [];
