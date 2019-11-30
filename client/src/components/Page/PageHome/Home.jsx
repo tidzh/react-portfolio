@@ -1,6 +1,5 @@
 import React from 'react';
 import PortfolioListContainer from "../../Portfolio/PortfolioList/PortfolioListContainer";
-import LayoutFront from "../../Layout/LayoutFront/LayoutFront";
 
 
 const Home = () => {

@@ -3,16 +3,17 @@ import {connect} from "react-redux";
 import AdminAuth from "./AdminAuth";
 import {isAuthUser, setAuthUserData, setAuthUserInput} from "../../../redux/auth-reducer";
 import axios from "axios";
+import {loginAPI} from "../../../api/api";
 
 class AdminAuthContainer extends React.Component{
+state = {
+  error:false
+}
 
 componentDidMount() {
- axios.get('/api/checkToken').then(res => {
-   if (res.status === 200) {
+  loginAPI.checkToken().then(status => {
+   if (status === 200) {
 	 this.props.isAuthUser(true);
-   } else {
-	 const error = new Error(res.error);
-	 throw error;
    }
  }).catch(err => {
    console.error(err);
@@ -22,18 +23,17 @@ componentDidMount() {
 
 onSubmit = evt => {
   evt.preventDefault();
-  axios.post(`/api/auth`,
-	{email: `${this.props.email}`, password:`${this.props.password}`})
-	.then(res => {
-	 if(res.status === 200) {
+  loginAPI.checkLogin(this.props.email,this.props.password)
+	.then(status => {
+	 if(status === 200) {
 	   this.props.setAuthUserData();
 	 } else {
-		 const error = new Error(res.error);
+		 const error = new Error(status.error);
 		 throw error;
 	   }
   }).catch(err => {
 	console.error(err);
-	console.info('Error logging in please try again');
+	this.setState({error:true})
   });
 }
 onChange = evt => {
@@ -43,7 +43,7 @@ onChange = evt => {
 }
   render() {
     return(
-      <AdminAuth {...this.props} onSubmit={this.onSubmit} onChange={this.onChange}/>
+      <AdminAuth {...this.props} error={this.state.error} onSubmit={this.onSubmit} onChange={this.onChange}/>
 	)
   }
 }

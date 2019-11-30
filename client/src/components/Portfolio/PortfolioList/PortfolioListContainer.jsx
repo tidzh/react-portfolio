@@ -1,30 +1,30 @@
 import {connect} from "react-redux";
 import {setCurrentPage, setPortfolio, setFetching, setPortfolioLike} from "../../../redux/portfolio-reducer";
 import React from "react";
-import axios from "axios";
 import PortfolioList from "./PortfolioList";
 import Preloader from "../../common/Preloader/Preloader";
+import {portfolioAPI} from "../../../api/api";
 
 class PortfolioListContainer extends React.Component {
   
   componentDidMount() {
 	this.props.setFetching(true)
-	axios.get(`/api/portfolios?page=${this.props.currentPage}`).then(response => {
+	portfolioAPI.getPortfolio(this.props.currentPage).then(data => {
 	  this.props.setFetching(false)
-	  this.props.setPortfolio(response.data.items, response.data.totalCount);
+	  this.props.setPortfolio(data.items, data.totalCount);
 	});
   }
   
   handlerPagination = (pageNumber) => {
 	this.props.setFetching(true)
 	this.props.setCurrentPage(pageNumber);
-	axios.get(`/api/portfolios?page=${pageNumber}`).then(response => {
+	portfolioAPI.handlerPagination(pageNumber).then(data => {
 	  this.props.setFetching(false)
-	  this.props.setPortfolio(response.data.items, response.data.totalCount)
+	  this.props.setPortfolio(data.items, data.totalCount)
 	});
   }
   setPortfolioLike = (id, likes) => {
-	axios.put(`/api/portfolio/${id}`, {"like": likes+1}).then(response => {
+	portfolioAPI.setPortfolioLike(id,likes).then(() => {
 	  this.props.setPortfolioLike(id);
 	});
   }

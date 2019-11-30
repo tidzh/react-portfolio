@@ -6,7 +6,7 @@ import FormButton from "../../Form/FormButton/FormButton";
 import FormInput from "../../Form/FormInput/FormInput";
 
 const AdminAuth = props => {
-  const {onSubmit, onChange, email, password} = props
+  const {onSubmit, onChange, email, password, error} = props
   
     return(
       <>
@@ -19,6 +19,7 @@ const AdminAuth = props => {
 		<div className={style.form__item}>
 		<FormInput name='password' type='password' onChange={onChange} value={password} placeholder='Введите пароль' required={true}/>
 	  </div>
+		{error && <p>Неверный логин или пароль</p>}
 		<div className={style.form__item}>
 		  <FormButton btnClass={'btn_blue'}>Войти</FormButton>
 		</div>

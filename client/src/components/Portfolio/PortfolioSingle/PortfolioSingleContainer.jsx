@@ -1,16 +1,16 @@
 import React from 'react';
 import PortfolioSingle from "./PortfolioSingle";
-import axios from "axios";
 import {connect} from "react-redux";
 import {setPortfolioSingle} from "../../../redux/portfolio-reducer";
 import Breadcrumbs from "../../common/Breadcrumbs/Breadcrumbs";
 import {withRouter} from "react-router-dom";
+import {portfolioAPI} from "../../../api/api";
 
 class PortfolioSingleContainer extends React.Component{
   componentDidMount() {
     const url = this.props.match.params.url;
-	axios.get(`/api/portfolio/${url}`).then(response => {
-	  this.props.setPortfolioSingle(response.data);
+	portfolioAPI.getPortfolioSingle(url).then(data => {
+	  this.props.setPortfolioSingle(data);
 	});
   }
   render() {
