@@ -5,8 +5,7 @@ import {NavLink} from "react-router-dom";
 
 
 const PorfolioListItem = props => {
-	const {articleItem, setPortfolioLike} = props;
-	
+	const {articleItem, setPortfolioLike, isLike} = props;
 	
 	return(
 	  <>
@@ -15,7 +14,9 @@ const PorfolioListItem = props => {
 		  <div className={style.portfolioList__itemImg}><img src={articleItem.img} alt=""/></div>
 		  <div className={style.portfolioList__itemTitle}>{articleItem.title}</div>
 		  </NavLink>
-		  <FormButton onClick={()=> setPortfolioLike(articleItem._id, articleItem.like)}>Нравится ({articleItem.like})</FormButton>
+		  <FormButton
+			disable={isLike.some(id => id === articleItem._id)}
+			onClick={()=> setPortfolioLike(articleItem._id, articleItem.like)}>Нравится ({articleItem.like})</FormButton>
 		</div>
 	  </>
 	)

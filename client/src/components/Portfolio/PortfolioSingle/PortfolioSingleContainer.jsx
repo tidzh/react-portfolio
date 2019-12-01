@@ -1,17 +1,15 @@
 import React from 'react';
 import PortfolioSingle from "./PortfolioSingle";
 import {connect} from "react-redux";
-import {setPortfolioSingle} from "../../../redux/portfolio-reducer";
+import {getPortfolioSingle} from "../../../redux/portfolio-reducer";
 import Breadcrumbs from "../../common/Breadcrumbs/Breadcrumbs";
 import {withRouter} from "react-router-dom";
-import {portfolioAPI} from "../../../api/api";
 
 class PortfolioSingleContainer extends React.Component{
+  
   componentDidMount() {
     const url = this.props.match.params.url;
-	portfolioAPI.getPortfolioSingle(url).then(data => {
-	  this.props.setPortfolioSingle(data);
-	});
+	this.props.getPortfolioSingle(url)
   }
   render() {
     if(!this.props.portfolioSingle) {
@@ -39,4 +37,4 @@ const mapStateToProps = state => {
 }
 
 
-export default connect(mapStateToProps, {setPortfolioSingle})(withRouter(PortfolioSingleContainer));
+export default connect(mapStateToProps, {getPortfolioSingle})(withRouter(PortfolioSingleContainer));

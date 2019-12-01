@@ -1,3 +1,5 @@
+import {portfolioAPI} from "../api/api";
+
 const UPDATE_PORTFOLIO = 'UPDATE_PORTFOLIO',
   NEW_PORTFOLIO = 'NEW_PORTFOLIO',
   SET_PORTFOLIO = 'SET_PORTFOLIO',
@@ -12,6 +14,7 @@ const initialState = {
   currentPage: 1,
   totalPortfolio: 0,
   isFetching: false,
+  likeInProgress: [],
   portfolioSingle: null,
   newPortfolio: {
 	"title": '',
@@ -22,7 +25,6 @@ const initialState = {
 
 const portfolioReducer = (state = initialState, action) => {
   let stateCopy;
-  
   switch (action.type) {
 	case SET_PORTFOLIO:
 	  return {
@@ -47,14 +49,13 @@ const portfolioReducer = (state = initialState, action) => {
 		portfolio: [...state.portfolio, {...newPortfolioItem}]
 	  };
 	case SET_PORTFOLIO_LIKE:
-	  
 	  return {
 		...state,
 		portfolio: state.portfolio.map(portfolio =>
 		  portfolio._id === action.portfolioId ? {...portfolio, like: portfolio.like + 1} : portfolio
-		)
+		),
+		likeInProgress: [...state.likeInProgress, action.portfolioId]
 	  }
-	
 	case UPDATE_PORTFOLIO:
 	  stateCopy = {
 		...state,
@@ -74,8 +75,31 @@ export const newPortfolioCreator = () => ({type: NEW_PORTFOLIO}),
   updatePortfolioCreator = (name, value) => ({type: UPDATE_PORTFOLIO, name, value}),
   setPortfolio = (portfolios, totalCount) => ({type: SET_PORTFOLIO, portfolios, totalCount}),
   setPortfolioSingle = (portfolioSingle) => ({type: SET_PORTFOLIO_SINGLE, portfolioSingle}),
-  setCurrentPage = currentPage => ({type: SET_CURRENT_PAGE, currentPage}),
   setPortfolioLike = portfolioId => ({type: SET_PORTFOLIO_LIKE, portfolioId}),
-  setFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching})
+  setFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching});
+
+export const getPortfolio = (currentPage) => {
+ return (dispatch) => {
+	dispatch(setFetching(true));
+	portfolioAPI.getPortfolio(currentPage).then(data => {
+	  dispatch(setFetching(false));
+	  dispatch(setPortfolio(data.items, data.totalCount));
+	});
+  }
+}
+export const setLikePortfolio = (id,likes) => {
+  return (dispatch) => {
+	portfolioAPI.setPortfolioLike(id,likes).then(() => {
+	  dispatch(setPortfolioLike(id));
+	});
+  }
+}
+export const getPortfolioSingle = (url) => {
+  return (dispatch) => {
+	portfolioAPI.getPortfolioSingle(url).then(data => {
+	  dispatch(setPortfolioSingle(data));
+	});
+  }
+}
 
 export default portfolioReducer;

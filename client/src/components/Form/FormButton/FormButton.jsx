@@ -2,7 +2,7 @@ import React from 'react';
 import style from '../FormButton/FormButton.module.scss'
 
 const FormButton = props => {
-    const {btnClass, onClick} = props;
+    const {btnClass, onClick, disable} = props;
     
     let btnClassConver ='';
     
@@ -18,7 +18,9 @@ const FormButton = props => {
 	}
 	
     return (
-	  props.children ? <button onClick={onClick} className={`${style.btn} ${btnClassConver}`}>{props.children}</button> : ''
+	  props.children ? <button disabled={disable}
+							   onClick={onClick}
+							   className={`${style.btn} ${btnClassConver}`}>{props.children}</button> : ''
 	)
 }
 export default FormButton;

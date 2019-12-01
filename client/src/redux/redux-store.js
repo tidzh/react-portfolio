@@ -1,4 +1,5 @@
-import {combineReducers, createStore} from "redux";
+import {applyMiddleware, combineReducers, createStore} from "redux";
+import thunk from "redux-thunk";
 import menuReducer from "./menu-reducer";
 import portfolioReducer from "./portfolio-reducer";
 import serviceReducer from "./service-reducer";
@@ -16,4 +17,4 @@ let reducers = combineReducers( {
 });
 
 
-export default createStore(reducers);
+export default createStore(reducers, applyMiddleware(thunk));

@@ -12,9 +12,6 @@ export const portfolioAPI = {
   getPortfolioSingle(url) {
     return instance.get(`/portfolio/${url}`).then(response => response.data)
   },
-  handlerPagination(pageNumber = 1) {
-	return instance.get(`/portfolios?page=${pageNumber}`).then(response => response.data)
-  },
   setPortfolioLike(id, likes) {
 	return instance.put(`/portfolio/${id}`, {"like": likes + 1}).then(response => response.data)
   }

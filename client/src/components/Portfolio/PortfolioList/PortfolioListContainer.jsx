@@ -1,32 +1,20 @@
-import {connect} from "react-redux";
-import {setCurrentPage, setPortfolio, setFetching, setPortfolioLike} from "../../../redux/portfolio-reducer";
 import React from "react";
+import {connect} from "react-redux";
+import {getPortfolio, setLikePortfolio} from "../../../redux/portfolio-reducer";
 import PortfolioList from "./PortfolioList";
 import Preloader from "../../common/Preloader/Preloader";
-import {portfolioAPI} from "../../../api/api";
 
 class PortfolioListContainer extends React.Component {
   
   componentDidMount() {
-	this.props.setFetching(true)
-	portfolioAPI.getPortfolio(this.props.currentPage).then(data => {
-	  this.props.setFetching(false)
-	  this.props.setPortfolio(data.items, data.totalCount);
-	});
+	this.props.getPortfolio(this.props.currentPage)
+  }
+  handlerPagination = (pageNumber) => {
+	this.props.getPortfolio(pageNumber)
   }
   
-  handlerPagination = (pageNumber) => {
-	this.props.setFetching(true)
-	this.props.setCurrentPage(pageNumber);
-	portfolioAPI.handlerPagination(pageNumber).then(data => {
-	  this.props.setFetching(false)
-	  this.props.setPortfolio(data.items, data.totalCount)
-	});
-  }
   setPortfolioLike = (id, likes) => {
-	portfolioAPI.setPortfolioLike(id,likes).then(() => {
-	  this.props.setPortfolioLike(id);
-	});
+	this.props.setLikePortfolio(id,likes);
   }
   
   render() {
@@ -37,6 +25,7 @@ class PortfolioListContainer extends React.Component {
 					 totalPortfolio={this.props.totalPortfolio}
 					 currentPage={this.props.currentPage}
 					 handlerPagination={this.handlerPagination}
+					 isLike={this.props.likeInProgress}
 					 isFetching={this.props.isFetching ? <Preloader/> : null}
 	  />
 	)
@@ -50,13 +39,11 @@ const mapStateToProps = state => {
 	totalPortfolio: state.portfolioPage.totalPortfolio,
 	currentPage: state.portfolioPage.currentPage,
 	isFetching: state.portfolioPage.isFetching,
+	likeInProgress: state.portfolioPage.likeInProgress
   }
 }
 
 
 export default connect(mapStateToProps, {
-  setPortfolio,
-  setCurrentPage,
-  setFetching,
-  setPortfolioLike
+  setLikePortfolio, getPortfolio
 })(PortfolioListContainer);
