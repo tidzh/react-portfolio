@@ -1,3 +1,13 @@
+.parent {
+  flex-grow: 1;
+  align-items: center !important;
+  justify-content: center!important;
+  background: #f3f4f6;
+}
 .wrap {
-  max-width: 500px;
+  width: 500px;
+  background: #fff;
+  padding: 20px;
+  border: 1px solid #f2f4f9;
+  border-radius: .25rem;
 }

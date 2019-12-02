@@ -1,3 +1,5 @@
+import {menuApi} from "../api/api";
+
 const UPDATE_MENU = 'UPDATE-MENU',
       ADD_MENU = 'ADD-MENU',
       ADD_MENU_ITEM = 'ADD-MENU-ITEM',
@@ -52,5 +54,14 @@ export const addMenuCreator = () => ({type: ADD_MENU}),
              updateMenuCreator = (menuName, menuValue, menuItem) =>
   ({type: UPDATE_MENU, name: menuName, value: menuValue, item: menuItem}),
             setMenu = (menu) => ({type: SET_MENU, menu:menu});
+
+
+export const setMenuThunk = () => {
+  return (dispatch) => {
+	menuApi.setMenu().then(data => {
+	  dispatch(setMenu(data));
+	})
+  }
+}
 
 export default menuReducer;

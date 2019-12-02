@@ -9,6 +9,8 @@ import ServicesContainer from "./components/Services/ServicesContainer";
 import FeedbackContainer from "./components/Page/PageFeedback/FeedbackContainer";
 import PortfolioSingleContainer from "./components/Portfolio/PortfolioSingle/PortfolioSingleContainer";
 import AdminContainer from "./components/Admin/AdminContainer";
+import AdminAuth from "./components/Admin/AdminAuth/AdminAuth";
+import AdminAuthContainer from "./components/Admin/AdminAuth/AdminAuthContainer";
 
 
 const App = () => {
@@ -31,6 +33,7 @@ return (
         <Route path='/services'>
           <LayoutFront><ServicesContainer/></LayoutFront>
         </Route>
+        <Route path='/auth/' component={AdminAuthContainer}/>
         <Route path='/admin' component={AdminContainer}/>
         <Route path='*'>
           <LayoutFront><Error404/></LayoutFront>

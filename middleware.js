@@ -9,11 +9,11 @@ const withAuth = function(req, res, next) {
 	req.cookies.token;
   
   if (!token) {
-	res.status(401).send('Unauthorized: No token provided');
+	res.status(200).send({message:'Unauthorized: No token provided', resultCode:false});
   } else {
 	jwt.verify(token, secret, function(err, decoded) {
 	  if (err) {
-		res.status(401).send('Unauthorized: Invalid token');
+		res.status(200).send({message:'Unauthorized: Invalid token', resultCode:false});
 	  } else {
 		req.email = decoded.email;
 		next();

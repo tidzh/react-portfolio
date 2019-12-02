@@ -31,9 +31,11 @@ export  const setAuthUserData = () => ({type: SET_USER_DATA}),
 
 export const checkToken = () => {
   return (dispatch) => {
-	loginAPI.checkToken().then(status => {
-	  if (status === 200) {
+	loginAPI.checkToken().then(data => {
+	  if (data.resultCode === true) {
 		dispatch(isAuthUser(true));
+	  } else {
+		dispatch(isAuthUser(false));
 	  }
 	}).catch(err => {
 	  console.error(err);
@@ -41,8 +43,8 @@ export const checkToken = () => {
 	});
   }
 }
-export const authUser = (email, password) => {
-  return (dispatch, setState) => {
+export const authUser = (email, password, validationUserData) => {
+  return (dispatch) => {
 	loginAPI.checkLogin(email, password)
 	  .then(status => {
 		if (status === 200) {
@@ -53,7 +55,7 @@ export const authUser = (email, password) => {
 		}
 	  }).catch(err => {
 	  console.error(err);
-	  // this.setState({error: true})
+	  validationUserData();
 	});
   }
 }

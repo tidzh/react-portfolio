@@ -8,13 +8,22 @@ const AdminMenu = props => {
 	
 	const menus = adminSidebar.map((menuItem) =>
 		<li key={menuItem.id} className={style.menu__item}>
+		  {menuItem.icon}
+		  {console.log(typeof menuItem.icon)}
+		  
 		  <NavLink exact
-				   to={`/admin/${menuItem.url}`}
-				   className={style.menu__link}
-				   activeClassName={style.menu__link_active}>{menuItem.name}</NavLink>
+				   to={`${menuItem.url}`}
+				   className={style.menuLink}
+				   activeClassName={style.menuLinkActive}>{menuItem.name}</NavLink>
 		</li>
 	)
 	
-    return(<ul className={style.menu}>{menus}</ul>)
+    return(
+      <>
+      <div className={style.asideTitle}>Меню</div>
+      <ul className={style.menu}>{menus}</ul>
+	</>
+	)
+	
 }
 export default AdminMenu;

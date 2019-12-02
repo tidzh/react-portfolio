@@ -5,33 +5,34 @@ import {Route, Switch, useRouteMatch} from "react-router-dom";
 import style from "./Admin.module.scss";
 import adminMenu from "./AdminMenu/AdminMenu.module.scss";
 import AdminMenuContainer from "./AdminMenu/AdminMenuContain";
-import AdminAuthContainer from "./AdminAuth/AdminAuthContainer";
+import HeaderAdmin from "../Header/HeaderAdmin/HeaderAdmin";
 
 const Admin = props => {
   
-  const { path} = useRouteMatch(),
+  const {path} = useRouteMatch(),
 	    {isAuth} = props;
   
   const aside = isAuth && <aside className={adminMenu.aside}><AdminMenuContainer/></aside>;
-  const authForm = !isAuth && <AdminAuthContainer/>
   
   return (
-	<div id="main">
-	  <div className="wrapper">
+    <>
+  <HeaderAdmin/>
+	<div id="main" className={style.wrap}>
 		<div className={`d-flex ${style.wrap}`}>
 		  {aside}
 		  <main className={style.main}>
 			<Switch>
 			  <Route exact path={path}>
-				{authForm}
+				<h1 className='h3'>Dashboard</h1>
+				<p>Рано или поздно здесь что-то будет</p>
 			  </Route>
 			  <Route path={`${path}/menu`} component={AdminPageMenuContainer}/>
 			  <Route path={`${path}/portfolio`} component={AdminPagePortfolioContainer}/>
 			</Switch>
 		  </main>
 		</div>
-	  </div>
 	</div>
+	 </>
   )
 }
 export default Admin

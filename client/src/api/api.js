@@ -18,9 +18,14 @@ export const portfolioAPI = {
 }
 export const loginAPI = {
   checkToken() {
-    return instance.get(`/checkToken`).then(response => response.status)
+    return instance.get(`/checkToken`).then(response => response.data)
   },
   checkLogin(email, password) {
 	return instance.post(`/auth`, {email: email, password:password}).then(response => response.status)
+  }
+}
+export const  menuApi = {
+  setMenu() {
+    return instance.get('/menu').then(response => response.data)
   }
 }

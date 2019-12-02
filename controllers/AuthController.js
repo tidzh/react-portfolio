@@ -8,7 +8,6 @@ const secret = 'mysecretsshhh';
 
 router.post('/auth', function(req, res) {
   const { email, password } = req.body;
-  console.log(email, password)
   
   LoginController.findOne({ email }, function(err, user) {
 	if (err) {
@@ -50,6 +49,6 @@ router.get('/secret', withAuth, function(req, res) {
   res.send('The password is potato');
 });
 router.get('/checkToken', withAuth, function(req, res) {
-  res.sendStatus(200);
+  res.send({message:'You are authorized', resultCode:true});
 });
 module.exports = router;

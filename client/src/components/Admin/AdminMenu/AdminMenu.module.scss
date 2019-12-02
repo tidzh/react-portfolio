@@ -1,23 +1,32 @@
 .aside {
   width: 300px;
+  background: #fff;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.asideTitle {
+  padding: 10px 15px;
+  letter-spacing: .05em;
+  pointer-events: none;
+  cursor: default;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #6f7377;
+  font-weight: 700;
 }
 
-.menu {
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  overflow: hidden;
-}
-
-.menu__item {
-}
-
-.menu__link {
+.menuLink {
   display: block;
-  padding: 10px;
+  padding: 10px 10px 10px 30px;
   color: #74788d;
   text-decoration: none;
-  &:hover, &_active {
-    background: #74788d;
-    color: #ffffff;
+  font-size: 15px;
+  transition: all .3s ease;
+  &:hover, &Active {
+    color: #3f87fd
+  }
+  &:hover {
+    padding: 10px 10px 10px 31px;
   }
 }

@@ -1,24 +1,28 @@
 const initialState = {
   adminSidebar: [
 	{
-	  "id":1,
-	  "name":"Главная",
-	  "url":""
+	  "id":0,
+	  "name":"Сайт",
+	  "url":"/"
+	},
+	{"id":1,
+	  "name":"DASHBOARD",
+	  "url":"/admin/"
 	},
 	{
 	  "id":2,
 	  "name":"Портфолио",
-	  "url":"portfolio"
+	  "url":"/admin/portfolio",
 	},
 	{
 	  "id":3,
 	  "name":"Меню",
-	  "url":"menu"
+	  "url":"/admin/menu"
 	},
 	{
 	  "id":4,
 	  "name":"Услуги",
-	  "url":"services"
+	  "url":"/admin/services"
 	},
   ]
 }

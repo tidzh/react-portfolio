@@ -4,38 +4,6 @@ import AdminPageMenu from "./AdminPageMenu";
 import {connect} from "react-redux";
 
 
-// class AdminPageMenuContainer extends React.Component {
-//   state = {edit: false}
-//
-//   handleSubmit = () => this.props.store.dispatch(addMenuCreator());
-//   handleSubmitItem = () => this.setState({edit: false})
-//
-//   handleInputChange = (name, value, id = false, targetId) => {
-// 	if(targetId ==='name-new' || targetId ==='url-new') {
-// 	  this.setState({edit:false})
-// 	}
-// 	this.props.store.dispatch(updateMenuCreator(name, value, id));
-//   }
-//   handleEditMenuItem = idMenu => this.setState({edit: idMenu});
-//
-//
-//   render() {
-// 	const {store} = this.props
-// 	let state = store.getState();
-// 	return (
-// 	  <AdminPageMenu menuData={state.menu.menuList}
-// 					 menuDataNew={state.menu.menuNew}
-// 					 addMenu={this.handleSubmit}
-// 					 addMenuItem={this.handleSubmitItem}
-// 					 updateMenu={this.handleInputChange}
-// 					 updateMenuItem={this.handleEditMenuItem}
-// 					 isOpen={this.state.edit}/>
-// 	)
-//   }
-// }
-//
-// export default AdminPageMenuContainer;
-
 
 
 const mapStateToProps = state => {
