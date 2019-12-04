@@ -19,7 +19,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-const AdminPagePortfolioContainer = connect(mapStateToProps,mapDispatchToProps)(AdminPagePortfolio);
-
-
-export default AdminPagePortfolioContainer;
+export default connect(mapStateToProps,mapDispatchToProps)(AdminPagePortfolio);

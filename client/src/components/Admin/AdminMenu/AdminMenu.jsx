@@ -8,9 +8,6 @@ const AdminMenu = props => {
 	
 	const menus = adminSidebar.map((menuItem) =>
 		<li key={menuItem.id} className={style.menu__item}>
-		  {menuItem.icon}
-		  {console.log(typeof menuItem.icon)}
-		  
 		  <NavLink exact
 				   to={`${menuItem.url}`}
 				   className={style.menuLink}

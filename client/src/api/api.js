@@ -22,6 +22,9 @@ export const loginAPI = {
   },
   checkLogin(email, password) {
 	return instance.post(`/auth`, {email: email, password:password}).then(response => response.status)
+  },
+  logout() {
+    return instance.get(`/logout`).then(response => response.data)
   }
 }
 export const  menuApi = {

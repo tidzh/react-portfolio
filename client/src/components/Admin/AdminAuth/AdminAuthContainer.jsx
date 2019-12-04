@@ -3,6 +3,7 @@ import {connect} from "react-redux";
 import AdminAuth from "./AdminAuth";
 import {checkToken, authUser, setAuthUserInput} from "../../../redux/auth-reducer";
 import {Redirect} from "react-router-dom";
+import {withAuthRedirect} from "../../../hoc/withAuthRedirect";
 
 
 class AdminAuthContainer extends React.Component {
@@ -10,9 +11,6 @@ class AdminAuthContainer extends React.Component {
 	error: false
   }
   
-  componentDidMount() {
-	this.props.checkToken();
-  }
   validationUserData = () => {
 	this.setState({error: true})
   }
@@ -25,6 +23,7 @@ class AdminAuthContainer extends React.Component {
   }
   
   render() {
+    console.log(this.props.isAuth)
 	if (this.props.isAuth) return  <Redirect to='/admin' />
 	return (
 	  <AdminAuth {...this.props} error={this.state.error} onSubmit={this.onSubmit} onChange={this.onChange}/>

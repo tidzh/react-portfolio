@@ -7,7 +7,7 @@ const SET_USER_DATA = 'SET_USER_DATA',
 const initialState = {
   email: '',
   password: '',
-  isAuth:false
+  // isAuth:false,
 }
 
 
@@ -16,7 +16,7 @@ const authReducer = (state=initialState, action) => {
 	case SET_USER_INPUT:
 	  return {...state, ...action.value}
 	  case SET_USER_DATA:
-	  return {...state, isAuth:true}
+	  return {...state, email:'', password:'', isAuth:true}
 	case IS_AUTH_USER:
 	  return {...state, isAuth:action.flag}
 	default:
@@ -27,7 +27,7 @@ const authReducer = (state=initialState, action) => {
 
 export  const setAuthUserData = () => ({type: SET_USER_DATA}),
               setAuthUserInput = value => ({type:SET_USER_INPUT, value}),
-              isAuthUser = flag => ({type:IS_AUTH_USER, flag});
+              isAuthUser = (flag) => ({type:IS_AUTH_USER, flag});
 
 export const checkToken = () => {
   return (dispatch) => {
@@ -57,6 +57,13 @@ export const authUser = (email, password, validationUserData) => {
 	  console.error(err);
 	  validationUserData();
 	});
+  }
+}
+export const logout = () => {
+  return (dispatch) => {
+	loginAPI.logout().then(data => {
+	  dispatch(isAuthUser(false));
+	})
   }
 }
 

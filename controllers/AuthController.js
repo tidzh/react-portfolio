@@ -45,10 +45,14 @@ router.post('/auth', function(req, res) {
 	}
   });
 });
-router.get('/secret', withAuth, function(req, res) {
+router.get('/secret', withAuth, function(secret, res) {
   res.send('The password is potato');
 });
+router.get('/logout', function(secret, res) {
+  res.clearCookie('token');
+  return res.sendStatus(200);
+});
 router.get('/checkToken', withAuth, function(req, res) {
-  res.send({message:'You are authorized', resultCode:true});
+  res.send({message:'You are authorized', resultCode:true, email:req.email});
 });
 module.exports = router;

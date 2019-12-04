@@ -49,9 +49,9 @@ const menuReducer = (state = initialState, action) => {
 	  
   }
 }
-export const addMenuCreator = () => ({type: ADD_MENU}),
-             addMenuItemCreator = () => ({type: ADD_MENU_ITEM}),
-             updateMenuCreator = (menuName, menuValue, menuItem) =>
+export const addMenu = () => ({type: ADD_MENU}),
+             addMenuItem = () => ({type: ADD_MENU_ITEM}),
+             updateMenu = (menuName, menuValue, menuItem) =>
   ({type: UPDATE_MENU, name: menuName, value: menuValue, item: menuItem}),
             setMenu = (menu) => ({type: SET_MENU, menu:menu});
 

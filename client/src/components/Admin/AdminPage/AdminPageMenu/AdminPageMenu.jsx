@@ -9,6 +9,7 @@ import {ADMIN} from "../../../../lang";
 
 const AdminPageMenu = props => {
   
+  
   const [isOpen, setIsOpen] = useState(false);
   
   const {menuData, menuDataNew, addMenu, addMenuItem, updateMenuItem, updateMenu} = props;
@@ -29,6 +30,7 @@ const AdminPageMenu = props => {
   }
   
   const handleEditMenuItem = idMenu => setIsOpen(idMenu);
+  
   
   
 	const menuLists = menuData.map(menuList => {

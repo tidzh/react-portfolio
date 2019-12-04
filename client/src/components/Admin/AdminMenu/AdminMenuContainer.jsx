@@ -9,6 +9,4 @@ const mapStateToProps = state => {
 }
 
 
-const AdminMenuContainer = connect(mapStateToProps)(AdminMenu);
-
-export default AdminMenuContainer;
+export default connect(mapStateToProps)(AdminMenu);

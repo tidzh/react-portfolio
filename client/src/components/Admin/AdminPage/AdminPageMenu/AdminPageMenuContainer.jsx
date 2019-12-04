@@ -1,35 +1,30 @@
 import React from 'react';
-import {addMenuCreator, updateMenuCreator, addMenuItemCreator} from "../../../../redux/menu-reducer";
+import {addMenu, updateMenu, addMenuItem, setMenuThunk} from "../../../../redux/menu-reducer";
 import AdminPageMenu from "./AdminPageMenu";
 import {connect} from "react-redux";
 
 
-
+class AdminPageMenuContainer extends React.Component {
+  
+  componentDidMount() {
+	this.props.setMenuThunk();
+  }
+  render() {
+	if(!this.props.menuData) {
+	  return false
+	}
+	return (
+	  <AdminPageMenu {...this.props}/>
+	)
+  }
+}
 
 const mapStateToProps = state => {
   return {
 	menuData: state.menu.menuList,
-	menuDataNew: state.menu.menuNew,
+	menuDataNew: state.menu.menuNew
   }
 };
-const mapStateToDispatch = (dispatch, state) => {
-  return {
-	addMenu: () => {
-	  dispatch(addMenuCreator());
-	},
-	updateMenu: (name, value, id = false) => {
-	  dispatch(updateMenuCreator(name, value, id));
-	},
-	addMenuItem: () => {
-	  dispatch(addMenuItemCreator());
-	}
-	// updateMenuItem: (idMenu) => {
-	//   console.log(state)
-	//   this.setState({edit: idMenu});
-	// }
-  }
-}
-const AdminPageMenuContainer = connect(mapStateToProps, mapStateToDispatch)(AdminPageMenu);
 
 
-export default AdminPageMenuContainer;
+export default connect(mapStateToProps, {addMenu, addMenuItem, updateMenu, setMenuThunk})(AdminPageMenuContainer);

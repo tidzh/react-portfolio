@@ -29,16 +29,10 @@ body {
   @include wrapper()
 }
 
-.d-flex {
-  display: flex;
-}
-
-.align-self-center {
-  align-items: center;
-}
 .pos-relative {
   position: relative;
 }
+
 button:disabled, button[disabled] {
   border: 1px solid #999999;
   background-color: #cccccc;

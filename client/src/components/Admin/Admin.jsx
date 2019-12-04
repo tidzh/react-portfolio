@@ -1,14 +1,13 @@
 import React from 'react';
-import AdminPageMenuContainer from "./AdminPage/AdminPageMenu/AdminPageMenuContainer";
-import AdminPagePortfolioContainer from "./AdminPage/AdminPagePortfolio/AdminPagePortfolioContainer";
 import {Route, Switch, useRouteMatch} from "react-router-dom";
 import style from "./Admin.module.scss";
 import adminMenu from "./AdminMenu/AdminMenu.module.scss";
-import AdminMenuContainer from "./AdminMenu/AdminMenuContain";
+import AdminMenuContainer from "./AdminMenu/AdminMenuContainer";
+import AdminPagePortfolioContainer from "./AdminPage/AdminPagePortfolio/AdminPagePortfolioContainer";
 import HeaderAdmin from "../Header/HeaderAdmin/HeaderAdmin";
+import AdminPageMenuContainer from "./AdminPage/AdminPageMenu/AdminPageMenuContainer";
 
 const Admin = props => {
-  
   const {path} = useRouteMatch(),
 	    {isAuth} = props;
   

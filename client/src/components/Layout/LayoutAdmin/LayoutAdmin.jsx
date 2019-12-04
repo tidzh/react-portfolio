@@ -1,7 +1,7 @@
 import React from 'react'
 import style from "../../Admin/Admin.module.scss";
 import adminMenu from "../../Admin/AdminMenu/AdminMenu.module.scss";
-import AdminMenuContainer from "../../Admin/AdminMenu/AdminMenuContain";
+import AdminMenuContainer from "../../Admin/AdminMenu/AdminMenuContainer";
 
 const LayoutAdmin = (props) => {
 	return (

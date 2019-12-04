@@ -9,13 +9,11 @@ import ServicesContainer from "./components/Services/ServicesContainer";
 import FeedbackContainer from "./components/Page/PageFeedback/FeedbackContainer";
 import PortfolioSingleContainer from "./components/Portfolio/PortfolioSingle/PortfolioSingleContainer";
 import AdminContainer from "./components/Admin/AdminContainer";
-import AdminAuth from "./components/Admin/AdminAuth/AdminAuth";
 import AdminAuthContainer from "./components/Admin/AdminAuth/AdminAuthContainer";
 
 
 const App = () => {
 return (
-  <>
   <Router>
       <Switch>
         <Route exact path='/'>
@@ -40,7 +38,6 @@ return (
         </Route>
       </Switch>
   </Router>
-  </>
 )
 }
 

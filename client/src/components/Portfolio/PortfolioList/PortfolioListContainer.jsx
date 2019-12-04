@@ -44,6 +44,4 @@ const mapStateToProps = state => {
 }
 
 
-export default connect(mapStateToProps, {
-  setLikePortfolio, getPortfolio
-})(PortfolioListContainer);
+export default connect(mapStateToProps, {setLikePortfolio, getPortfolio})(PortfolioListContainer);
