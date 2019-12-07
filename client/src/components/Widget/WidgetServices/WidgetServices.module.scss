@@ -1,0 +1,100 @@
+.servicesItem {
+  flex: 0 0 33.333333%;
+  max-width: 33.333333%;
+  padding: 0 15px;
+}
+
+.servicesListIcon {
+  font-size: 30px;
+  position: relative;
+  color: #fff
+}
+
+.servicesFlip {
+  display: flex;
+  min-height: 270px;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+  perspective: 1200px;
+  width: 100%;
+  height: 100%;
+  &:hover {
+    .servicesList {
+      transform: rotate3d(1, 0, 0, 180deg)
+    }
+  }
+}
+
+.servicesList {
+  position: relative;
+  transition-property: box-shadow, transform;
+  transition-duration: .6s;
+  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+  transform-style: inherit;
+  perspective: inherit;
+  height: 100%;
+  width: 100%;
+  margin-bottom: 30px;
+  p {
+    color: #fff;
+  }
+}
+.servicesListTitle {
+  font-size: 22px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.flipContent {
+  transform: translate3d(0, 0, 60px) scale(.85);
+}
+.flipContentTitle {
+  padding: 11px 20px;
+  background: #fff;
+  font-size: 14px;
+  border-radius: 2px;
+}
+
+.servicesListFront {
+  background-color: #fff;
+  z-index: 2;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  transform-style: inherit;
+  perspective: inherit;
+  backface-visibility: hidden;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  &:before {
+    right: 0;
+    content: "";
+    position: absolute;
+    background: #000;
+    left: 0;
+    height: 100%;
+    opacity: .2
+  }
+}
+
+.servicesListBack {
+  transform: rotateY(-180deg) rotateZ(-180deg);
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background: #593eff;
+  transform-style: inherit;
+  perspective: inherit;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center
+}

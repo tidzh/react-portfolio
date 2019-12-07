@@ -27,8 +27,18 @@ export const loginAPI = {
     return instance.get(`/logout`).then(response => response.data)
   }
 }
-export const  menuApi = {
+export const menuApi = {
   setMenu() {
     return instance.get('/menu').then(response => response.data)
+  }
+}
+export const skillsApi = {
+  getSkill() {
+    return instance.get('/skills').then(response => response.data)
+  }
+}
+export const servicesApi = {
+  getServices() {
+    return instance.get('/services').then(response => response.data)
   }
 }

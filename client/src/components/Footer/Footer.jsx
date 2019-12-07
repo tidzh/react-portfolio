@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Footer = props => {
+const Footer = () => {
     return(
       <footer className="footer">
 		<div className="wrapper">
-		  © {new Date().getFullYear()} Kondakov Alex
+		  © {new Date().getFullYear()} Kondakov Alex | All Right Reserved
 		</div>
 	  </footer>
 	)

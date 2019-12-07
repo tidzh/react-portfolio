@@ -1,7 +1,3 @@
-@import "assets/scss/core/smart-grid";
-@import "assets/scss/core/base";
-@import "assets/scss/core/flex";
-@import "assets/scss/core/text";
-@import "assets/scss/core/indent";
-@import "assets/scss/layout/header";
-@import "assets/scss/layout/footer";
+@import 'assets/scss/core';
+@import 'assets/scss/components';
+@import 'assets/scss/layout';

@@ -1,0 +1,55 @@
+.wrap {
+  display: flex;
+  margin: 0 -15px;
+}
+.title {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 20px 0;
+}
+
+.wrapItem {
+  width: 50%;
+  padding: 0 15px;
+}
+.wrapItemContent {
+  padding: 20px;
+  background: #fff;
+  border-radius: 2px;
+  overflow: hidden;
+  border: 1px solid #eee;
+  -webkit-transition: all .3s ease-in-out 0s;
+  -moz-transition: all .3s ease-in-out 0s;
+  -ms-transition: all .3s ease-in-out 0s;
+  -o-transition: all .3s ease-in-out 0s;
+  transition: all .3s ease-in-out 0s;
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(134,151,168,.1);
+  }
+}
+.progress {
+  background: #e9ecef;
+  border-radius: .25rem;
+  height: 7px;
+  display: flex;
+  overflow: hidden;
+}
+.progressBar {
+  background: rgba(89,62,255,1);
+  opacity: .8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  white-space: nowrap;
+  transition: width .6s ease;
+}
+.skills {
+  margin-bottom: 10px;
+}
+.skillsTitle {
+  margin-bottom: 10px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-weight: 400;
+}

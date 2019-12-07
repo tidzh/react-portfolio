@@ -12,7 +12,9 @@ app.use("/api",
   require('./controllers/PortfolioController'),
   require('./controllers/MenuController'),
   require('./controllers/LoginController'),
-  require('./controllers/AuthController')
+  require('./controllers/AuthController'),
+  require('./controllers/SkillController'),
+  require('./controllers/ServicesController')
 );
 
 

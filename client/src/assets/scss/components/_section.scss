@@ -1,0 +1,28 @@
+.section {
+  padding: 100px 0;
+  position: relative;
+  background: #fff;
+  &_grey {
+    background: #f7f7f7;
+  }
+}
+.section-title {
+  position: relative;
+  margin-bottom: 60px;
+  &:after {
+    //background: linear-gradient(#e66465, #9198e5);
+    background: linear-gradient(to left,rgba(0,0,0,0),#a5a5a5,rgba(0,0,0,0));
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    width: 100%;
+    content: "";
+    bottom: -30px
+  }
+}
+.sub-title {
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #878d8d;
+}

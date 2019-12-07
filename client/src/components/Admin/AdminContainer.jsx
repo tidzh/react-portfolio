@@ -16,4 +16,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(withAuthRedirect(AdminContainer, '/auth'));
+export default withAuthRedirect(connect(mapStateToProps)(AdminContainer), '/auth');

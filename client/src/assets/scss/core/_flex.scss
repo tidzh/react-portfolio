@@ -9,3 +9,6 @@
 .align-self-center {
   align-items: center;
 }
+.row {
+  @include row-flex
+}
