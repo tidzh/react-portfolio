@@ -37,7 +37,7 @@ const PageHome = props => {
 			  <h2 className='h2'>Что я умею</h2>
 			</div>
 			</div>
-			<WidgetResume skills = {skills}/>
+			<WidgetResume skills={skills}/>
 		  </div>
 		</section>
 		</>

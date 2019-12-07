@@ -25,8 +25,6 @@ class HeaderContainer extends React.Component {
   }
 }
 
-
-
 const mapStateToProps = (state) => {
   return{
     menuData: state.menu.menuList,

@@ -4,6 +4,7 @@ import {connect} from "react-redux";
 import {getPortfolioSingle} from "../../../redux/portfolio-reducer";
 import Breadcrumbs from "../../common/Breadcrumbs/Breadcrumbs";
 import {withRouter} from "react-router-dom";
+import {compose} from "redux";
 
 class PortfolioSingleContainer extends React.Component{
   
@@ -37,4 +38,7 @@ const mapStateToProps = state => {
 }
 
 
-export default connect(mapStateToProps, {getPortfolioSingle})(withRouter(PortfolioSingleContainer));
+export default compose(
+  connect(mapStateToProps, {getPortfolioSingle}),
+  withRouter
+)(PortfolioSingleContainer)

@@ -3,6 +3,7 @@ import {connect} from "react-redux";
 import {getPortfolio, setLikePortfolio} from "../../../redux/portfolio-reducer";
 import PortfolioList from "./PortfolioList";
 import Preloader from "../../common/Preloader/Preloader";
+import {compose} from "redux";
 
 class PortfolioListContainer extends React.Component {
   
@@ -43,5 +44,6 @@ const mapStateToProps = state => {
   }
 }
 
-
-export default connect(mapStateToProps, {setLikePortfolio, getPortfolio})(PortfolioListContainer);
+export default compose(
+  connect(mapStateToProps, {setLikePortfolio, getPortfolio})
+)(PortfolioListContainer)

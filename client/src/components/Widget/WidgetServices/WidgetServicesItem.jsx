@@ -2,7 +2,6 @@ import React from "react";
 import style from "./WidgetServices.module.scss";
 
 const WidgetServicesItem = props => {
-  console.log(props)
   const {name, img, text} = props.servicesItem
   return(
     <>
