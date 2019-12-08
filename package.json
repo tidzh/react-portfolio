@@ -16,7 +16,7 @@
     "cors": "^2.8.5",
     "express": "^4.16.4",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.3.9",
+    "mongoose": "^5.7.14",
     "react-cookie": "^4.0.1",
     "react-helmet": "^5.2.1",
     "redux-thunk": "^2.3.0"
@@ -25,7 +25,7 @@
     "@typescript-eslint/eslint-plugin": "^2.9.0",
     "@typescript-eslint/parser": "^2.9.0",
     "babel-eslint": "^10.0.3",
-    "eslint": "^6.7.1",
+    "eslint": "^6.7.2",
     "eslint-config-react-app": "^5.0.2",
     "eslint-plugin-flowtype": "^3.13.0",
     "eslint-plugin-import": "^2.18.2",

@@ -7,7 +7,7 @@ const HeaderAdmin = () => {
     <header className={style.header}>
 	  <div className='d-flex align-items-center'>
 		<div className={style.header_logo}>Dashboard</div>
-		<div className="ml-auto"><UserHeaderWidgetContainer/></div>
+		  <UserHeaderWidgetContainer/>
 	  </div>
 	</header>
   )

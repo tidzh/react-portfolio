@@ -9,14 +9,13 @@ import {ADMIN} from "../../../../lang";
 
 const AdminPageMenu = props => {
   
-  
   const [isOpen, setIsOpen] = useState(false);
   
-  const {menuData, menuDataNew, addMenu, addMenuItem, updateMenuItem, updateMenu} = props;
+  const {menuData, menuDataNew, addMenuThunk, addMenuItem, updateMenu} = props;
   
   const handleSubmit = evt => {
 	evt.preventDefault();
-	addMenu();
+	addMenuThunk();
   }
   const handleSubmitItem = evt => {
     evt.preventDefault();
@@ -24,9 +23,7 @@ const AdminPageMenu = props => {
 	addMenuItem();
   }
   const handleInputChange = evt => {
-	const target = evt.target;
-	
-	updateMenu(target.name, target.value, isOpen, target.id);
+	updateMenu(evt.target.name, evt.target.value, isOpen, evt.target.id);
   }
   
   const handleEditMenuItem = idMenu => setIsOpen(idMenu);
@@ -34,10 +31,10 @@ const AdminPageMenu = props => {
   
   
 	const menuLists = menuData.map(menuList => {
-	  if(isOpen === menuList.id) {
-		return <li className="mb-20" key={menuList.id}>
-		  <div className="mb-5"><b>ID:</b> {menuList.id}</div>
-		  <Form formOnSubmit={handleSubmitItem}>
+	  if(isOpen === menuList._id) {
+		return <li className="mb-20" key={menuList._id}>
+		  <div className="mb-5"><b>ID:</b> {menuList._id}</div>
+		  <Form onSubmit ={handleSubmitItem}>
 			<div className="mb-5">
 			  <b>Имя:</b>
 			  <FormInput required
@@ -53,26 +50,27 @@ const AdminPageMenu = props => {
 						 placeholder="Введите URL"
 						 onChange={handleInputChange}/>
 			</div>
-			<FormButton btnClass='btn_pink' onClick={handleEditMenuItem.bind(this,menuList.id)}>{ADMIN.save}</FormButton>
+			<FormButton btnClass='btn_pink' onClick={handleEditMenuItem.bind(this,menuList._id)}>{ADMIN.save}</FormButton>
 		  </Form>
 		</li>
 	  } else {
-		return <li className="mb-20" key={menuList.id}>
-		  <div className="mb-5"><b>ID:</b> {menuList.id}</div>
+		return <li className="mb-20" key={menuList._id}>
+		  <div className="mb-5"><b>ID:</b> {menuList._id}</div>
 		  <div className="mb-5"><b>Имя:</b> {menuList.name}</div>
 		  <div className="mb-5"><b>URL:</b> {menuList.url}</div>
-		  <FormButton btnClass='btn_blue' onClick={handleEditMenuItem.bind(this,menuList.id)}>{ADMIN.edit}</FormButton>
+		  <FormButton btnClass='btn_blue' onClick={handleEditMenuItem.bind(this,menuList._id)}>{ADMIN.edit}</FormButton>
 		</li>
 	  }
 	})
 	
 	return (
-	  <React.Fragment>
-		<h1 className="h1">Редактировать меню</h1>
-		<ul className={style.wrap}>{menuLists}</ul>
+	  <>
+		<h1 className="h3">Редактировать меню</h1>
+	  <div className={style.wrap}>
+		<ul>{menuLists}</ul>
 		<div className={style.add}>
 		  <h3 className="h3 mb-20">Добавить URl</h3>
-		  <Form formOnSubmit={handleSubmit}>
+		  <Form onSubmit={handleSubmit}>
 			<div className={styleForm.form__item}>
 			  <FormInput required
 						 id='name-new'
@@ -94,7 +92,8 @@ const AdminPageMenu = props => {
 			</div>
 		  </Form>
 		</div>
-	  </React.Fragment>
+	  </div>
+	  </>
 	)
 }
 

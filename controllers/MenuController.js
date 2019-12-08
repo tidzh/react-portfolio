@@ -10,6 +10,7 @@ router.get("/menu", (req, res)=>{
 });
 
 router.post("/menu", (req, res)=>{
+  console.log(req.query)
   MenuController.create(req.body)
 	.then(menu => {
 	  res.send(menu);

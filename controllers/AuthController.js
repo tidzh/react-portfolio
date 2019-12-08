@@ -6,10 +6,10 @@ const withAuth = require('../middleware');
 
 const secret = 'mysecretsshhh';
 
-router.post('/auth', function(req, res) {
-  const { email, password } = req.body;
+router.post('/auth', function (req, res) {
+  const {email, password} = req.body;
   
-  LoginController.findOne({ email }, function(err, user) {
+  LoginController.findOne({email}, function (err, user) {
 	if (err) {
 	  res.status(500)
 		.json({
@@ -21,7 +21,7 @@ router.post('/auth', function(req, res) {
 		  error: 'Incorrect email or password'
 		});
 	} else {
-	  user.isCorrectPassword(password, function(err, same) {
+	  user.isCorrectPassword(password, function (err, same) {
 		if (err) {
 		  res.status(500)
 			.json({
@@ -34,25 +34,29 @@ router.post('/auth', function(req, res) {
 			});
 		} else {
 		  // Issue token
-		  const payload = { email };
+		  const payload = {email};
 		  const token = jwt.sign(payload, secret, {
-			expiresIn: '1h'
+			expiresIn: '2h'
 		  });
-		  res.cookie('token', token, { httpOnly: true })
+		  res.cookie('token', token, {httpOnly: true})
 			.sendStatus(200);
 		}
 	  });
 	}
   });
 });
-router.get('/secret', withAuth, function(secret, res) {
+router.get('/secret', withAuth, function (secret, res) {
   res.send('The password is potato');
 });
-router.get('/logout', function(secret, res) {
+router.get('/logout', function (secret, res) {
   res.clearCookie('token');
   return res.sendStatus(200);
 });
-router.get('/checkToken', withAuth, function(req, res) {
-  res.send({message:'You are authorized', resultCode:true, email:req.email});
+router.get('/checkToken', withAuth, function (req, res) {
+  
+  LoginController.findOne({email: req.email}, function (err, user) {
+	res.send({message: 'You are authorized', resultCode: true, email: user.email, name: user.name, ava: user.ava});
+  });
+  
 });
 module.exports = router;

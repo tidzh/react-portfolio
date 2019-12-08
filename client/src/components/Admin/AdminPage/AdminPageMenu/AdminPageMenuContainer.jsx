@@ -1,5 +1,5 @@
 import React from 'react';
-import {addMenu, updateMenu, addMenuItem, setMenuThunk} from "../../../../redux/menu-reducer";
+import {updateMenu, addMenuItem, setMenuThunk, addMenuThunk} from "../../../../redux/menu-reducer";
 import AdminPageMenu from "./AdminPageMenu";
 import {connect} from "react-redux";
 
@@ -27,4 +27,4 @@ const mapStateToProps = state => {
 };
 
 
-export default connect(mapStateToProps, {addMenu, addMenuItem, updateMenu, setMenuThunk})(AdminPageMenuContainer);
+export default connect(mapStateToProps, {addMenuThunk, addMenuItem, updateMenu, setMenuThunk})(AdminPageMenuContainer);

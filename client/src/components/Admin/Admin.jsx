@@ -9,16 +9,14 @@ import AdminPageMenuContainer from "./AdminPage/AdminPageMenu/AdminPageMenuConta
 
 const Admin = props => {
   const {path} = useRouteMatch(),
-	    {isAuth} = props;
-  
-  const aside = isAuth && <aside className={adminMenu.aside}><AdminMenuContainer/></aside>;
+	    {userEmail, userName}  = props
   
   return (
     <>
   <HeaderAdmin/>
 	<div id="main" className={style.wrap}>
 		<div className={`d-flex ${style.wrap}`}>
-		  {aside}
+		  <aside className={adminMenu.aside}><AdminMenuContainer/></aside>
 		  <main className={style.main}>
 			<Switch>
 			  <Route exact path={path}>

@@ -30,6 +30,9 @@ export const loginAPI = {
 export const menuApi = {
   setMenu() {
     return instance.get('/menu').then(response => response.data)
+  },
+  addMenu(data) {
+    return instance.post('/menu', {data}).then(response => response.status)
   }
 }
 export const skillsApi = {

@@ -1,0 +1,27 @@
+.title {
+  font-size: 80px;
+  color: #686868;
+  font-weight: 700;
+}
+.subTitle {
+  font-size: 25px;
+}
+.text {
+  color: #686868;
+  font-size: 17px;
+  margin: 16px 0 20px;
+}
+.goHome {
+  color: #212529;
+  background: #b1cfec;
+  border-color: #b1cfec;
+  text-decoration: none;
+  padding: 8px 10px;
+  display: inline-block;
+  border-radius: 3px;
+  font-size: 13px;
+  &:hover {
+    background: #92bce5;
+    border-color: #88b6e2;
+  }
+}

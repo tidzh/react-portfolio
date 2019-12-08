@@ -3,7 +3,7 @@ import {Redirect} from "react-router-dom";
 import {connect} from "react-redux";
 import {checkToken} from "../redux/auth-reducer";
 
-const mapStateToPropsRorRedirect = (state) => {
+const mapStateToPropsRorRedirect = state => {
   return {
 	isAuth: state.auth.isAuth,
   }

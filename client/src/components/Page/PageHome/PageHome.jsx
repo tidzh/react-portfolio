@@ -10,8 +10,11 @@ const PageHome = props => {
       <>
 		<section className='section section_grey'>
 		  <div className="wrapper">
-			<div className="d-flex align-self-center">
-			  <h1 className="h1">Последние работы</h1>
+			<div className="text-center">
+			  <div className="uppercase section-title d-inline-block">
+				<div className="sub-title">Портфолио</div>
+				<h1 className='h2'>Мои работы</h1>
+			  </div>
 			</div>
 			<div className="article-wrap">
 			  <PortfolioListContainer/>

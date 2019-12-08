@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 
 import LayoutFront from "./components/Layout/LayoutFront/LayoutFront";
 import Portfolio from "./components/Page/PagePortfolio/Portfolio";
-import Error404 from "./components/Error/Error404";
+import Error404 from "./components/Error/Error404/Error404";
 import ServicesContainer from "./components/Services/ServicesContainer";
 import FeedbackContainer from "./components/Page/PageFeedback/FeedbackContainer";
 import PortfolioSingleContainer from "./components/Portfolio/PortfolioSingle/PortfolioSingleContainer";
