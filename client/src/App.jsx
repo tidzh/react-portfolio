@@ -8,7 +8,7 @@ import ServicesContainer from "./components/Services/ServicesContainer";
 import FeedbackContainer from "./components/Page/PageFeedback/FeedbackContainer";
 import PortfolioSingleContainer from "./components/Portfolio/PortfolioSingle/PortfolioSingleContainer";
 import AdminContainer from "./components/Admin/AdminContainer";
-import AdminAuthContainer from "./components/Admin/AdminAuth/AdminAuthContainer";
+import AdminAuthContainer from "./components/Auth/AuthContainer";
 import PageHomeContainer from "./components/Page/PageHome/PageHomeContainer";
 
 

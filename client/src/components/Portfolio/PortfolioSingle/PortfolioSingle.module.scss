@@ -1,0 +1,51 @@
+@import "../../../assets/scss/core/smart-grid";
+
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+.left {
+  @include size(7)
+}
+.right {
+  @include size(5);
+  padding-left: 40px;
+}
+.title {
+  font-family: 'Oswald', sans-serif;
+  display: inline-block;
+  margin: 0 0 15px;
+  padding-bottom: 3px;
+  font-size: 20px;
+  position: relative;
+  &:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    margin-top: -1px;
+    background: #593eff;
+  }
+}
+.projectItem {
+  margin-bottom: 20px;
+}
+.tags {
+  margin: 0 -5px;
+}
+.tagsItem {
+  margin: 0 5px;
+}
+.tagsName {
+  font-size: 12px;
+  color: #666;
+  padding: 2px 7px;
+  background: #eee;
+}
+.url {
+  margin-bottom: 20px;
+  a {
+    color: #0099CC;
+    text-decoration: none;
+  }
+}

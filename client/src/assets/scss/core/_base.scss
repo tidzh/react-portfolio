@@ -14,6 +14,9 @@ body {
   -webkit-box-sizing: border-box;
   box-sizing: border-box
 }
+* {
+  outline: none;
+}
 
 #root {
   display: flex;
@@ -34,6 +37,11 @@ body {
 }
 .d-inline-block {
   display: inline-block;
+}
+a {
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 button:disabled, button[disabled] {

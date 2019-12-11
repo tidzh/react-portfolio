@@ -1,11 +1,10 @@
 import React from 'react';
-import Form from "../../../Form/Form";
-import FormInput from "../../../Form/FormInput/FormInput";
-import FormButton from "../../../Form/FormButton/FormButton";
-import FormTextarea from "../../../Form/FormTextarea/FormTextarea";
+import FormButton from "../../../common/FormButton/FormButton";
 import {ADMIN} from "../../../../lang";
 import style from './AdminPagePortfolio.module.scss'
-import styleForm from "../../../Form/Form.module.scss";
+import styleForm from "../../../common/Form/Form.module.scss";
+import {Form} from "../../../common/Form/Form";
+import {Field} from "redux-form";
 
 const AdminPagePortfolio = props => {
   const {portfolioData, portfolioDataNew, addPortfolio, updatePortfolio} = props;
@@ -32,11 +31,11 @@ const AdminPagePortfolio = props => {
 	  <h2 className='h3 mb-20'>Добавить новый проект</h2>
 	  <div className={style.add}>
 	  <Form formOnSubmit={handleOnSubmit}>
-		<div className={styleForm.form__item}>
-		<FormInput name='title' onChange={handleChangeInput} required placeholder='Название проекта' value={portfolioDataNew.title}/>
+		<div className={styleForm.item}>
+		<Field name='title' onChange={handleChangeInput} required placeholder='Название проекта' value={portfolioDataNew.title}/>
 		</div>
-		<div className={styleForm.form__item}>
-		  <FormTextarea name='text' onChange={handleChangeInput} placeholder='Описание проекта' value={portfolioDataNew.text}/>
+		<div className={styleForm.item}>
+		  <Field name='text' onChange={handleChangeInput} placeholder='Описание проекта' value={portfolioDataNew.text}/>
 		</div>
 		<div className={styleForm.form__item}>
 		  <FormButton>{ADMIN.add}</FormButton>

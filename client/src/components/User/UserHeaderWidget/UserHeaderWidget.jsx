@@ -17,12 +17,12 @@ const UserHeaderWidget = props => {
 	<div className={style.menu}>
 	  <div className={style.menuItem}>
 		<div className={style.profile} onClick={handlerDropdown}>
-		  <img src={`assets/img/ava/${userAva}`} alt={userName} className={style.profileAva}/>
+		  <img src={`/assets/img/ava/${userAva}`} alt={userName} className={style.profileAva}/>
 		</div>
 		{isOpen &&
 		<div className={style.dropdownMenu}>
 		  <div className={style.dropdownMenuHeader}>
-			<img src={`assets/img/ava/${userAva}`} alt={userName} className={`${style.profileAva} ${style.profileAvaBig}`}/>
+			<img src={`/assets/img/ava/${userAva}`} alt={userName} className={`${style.profileAva} ${style.profileAvaBig}`}/>
 			<div className={style.profileName}>{userName}</div>
 			<div className={style.profileEmail}>{userEmail}</div>
 		  </div>

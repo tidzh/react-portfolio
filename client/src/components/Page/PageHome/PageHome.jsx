@@ -2,6 +2,7 @@ import React from 'react';
 import PortfolioListContainer from "../../Portfolio/PortfolioList/PortfolioListContainer";
 import WidgetResume from "../../Widget/WidgetResume/WidgetResume";
 import WidgetServices from "../../Widget/WidgetServices/WidgetServices";
+import Heading from "../../common/Heading/Heading";
 
 
 const PageHome = props => {
@@ -10,12 +11,7 @@ const PageHome = props => {
       <>
 		<section className='section section_grey'>
 		  <div className="wrapper">
-			<div className="text-center">
-			  <div className="uppercase section-title d-inline-block">
-				<div className="sub-title">Портфолио</div>
-				<h1 className='h2'>Мои работы</h1>
-			  </div>
-			</div>
+			<Heading title={'Мои работы'} subtitle='Портфолио' Tag={'h1'}/>
 			<div className="article-wrap">
 			  <PortfolioListContainer/>
 			</div>
@@ -23,23 +19,13 @@ const PageHome = props => {
 		</section>
 		<section className='section'>
 		  <div className="wrapper">
-			<div className="text-center">
-			  <div className="uppercase section-title d-inline-block">
-				<div className="sub-title">Мои услуги</div>
-				<h2 className='h2'>Что я делаю</h2>
-			  </div>
-			</div>
+			<Heading title={'Мои услуги'} subtitle='Что я делаю' Tag={'h2'}/>
 			<WidgetServices services={services}/>
 		  </div>
 		</section>
 		<section className='section section_grey'>
 		  <div className="wrapper">
-			<div className="text-center">
-			<div className="uppercase section-title d-inline-block">
-			  <div className="sub-title">Мое резюме</div>
-			  <h2 className='h2'>Что я умею</h2>
-			</div>
-			</div>
+			<Heading title={'Мое резюме'} subtitle='Что я умею' Tag={'h2'}/>
 			<WidgetResume skills={skills}/>
 		  </div>
 		</section>

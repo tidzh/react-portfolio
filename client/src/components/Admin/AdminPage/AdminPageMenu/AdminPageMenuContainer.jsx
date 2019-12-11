@@ -2,6 +2,7 @@ import React from 'react';
 import {updateMenu, addMenuItem, setMenuThunk, addMenuThunk} from "../../../../redux/menu-reducer";
 import AdminPageMenu from "./AdminPageMenu";
 import {connect} from "react-redux";
+import {compose} from "redux";
 
 
 class AdminPageMenuContainer extends React.Component {
@@ -27,4 +28,6 @@ const mapStateToProps = state => {
 };
 
 
-export default connect(mapStateToProps, {addMenuThunk, addMenuItem, updateMenu, setMenuThunk})(AdminPageMenuContainer);
+export default compose(
+  connect(mapStateToProps, {addMenuThunk, addMenuItem, updateMenu, setMenuThunk})
+)(AdminPageMenuContainer)

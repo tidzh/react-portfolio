@@ -1,0 +1,32 @@
+.contactDetail {
+  margin: 60px 0;
+}
+.contactDetailsItem {
+  padding: 20px;
+  background: #fff;
+  border-radius: 2px;
+  overflow: hidden;
+  border: 1px solid #eee;
+  transition: all .3s ease-in-out 0s;
+  text-align: center;
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(134,151,168,.1);
+  }
+}
+.contactDetailsItemImg {
+  max-height: 30px;
+  margin-bottom: 20px;
+}
+.contactDetailsItemLink {
+  display: block;
+  color: #6e7373;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.contactDetailsItemText {
+  margin-top: 20px;
+  font-weight: bold;
+}

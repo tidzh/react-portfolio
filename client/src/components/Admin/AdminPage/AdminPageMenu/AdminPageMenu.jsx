@@ -1,21 +1,19 @@
 import React, { useState } from 'react';
-import Form from "../../../Form/Form";
-import FormInput from "../../../Form/FormInput/FormInput";
-import FormButton from "../../../Form/FormButton/FormButton";
-import style from './AdminPageMenu.module.scss';
-import styleForm from "../../../Form/Form.module.scss";
+import FormButton from "../../../common/FormButton/FormButton";
+import styleForm from "../../../common/Form/Form.module.scss";
 import {ADMIN} from "../../../../lang";
+import {Form} from "../../../common/Form/Form";
+import {Field} from "redux-form";
 
 
 const AdminPageMenu = props => {
   
-  const [isOpen, setIsOpen] = useState(false);
-  
-  const {menuData, menuDataNew, addMenuThunk, addMenuItem, updateMenu} = props;
+  const [isOpen, setIsOpen] = useState(false),
+	    {menuData, menuDataNew, addMenuThunk, addMenuItem, updateMenu} = props;
   
   const handleSubmit = evt => {
 	evt.preventDefault();
-	addMenuThunk();
+	addMenuThunk(menuDataNew.name, menuDataNew.url);
   }
   const handleSubmitItem = evt => {
     evt.preventDefault();
@@ -37,14 +35,14 @@ const AdminPageMenu = props => {
 		  <Form onSubmit ={handleSubmitItem}>
 			<div className="mb-5">
 			  <b>Имя:</b>
-			  <FormInput required
+			  <Field required
 						 name='name'
 						 value={menuList.name}
 						 placeholder="Введите название URL"
 						 onChange={handleInputChange}/>
 			</div>
 			<div className="mb-5"><b>URL:</b>
-			  <FormInput required
+			  <Field required
 						 name='url'
 						 value={menuList.url}
 						 placeholder="Введите URL"
@@ -66,28 +64,28 @@ const AdminPageMenu = props => {
 	return (
 	  <>
 		<h1 className="h3">Редактировать меню</h1>
-	  <div className={style.wrap}>
+	  <div>
 		<ul>{menuLists}</ul>
-		<div className={style.add}>
+		<div>
 		  <h3 className="h3 mb-20">Добавить URl</h3>
 		  <Form onSubmit={handleSubmit}>
-			<div className={styleForm.form__item}>
-			  <FormInput required
+			<div className={styleForm.item}>
+			  <Field required
 						 id='name-new'
 						 name='name'
 						 placeholder="Введите название URL"
 						 value={menuDataNew.name}
 						 onChange={handleInputChange}/>
 			</div>
-			<div className={styleForm.form__item}>
-			  <FormInput required
+			<div className={styleForm.item}>
+			  <Field required
 						 name='url'
 						 id='url-new'
 						 placeholder="Введите URL"
 						 value={menuDataNew.url}
 						 onChange={handleInputChange}/>
 			</div>
-			<div className={styleForm.form__item}>
+			<div className={styleForm.item}>
 			  <FormButton btnClass="btn_blue">{ADMIN.add}</FormButton>
 			</div>
 		  </Form>

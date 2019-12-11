@@ -22,7 +22,6 @@ class AdminContainer extends React.Component{
   }
 }
 const mapStateToProps = state => {
-  console.log(state)
   return {
     userName:state.auth.name,
     userEmail:state.auth.email,

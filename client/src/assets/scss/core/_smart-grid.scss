@@ -6,7 +6,7 @@ $break_sm: 768px;
 $break_md: 992px;
 $break_lg: 1200px;
 
-$offset: 10px;
+$offset: 30px;
 $offset_xs: $offset;
 $offset_sm: $offset;
 $offset_md: $offset;
@@ -18,7 +18,7 @@ $offset_sm_one_side: ($offset_sm / 2);
 $offset_md_one_side: ($offset_md / 2);
 $offset_lg_one_side: ($offset_lg / 2);
 
-$fields: 10px;
+$fields: 30px;
 
 @mixin wrapper-full(){
     padding: 0 $fields;

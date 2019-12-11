@@ -7,15 +7,17 @@ import newFeedback from "./feedback-reducer";
 import authReducer from "./auth-reducer";
 import HomeReducer from "./home-reducer";
 import ServicesReducer from "./services-reducer";
+import { reducer as formReducer } from 'redux-form'
 
-let reducers = combineReducers( {
+const reducers = combineReducers( {
   menu: menuReducer,
   portfolioPage: portfolioReducer,
   adminPage:adminReducer,
   feedbackPage:newFeedback,
   auth: authReducer,
   home:HomeReducer,
-  services:ServicesReducer
+  services:ServicesReducer,
+  form: formReducer
 });
 
 

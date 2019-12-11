@@ -1,6 +1,8 @@
 import {feedbackInputCreator, feedbackSendCreator} from "../../../redux/feedback-reducer";
 import Feedback from "./Feedback";
 import {connect} from "react-redux";
+import {compose} from "redux";
+import {reduxForm} from "redux-form";
 
 const mapStateToProps = props => {
   return {
@@ -19,5 +21,10 @@ const mapDispatchToProps = dispatch => {
 }
 
 
-const FeedbackContainer = connect(mapStateToProps, mapDispatchToProps)(Feedback);
-export default FeedbackContainer;
+
+export default compose(
+  connect(mapStateToProps, mapDispatchToProps),
+  reduxForm({
+	form: 'feedback',
+  })
+)(Feedback)

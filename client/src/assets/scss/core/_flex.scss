@@ -1,14 +1,9 @@
 .d-flex {
   display: flex;
 }
-
 .align-items-center {
   align-items: center;
 }
-
-.align-self-center {
-  align-items: center;
-}
-.row {
-  @include row-flex
+.justify-content-center {
+  justify-content: center;
 }
