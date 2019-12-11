@@ -1,16 +1,25 @@
 @import "../../../assets/scss/core/smart-grid";
 
+.h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
 .wrap {
   display: flex;
   flex-wrap: wrap;
 }
+
 .left {
   @include size(7)
 }
+
 .right {
   @include size(5);
   padding-left: 40px;
 }
+
 .title {
   font-family: 'Oswald', sans-serif;
   display: inline-block;
@@ -27,25 +36,45 @@
     background: #593eff;
   }
 }
+
 .projectItem {
   margin-bottom: 20px;
 }
+
+.mainInfo {
+  margin: 10px 0 20px;
+  svg {
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+    color: #666;
+  }
+}
+.mainInfoItem {
+  margin-bottom: 10px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+.url {
+  color: #0099CC;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 .tags {
   margin: 0 -5px;
 }
+
 .tagsItem {
   margin: 0 5px;
 }
+
 .tagsName {
   font-size: 12px;
   color: #666;
   padding: 2px 7px;
   background: #eee;
-}
-.url {
-  margin-bottom: 20px;
-  a {
-    color: #0099CC;
-    text-decoration: none;
-  }
 }
