@@ -1,30 +1,30 @@
-import {feedbackInputCreator, feedbackSendCreator} from "../../../redux/feedback-reducer";
+import React from "react";
+import {addFeedback} from "../../../redux/feedback-reducer";
 import Feedback from "./Feedback";
 import {connect} from "react-redux";
 import {compose} from "redux";
 import {reduxForm} from "redux-form";
 
-const mapStateToProps = props => {
-  return {
-	newFeedback: props.feedbackPage.newFeedback
+class FeedbackContainer extends React.Component {
+  state = {
+    formStatus: false
   }
-};
-const mapDispatchToProps = dispatch => {
-  return {
-	inputChange: (name, value) => {
-	  dispatch(feedbackInputCreator(name, value));
-	},
-	submitForm: () => {
-	  dispatch(feedbackSendCreator());
-	}
+  
+  onSubmit = formData => {
+	this.setState({formStatus: !this.state.status})
+	this.props.addFeedback(formData.subject, formData.name, formData.email, formData.text);
+  }
+  
+  render() {
+	return <Feedback {...this.props} onSubmit={this.onSubmit} formStatus={this.state.formStatus}/>
   }
 }
 
 
 
 export default compose(
-  connect(mapStateToProps, mapDispatchToProps),
+  connect(null, {addFeedback}),
   reduxForm({
 	form: 'feedback',
   })
-)(Feedback)
+)(FeedbackContainer)

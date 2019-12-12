@@ -28,20 +28,25 @@ export const loginAPI = {
   }
 }
 export const menuApi = {
-  setMenu() {
+  set() {
     return instance.get('/menu').then(response => response.data)
   },
-  addMenu(name, url) {
+  add(name, url) {
     return instance.post('/menu', {name, url}).then(response => response.status)
   }
 }
 export const skillsApi = {
-  getSkill() {
+  get() {
     return instance.get('/skills').then(response => response.data)
   }
 }
 export const servicesApi = {
-  getServices() {
+  get() {
     return instance.get('/services').then(response => response.data)
+  }
+}
+export const feedbackApi = {
+  add(subject, name, email, text, status = false) {
+    return instance.post('/feedback', {subject, name, email, text, status}).then(response => response.status)
   }
 }

@@ -58,7 +58,7 @@ export const addMenu = () => ({type: ADD_MENU}),
 
 export const setMenuThunk = () => {
   return (dispatch) => {
-	menuApi.setMenu().then(data => {
+	menuApi.set().then(data => {
 	  dispatch(setMenu(data));
 	})
   }

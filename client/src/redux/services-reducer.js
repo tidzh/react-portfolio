@@ -18,7 +18,7 @@ export const setServicesAction = (services) => ({type: SET_SERVICES, services});
 
 export const setServices = () => {
   return (dispatch) => {
-	servicesApi.getServices().then(data => {
+	servicesApi.get().then(data => {
 	  dispatch(setServicesAction(data));
 	})
   }

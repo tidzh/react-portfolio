@@ -5,7 +5,6 @@ import {checkToken, authUser, setAuthUserInput} from "../../redux/auth-reducer";
 import {Redirect} from "react-router-dom";
 import {compose} from "redux";
 import {reduxForm} from "redux-form";
-import {maxLengthCreator} from "../../helpers/validators";
 
 
 class AuthContainer extends React.Component {
@@ -13,14 +12,8 @@ class AuthContainer extends React.Component {
 	error: false
   }
   
-  validationUserData = () => {
-	this.setState({error: true})
-  }
   onSubmit = formData => {
-	this.props.authUser(formData.email, formData.password, this.validationUserData);
-  }
-  onChange = evt => {
-	this.props.setAuthUserInput({[evt.target.name]: evt.target.value})
+	this.props.authUser(formData.email, formData.password);
   }
   render() {
 	if (this.props.isAuth) return <Redirect to='/admin'/>

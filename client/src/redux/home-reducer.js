@@ -18,7 +18,7 @@ export const setSkills = (data) => ({type:SET_SKILLS, data});
 
 export const getSkills = () => {
   return (dispatch) => {
-	skillsApi.getSkill().then(data => {
+	skillsApi.get().then(data => {
 	  dispatch(setSkills(data))
 	})
   }

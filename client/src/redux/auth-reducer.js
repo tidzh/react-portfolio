@@ -45,7 +45,7 @@ export const checkToken = () => {
 	});
   }
 }
-export const authUser = (email, password, validationUserData) => {
+export const authUser = (email, password) => {
   return (dispatch) => {
 	loginAPI.checkLogin(email, password)
 	  .then(status => {
@@ -57,7 +57,6 @@ export const authUser = (email, password, validationUserData) => {
 		}
 	  }).catch(err => {
 	  console.error(err);
-	  validationUserData();
 	});
   }
 }

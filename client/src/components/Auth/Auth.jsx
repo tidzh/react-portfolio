@@ -8,7 +8,7 @@ import {email, required} from "../../helpers/validators";
 import {Form, renderInput} from "../common/Form/Form";
 
 const Auth = props => {
- const {onSubmit, handleSubmit, submitting,pristine} = props;
+ const {onSubmit, handleSubmit} = props;
  
   return (
 	<>

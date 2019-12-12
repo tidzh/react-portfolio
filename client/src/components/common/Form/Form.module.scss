@@ -1,5 +1,31 @@
 .form {
 }
+.success {
+  position: relative;
+  &:after {
+    content: '';
+    width: calc(100% + 20px);
+    height: calc(100% + 20px);
+    background: #ffffff;
+    opacity: .6;
+    left: -10px;
+    bottom: -10px;
+    position: absolute;
+  }
+}
+.successText {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 34px;
+  text-align: center;
+  font-size: 20px;
+  border: 1px solid #099137;
+  border-radius: 5px;
+}
 .item {
   margin-top: 10px;
   &:first-child {

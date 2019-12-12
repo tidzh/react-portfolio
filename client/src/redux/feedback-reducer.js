@@ -1,30 +1,35 @@
-const FEEDBACK_UPDATE = 'FEEDBACK_UPDATE',
-      FEEDBACK_SEND  = 'FEEDBACK_SEND';
+import {feedbackApi} from "../api/api";
+import {reset} from 'redux-form';
+
+const FEEDBACK_LOADING = 'FEEDBACK_LOADING';
 
 const initialState = {
-	feedbackArchive: [{
-	}],
-	newFeedback: {
-    text:''
-}
+	feedbackArchive: null,
+    loading:false
 }
 
 const feedbackReducer = (state = initialState, action) => {
   switch (action.type) {
-	case FEEDBACK_UPDATE:
+	case FEEDBACK_LOADING:
 	  return  {
 	    ...state,
-		newFeedback: {...state.newFeedback[action.name] = action.value}
+		loading: action.status
 		};
-	case FEEDBACK_SEND:
-	  return {...state, newFeedback:{text: ''}};
 	default:
 	  return state;
   
   }
 }
 
-export const feedbackInputCreator = (name, value) => ({type: FEEDBACK_UPDATE, name:name, value:value}),
-             feedbackSendCreator = () => ({type: FEEDBACK_SEND});
+export const feedbackLoading = (status) => ({type: FEEDBACK_LOADING, status});
+
+
+export const addFeedback = (subject, name, email, text) => {
+  return (dispatch) => {
+	feedbackApi.add(subject, name, email, text).then(data => {
+	  dispatch(reset('feedback'));
+	})
+  }
+}
 
 export default feedbackReducer;

@@ -13,9 +13,8 @@ import like from '../../../assets/img/like.svg'
 
 
 const Feedback = props => {
-  const {handleSubmit} = props;
+  const {onSubmit, handleSubmit, formStatus} = props;
   const maxLength1000 = maxLength(1000);
-  
   return (
 	<section className="section section_grey">
 	  <div className="wrapper">
@@ -50,45 +49,48 @@ const Feedback = props => {
 			</div>
 		  </div>
 		</div>
-		<Form onSubmit={handleSubmit}>
-		  <div className={styleForm.itemGrouped}>
-			<div className={`d-flex`}>
-			  <div className={styleForm.half}>
-				<Field name={'name'}
-					   className={`${styleForm.control} ${styleForm.controlBig}`}
-					   component={renderInput}
-					   placeholder='Ваше имя'
-					   validate={[required]}/>
-			  </div>
-			  <div className={styleForm.half}>
-				<Field name={'email'}
-					   className={`${styleForm.control} ${styleForm.controlBig}`}
-					   component={renderInput}
-					   placeholder='Ваш Email'
-					   validate={[required, email]}/>
+		<div className={formStatus && styleForm.success}>
+		  <Form onSubmit={handleSubmit(onSubmit)}>
+			<div className={styleForm.itemGrouped}>
+			  <div className={`d-flex`}>
+				<div className={styleForm.half}>
+				  <Field name={'name'}
+						 className={`${styleForm.control} ${styleForm.controlBig}`}
+						 component={renderInput}
+						 placeholder='Ваше имя'
+						 validate={[required]}/>
+				</div>
+				<div className={styleForm.half}>
+				  <Field name={'email'}
+						 className={`${styleForm.control} ${styleForm.controlBig}`}
+						 component={renderInput}
+						 placeholder='Ваш Email'
+						 validate={[required, email]}/>
+				</div>
 			  </div>
 			</div>
-		  </div>
-		  <div className={`${styleForm.item} ${styleForm.item3}`}>
-		  <Field name={'subject'}
-				 className={`${styleForm.control} ${styleForm.controlBig}`}
-				 component={renderInput}
-				 placeholder='Тема сообщения'
-				 validate={[required]}/>
-		  </div>
-		  <div className={`${styleForm.item} ${styleForm.item3}`}>
-			<Field name={'text'}
-				   className={`${styleForm.control} ${styleForm.controlBig}`}
-				   component={renderTextArea}
-				   placeholder='Ваше сообщение'
-				   validate={[required, maxLength1000]}
-				   rows={4}
-			/>
-		  </div>
-		  <div className={`${styleForm.item} ${styleForm.item3} text-center`}>
-			<FormButton btnClass={`${styleBtn.btn} ${styleBtn.btnViolet} ${styleBtn.btnBig}`}>Отправить</FormButton>
-		  </div>
-		</Form>
+			<div className={`${styleForm.item} ${styleForm.item3}`}>
+			  <Field name={'subject'}
+					 className={`${styleForm.control} ${styleForm.controlBig}`}
+					 component={renderInput}
+					 placeholder='Тема сообщения'
+					 validate={[required]}/>
+			</div>
+			<div className={`${styleForm.item} ${styleForm.item3}`}>
+			  <Field name={'text'}
+					 className={`${styleForm.control} ${styleForm.controlBig}`}
+					 component={renderTextArea}
+					 placeholder='Ваше сообщение'
+					 validate={[required, maxLength1000]}
+					 rows={4}
+			  />
+			</div>
+			<div className={`${styleForm.item} ${styleForm.item3} text-center`}>
+			  <FormButton btnClass={`${styleBtn.btn} ${styleBtn.btnViolet} ${styleBtn.btnBig}`}>Отправить</FormButton>
+			</div>
+		  </Form>
+		  {formStatus && <div className={styleForm.successText}>Спасибо за ваше сообщение. Я свяжусь с вами в ближайшее время</div>}
+		</div>
 	  </div>
 	</section>
   )
