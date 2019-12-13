@@ -1,5 +1,5 @@
 import React from 'react';
-import FormButton from "../../common/FormButton/FormButton";
+import FormButton from "../../common/Button/FormButton";
 
 const PortfolioListSort = props => {
   return (

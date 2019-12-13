@@ -4,7 +4,7 @@ import style from "./Admin.module.scss";
 import adminMenu from "./AdminMenu/AdminMenu.module.scss";
 import AdminMenuContainer from "./AdminMenu/AdminMenuContainer";
 import AdminPagePortfolioContainer from "./AdminPage/AdminPagePortfolio/AdminPagePortfolioContainer";
-import HeaderAdmin from "../Header/HeaderAdmin/HeaderAdmin";
+import HeaderAdmin from "../Layout/Header/HeaderAdmin/HeaderAdmin";
 import AdminPageMenuContainer from "./AdminPage/AdminPageMenu/AdminPageMenuContainer";
 
 const Admin = props => {

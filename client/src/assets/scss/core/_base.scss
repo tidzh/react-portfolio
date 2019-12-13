@@ -12,9 +12,7 @@ body {
 
 *, ::after, ::before {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box
-}
-* {
+  box-sizing: border-box;
   outline: none;
 }
 
@@ -28,10 +26,6 @@ body {
   flex: 1 0 auto;
 }
 
-.wrapper {
-  @include wrapper()
-}
-
 .pos-relative {
   position: relative;
 }
@@ -43,9 +37,9 @@ a {
     text-decoration: none;
   }
 }
-
-button:disabled, button[disabled] {
-  border: 1px solid #999999;
-  background-color: #cccccc;
-  color: #666666;
+[class^="icon-"], [class*=" icon-"] {
+  height: initial;
+  width: initial;
+  display: inline-block;
+  fill: currentColor;
 }

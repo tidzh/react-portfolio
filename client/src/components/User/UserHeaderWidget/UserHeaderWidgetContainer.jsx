@@ -2,9 +2,13 @@ import React from 'react';
 import {connect} from "react-redux";
 import UserHeaderWidget from "./UserHeaderWidget";
 import {logout} from "../../../redux/auth-reducer";
-import {UserContext} from "../../../contextApi";
+import {UserContext} from "../../../helpers/contextApi";
+import {compose} from "redux";
 
 const UserHeaderWidgetContainer = props => {
+  
+  console.log(props)
+  
   
   const logout = (evt) => {
     evt.preventDefault();
@@ -16,11 +20,12 @@ const UserHeaderWidgetContainer = props => {
     <UserContext.Consumer>
       {
       (userData) => (
-        <UserHeaderWidget userData={userData} logout={logout}/>
+        <UserHeaderWidget {...props} userData={userData} logout={logout}/>
       )
     }
     </UserContext.Consumer>
   )
 }
+
 
 export default connect(null,{logout})(UserHeaderWidgetContainer)

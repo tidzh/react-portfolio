@@ -1,8 +1,8 @@
 import React from "react";
-import FormButton from "../../common/FormButton/FormButton";
+import FormButton from "../../common/Button/FormButton";
 import style from './Feedback.module.scss'
 import styleForm from "../../common/Form/Form.module.scss";
-import styleBtn from "../../common/FormButton/FormButton.module.scss";
+import styleBtn from "../../common/Button/FormButton.module.scss";
 import {Field} from "redux-form";
 import Heading from "../../common/Heading/Heading";
 import {email, maxLength, required} from "../../../helpers/validators";
@@ -10,13 +10,14 @@ import {Form, renderInput, renderTextArea} from "../../common/Form/Form";
 import phone from '../../../assets/img/phone.svg'
 import mail from '../../../assets/img/mail.svg'
 import like from '../../../assets/img/like.svg'
+import Section from "../../Layout/Section/Section";
 
 
 const Feedback = props => {
   const {onSubmit, handleSubmit, formStatus} = props;
   const maxLength1000 = maxLength(1000);
   return (
-	<section className="section section_grey">
+	<Section grey={true}>
 	  <div className="wrapper">
 		<Heading title='Обратная связь' subtitle='Связаться со мной' Tag={'h1'}/>
 		<div className={style.contactDetail}>
@@ -92,7 +93,7 @@ const Feedback = props => {
 		  {formStatus && <div className={styleForm.successText}>Спасибо за ваше сообщение. Я свяжусь с вами в ближайшее время</div>}
 		</div>
 	  </div>
-	</section>
+</Section>
   )
 }
 export default Feedback;

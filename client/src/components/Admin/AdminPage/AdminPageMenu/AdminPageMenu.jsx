@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import FormButton from "../../../common/FormButton/FormButton";
+import FormButton from "../../../common/Button/FormButton";
 import styleForm from "../../../common/Form/Form.module.scss";
-import {ADMIN} from "../../../../lang";
+import {ADMIN} from "../../../../helpers/lang";
 import {Form} from "../../../common/Form/Form";
 import {Field} from "redux-form";
 

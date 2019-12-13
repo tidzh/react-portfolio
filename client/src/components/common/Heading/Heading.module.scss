@@ -1,16 +1,7 @@
-.section {
-  padding: 100px 0;
-  position: relative;
-  background: #fff;
-  &_grey {
-    background: #f7f7f7;
-  }
-}
-.section-title {
+.title {
   position: relative;
   margin-bottom: 60px;
   &:after {
-    //background: linear-gradient(#e66465, #9198e5);
     background: linear-gradient(to left,rgba(0,0,0,0),#a5a5a5,rgba(0,0,0,0));
     position: absolute;
     left: 0;
@@ -21,7 +12,7 @@
     bottom: -30px
   }
 }
-.sub-title {
+.subTitle {
   font-size: 12px;
   letter-spacing: 1px;
   color: #878d8d;

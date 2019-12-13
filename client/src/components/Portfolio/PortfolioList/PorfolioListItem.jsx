@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './PortfolioListItem.module.scss';
-import FormButton from "../../common/FormButton/FormButton";
+import FormButton from "../../common/Button/FormButton";
 import {NavLink} from "react-router-dom";
 
 

@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "./Header";
 import {connect} from "react-redux";
-import {setMenuThunk} from "../../redux/menu-reducer";
+import {setMenuThunk} from "../../../redux/menu-reducer";
 
 class HeaderContainer extends React.Component {
   constructor(props) {

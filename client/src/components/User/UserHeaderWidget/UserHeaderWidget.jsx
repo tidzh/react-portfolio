@@ -14,7 +14,6 @@ const UserHeaderWidget = props => {
   }
   
   return (
-	<div className={style.menu}>
 	  <div className={style.menuItem}>
 		<div className={style.profile} onClick={handlerDropdown}>
 		  <img src={`/assets/img/ava/${userAva}`} alt={userName} className={style.profileAva}/>
@@ -56,7 +55,6 @@ const UserHeaderWidget = props => {
 		</div>
 		}
 	  </div>
-	</div>
   )
 }
 export default UserHeaderWidget;

@@ -1,0 +1,22 @@
+.iconBell {
+  margin-right: 20px;
+  cursor: pointer;
+  position: relative;
+  svg {
+    width: 20px;
+    height: 20px;
+    fill: #ffffff;
+  }
+}
+.iconBellCount {
+  position: absolute;
+  padding: 3px 6px;
+  color: #fff;
+  background: #f15050;
+  font-size: 12px;
+  border-radius: 50%;
+  font-weight: 700;
+  line-height: 1;
+  top: -12px;
+  right: -7px;
+}

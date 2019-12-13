@@ -1,4 +1,5 @@
 import React from "react";
+import style from './Heading.module.scss'
 
 const Heading = props => {
   
@@ -6,8 +7,8 @@ const Heading = props => {
   
   return(
 	<div className="text-center">
-	  <div className="uppercase section-title d-inline-block">
-		<div className="sub-title">{subtitle}</div>
+	  <div className={`uppercase d-inline-block ${style.title}`}>
+		<div className={style.subTitle}>{subtitle}</div>
 		<Tag className={Tag}>{title}</Tag>
 	  </div>
 	</div>

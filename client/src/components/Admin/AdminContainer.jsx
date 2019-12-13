@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 import Admin from "./Admin";
 import {withAuthRedirect} from "../../hoc/withAuthRedirect";
 import {compose} from "redux";
-import {UserContext} from "../../contextApi";
+import {UserContext} from "../../helpers/contextApi";
 
 
 class AdminContainer extends React.Component{

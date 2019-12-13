@@ -1,9 +1,9 @@
 import React from 'react';
 import style from "./Auth.module.scss";
 import styleForm from "../../components/common/Form/Form.module.scss";
-import FormButton from "../common/FormButton/FormButton";
+import FormButton from "../common/Button/FormButton";
 import {Field} from "redux-form";
-import styleBtn from '../common/FormButton/FormButton.module.scss'
+import styleBtn from '../common/Button/FormButton.module.scss'
 import {email, required} from "../../helpers/validators";
 import {Form, renderInput} from "../common/Form/Form";
 

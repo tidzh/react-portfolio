@@ -1,6 +1,6 @@
 import React from 'react';
-import HeaderContainer from "../../Header/HeaderContainer";
-import Footer from "../../Footer/Footer";
+import HeaderContainer from "../Header/HeaderContainer";
+import Footer from "../Footer/Footer";
 
 const  LayoutFront = props =>{
 	return (
