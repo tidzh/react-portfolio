@@ -1,4 +1,5 @@
 import {loginAPI} from "../api/api";
+import {stopSubmit} from "redux-form";
 
 const SET_USER_DATA = 'SET_USER_DATA',
       SET_USER_INPUT = 'SET_USER_INPUT',
@@ -48,15 +49,12 @@ export const checkToken = () => {
 export const authUser = (email, password) => {
   return (dispatch) => {
 	loginAPI.checkLogin(email, password)
-	  .then(status => {
-		if (status === 200) {
+	  .then(response => {
+		if (response.status === 200) {
 		  dispatch(setAuthUserData())
-		} else {
-		  const error = new Error(status.error);
-		  throw error;
 		}
 	  }).catch(err => {
-	  console.error(err);
+	  dispatch(stopSubmit('auth', {_error: err.response.data.error}))
 	});
   }
 }

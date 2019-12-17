@@ -21,7 +21,7 @@ export const loginAPI = {
     return instance.get(`/checkToken`).then(response => response.data)
   },
   checkLogin(email, password) {
-	return instance.post(`/auth`, {email: email, password:password}).then(response => response.status)
+	return instance.post(`/auth`, {email, password}).then(response => response)
   },
   logout() {
     return instance.get(`/logout`).then(response => response.data)

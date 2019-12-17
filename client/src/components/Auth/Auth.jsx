@@ -8,7 +8,7 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 
 const Auth = props => {
-  const {onSubmit, handleSubmit} = props;
+  const {onSubmit, handleSubmit, error} = props;
   
   return (
 	<Box display="flex" flexGrow={1} justifyContent="center" alignItems="center" className={style.parent}>
@@ -28,6 +28,7 @@ const Auth = props => {
 				   placeholder='Введите пароль'
 				   validate={[required]}/>
 		  </Box>
+		  {error && <Box mt={1}><Typography color='error'>{error}</Typography></Box>}
 		  <Box mt={1}>
 			<Field name={'rememberMe'} type={'checkbox'} component={'input'}/> Запомнить меня
 		  </Box>
