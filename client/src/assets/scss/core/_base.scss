@@ -24,14 +24,9 @@ body {
 
 #main {
   flex: 1 0 auto;
+  margin-top: 65px;
 }
 
-.pos-relative {
-  position: relative;
-}
-.d-inline-block {
-  display: inline-block;
-}
 a {
   &:hover {
     text-decoration: none;
@@ -42,4 +37,7 @@ a {
   width: initial;
   display: inline-block;
   fill: currentColor;
+}
+.uppercase {
+  text-transform: uppercase;
 }

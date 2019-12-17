@@ -7,16 +7,17 @@ import {reduxForm} from "redux-form";
 
 class FeedbackContainer extends React.Component {
   state = {
-    formStatus: false
+    formLoading: false
   }
   
   onSubmit = formData => {
-	this.setState({formStatus: !this.state.status})
+	this.setState({formLoading: true})
 	this.props.addFeedback(formData.subject, formData.name, formData.email, formData.text);
+	// this.setState({formLoading: false})
   }
   
   render() {
-	return <Feedback {...this.props} onSubmit={this.onSubmit} formStatus={this.state.formStatus}/>
+	return <Feedback {...this.props} onSubmit={this.onSubmit} formLoading={this.state.formLoading}/>
   }
 }
 

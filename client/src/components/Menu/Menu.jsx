@@ -1,6 +1,7 @@
 import React from 'react';
-import menuStyle from './Menu.module.scss';
+import style from './Menu.module.scss';
 import {NavLink} from "react-router-dom";
+import Box from "@material-ui/core/Box";
 
 const Menu = props => {
   if (!props.menu) {
@@ -9,14 +10,14 @@ const Menu = props => {
     const {menu, menuState} = props;
     
     const menuLists = menu.map((menuList) =>
-      <li key={menuList._id} className={menuStyle.item}>
-          <NavLink activeClassName={menuStyle.link_active} exact to={`/${menuList.url}`} className={menuStyle.link}>{menuList.name}</NavLink>
+      <li key={menuList._id}>
+          <NavLink activeClassName={style.linkActive} exact to={`/${menuList.url}`} className={style.link}>{menuList.name}</NavLink>
       </li>
     );
     return(
-      <nav style={{display:menuState ? 'block':'none' }} className={menuStyle.wrap}>
-        <ul className="d-flex">{menuLists}</ul>
-      </nav>
+      <Box component="nav" ml="auto">
+        <Box component="ul" display="flex">{menuLists}</Box>
+      </Box>
     )
 }
 

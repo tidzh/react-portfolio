@@ -1,20 +1,25 @@
 import React from 'react';
 import Menu from '../../Menu/Menu';
-import style from './Header.module.scss'
+import Container from "@material-ui/core/Container";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
 
 const Header = props => {
  const {menuData, isOpen, burgerState} = props;
  
+ 
   return (
-      <header className={style.root}>
-        <div className="wrapper">
-          <div className="d-flex">
-		   <Menu menu={menuData} menuState={isOpen}/>
-           {/*<button className={`ml-auto burger ${isOpen ? '':'burger_active'}`} onClick={burgerState}*/}
-           {/*>&times;</button>*/}
-          </div>
-        </div>
-        </header>
+    <AppBar position="fixed" color="inherit">
+      <Container>
+      <Toolbar>
+        <Typography variant="h6" className=''>
+          Kondakov.Dev
+        </Typography>
+        <Menu menu={menuData} menuState={isOpen}/>
+      </Toolbar>
+      </Container>
+    </AppBar>
   )
 }
 export default Header;

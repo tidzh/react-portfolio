@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import FormButton from "../../../common/Button/FormButton";
 import styleForm from "../../../common/Form/Form.module.scss";
 import {ADMIN} from "../../../../helpers/lang";
 import {Form} from "../../../common/Form/Form";
 import {Field} from "redux-form";
+import Button from "@material-ui/core/Button";
 
 
 const AdminPageMenu = props => {
@@ -48,7 +48,7 @@ const AdminPageMenu = props => {
 						 placeholder="Введите URL"
 						 onChange={handleInputChange}/>
 			</div>
-			<FormButton btnClass='btn_pink' onClick={handleEditMenuItem.bind(this,menuList._id)}>{ADMIN.save}</FormButton>
+			<Button variant="contained" color="secondary" onClick={handleEditMenuItem.bind(this,menuList._id)}>{ADMIN.save}</Button>
 		  </Form>
 		</li>
 	  } else {
@@ -56,7 +56,7 @@ const AdminPageMenu = props => {
 		  <div className="mb-5"><b>ID:</b> {menuList._id}</div>
 		  <div className="mb-5"><b>Имя:</b> {menuList.name}</div>
 		  <div className="mb-5"><b>URL:</b> {menuList.url}</div>
-		  <FormButton btnClass='btn_blue' onClick={handleEditMenuItem.bind(this,menuList._id)}>{ADMIN.edit}</FormButton>
+		  <Button variant="contained" color="secondary" onClick={handleEditMenuItem.bind(this,menuList._id)}>{ADMIN.edit}</Button>
 		</li>
 	  }
 	})
@@ -86,7 +86,7 @@ const AdminPageMenu = props => {
 						 onChange={handleInputChange}/>
 			</div>
 			<div className={styleForm.item}>
-			  <FormButton btnClass="btn_blue">{ADMIN.add}</FormButton>
+			  <Button btnClass="btn_blue">{ADMIN.add}</Button>
 			</div>
 		  </Form>
 		</div>

@@ -1,11 +1,11 @@
 import React from "react";
+import Grid from '@material-ui/core/Grid';
 import style from "./WidgetServices.module.scss";
 
 const WidgetServicesItem = props => {
   const {name, img, text} = props.servicesItem
   return(
-    <>
-      <div className={style.servicesItem}>
+    <Grid item xs={4}>
         <div className={style.servicesFlip}>
           <div className={style.servicesList}>
             <div className={style.servicesListFront} style={{backgroundImage:`url(assets/img/${img})`}}>
@@ -26,8 +26,7 @@ const WidgetServicesItem = props => {
             </div>
           </div>
         </div>
-      </div>
-    </>
+    </Grid>
   )
 }
 export default WidgetServicesItem

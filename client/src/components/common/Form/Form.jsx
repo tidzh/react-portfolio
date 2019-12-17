@@ -1,39 +1,45 @@
 import React from 'react'
 import style from '../Form/Form.module.scss'
+import FormControl from "@material-ui/core/FormControl";
+import TextField from "@material-ui/core/TextField";
+import makeStyles from "@material-ui/core/styles/makeStyles";
+import {Field} from "redux-form";
+
+const helperTextStyles = makeStyles(theme => ({
+  error: {
+	"&.MuiFormHelperText-root.Mui-error": {
+	  textAlign: 'right'
+	}
+  }
+}));
 
 export const Form = props => {
-	const {onSubmit, className} = props;
-    return(
-	  <form onSubmit={onSubmit} className={style.form}>
-		{props.children}
-	  </form>
-	)
-};
-
-export const renderInput = ({ input, className, type, meta: { touched, error, warning }, ...props }) => {
-  
-  const hasError =  touched && error;
-  
+  const {onSubmit} = props;
   return (
-	<>
-	  <input {...input}
-			 {...props}
-			 type={type}
-			 className={`${className} ${hasError ? style.controlError : ''}`}/>
-	  { hasError && <div className={style.controlErrorText}>{error}</div> }
-	</>
+	<form onSubmit={onSubmit}>
+	  <FormControl fullWidth>
+		{props.children}
+	  </FormControl>
+	</form>
   )
 };
-export const renderTextArea = ({ input, className, type, meta: { touched, error, warning }, ...props }) => {
+
+export const renderInput = ({input, placeholder, type, meta: {touched, invalid, error}, ...props}) => {
   
-  const hasError =  touched && error;
+  const helperTestClasses = helperTextStyles();
+  
   return (
-	<>
-	  <textarea {...input}
-				{...props}
-				type={type}
-				className={`${className} ${hasError ? style.controlError : ''}`}/>
-	  { hasError && <div className={style.controlErrorText}>{error}</div> }
-	</>
+	<TextField {...input}
+			   type={type}
+			   {...props}
+			   error={touched && invalid}
+			   helperText={touched && error}
+			   variant="outlined"
+			   FormHelperTextProps={{ classes: helperTestClasses }}
+			   label={placeholder}
+			   fullWidth
+			   InputLabelProps={{
+				 shrink: true,
+			   }}/>
   )
 };

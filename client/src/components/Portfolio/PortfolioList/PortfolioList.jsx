@@ -1,36 +1,30 @@
 import React from 'react';
 import style from './PortfolioListItem.module.scss';
-import stylePag from '../PortfolioPagination/PortfolioPagination.module.scss';
 import PorfolioListItem from './PorfolioListItem';
+import Grid from "@material-ui/core/Grid";
+import Box from "@material-ui/core/Box";
+import Pagination from "../../common/Pagination/Pagination";
+
 
 
 const PortfolioList = props => {
   
-  const {portfolioList, pageSize, totalPortfolio, currentPage, handlerPagination, isFetching, setPortfolioLike, isLike} =  props,
-         pageCount = Math.ceil(totalPortfolio / pageSize);
+  const {portfolioList, pageSize, totalPortfolio, currentPage, handlerPagination, isFetching, setPortfolioLike, isLike} =  props;
+  
   
   const portfolioLists = portfolioList.map((article,index) =>
-    <li key={index} className={style.portfolioList__item}>
+    <Grid item md={3} key={index}>
       <PorfolioListItem isLike={isLike} index={index} articleItem={article} setPortfolioLike={setPortfolioLike}/>
-    </li>
-  )
-  let paginationArr = [];
-  for (let i = 1; i <= pageCount; i++) {
-    paginationArr.push(i);
-  }
-  const pagination = paginationArr.map((paginationItem, index) =>
-    <li key={index}
-        onClick={(evt)=> handlerPagination(paginationItem)}
-        className={`${stylePag.pagination__item} ${currentPage === paginationItem ? stylePag.pagination__item_active : ''}`}>{paginationItem}</li>
+    </Grid>
   )
   
   return(
     <>
-      <div className="pos-relative">
-        {isFetching}
-        <ul className={style.portfolioList}>{portfolioLists}</ul>
-      </div>
-      <ul className={`${stylePag.pagination} d-flex`}>{pagination}</ul>
+      <Grid container spacing={3}>
+          {isFetching}
+          {portfolioLists}
+      </Grid>
+        <Pagination currentPage={currentPage} handlerPagination={handlerPagination} totalPortfolio={totalPortfolio} pageSize={pageSize}/>
     </>
   )
 }

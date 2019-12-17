@@ -1,25 +1,26 @@
 import React from 'react';
 import style from './PortfolioListItem.module.scss';
-import FormButton from "../../common/Button/FormButton";
 import {NavLink} from "react-router-dom";
+import Box from "@material-ui/core/Box";
 
 
-const PorfolioListItem = props => {
+const PortfolioListItem = props => {
 	const {articleItem, setPortfolioLike, isLike} = props;
 	
 	return(
-	  <>
-		<div className={style.portfolioList__itemWrap}>
-		  <NavLink to={`/portfolio/${articleItem.url}.html`} >
-		  <div className={style.portfolioList__itemImg}><img src={articleItem.img} alt=""/></div>
-		  <div className={style.portfolioList__itemTitle}>{articleItem.title}</div>
+		<div className={style.item}>
+		  <NavLink to={`/portfolio/${articleItem.url}.html`} className={style.link}>
+		  <div className={style.img}><img src={articleItem.img} alt=""/></div>
+		  <Box className={style.footer} p={2}>
+			<div className={style.name}>{articleItem.title}</div>
+			<div className={style.category}>Категория</div>
+		  </Box>
 		  </NavLink>
-		  <FormButton
-			disable={isLike.some(id => id === articleItem._id)}
-			onClick={()=> setPortfolioLike(articleItem._id, articleItem.like)}>Нравится ({articleItem.like})</FormButton>
+		  {/*<FormButton*/}
+			{/*disable={isLike.some(id => id === articleItem._id)}*/}
+			{/*onClick={()=> setPortfolioLike(articleItem._id, articleItem.like)}>Нравится ({articleItem.like})</FormButton>*/}
 		</div>
-	  </>
 	)
 }
 
-export default PorfolioListItem;
+export default PortfolioListItem;

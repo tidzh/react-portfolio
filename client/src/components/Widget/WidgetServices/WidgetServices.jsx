@@ -1,5 +1,6 @@
 import React from "react";
 import WidgetServicesItem from "./WidgetServicesItem";
+import Grid from '@material-ui/core/Grid';
 
 const WidgetServices = props => {
   
@@ -8,7 +9,7 @@ const WidgetServices = props => {
   )
   
   return(
-	<div className="row pos-relative">{servicesList}</div>
+    <Grid container spacing={3}>{servicesList}</Grid>
   )
 }
 export default WidgetServices

@@ -1,19 +1,11 @@
-.wrap {
-  flex: auto;
-}
-
-.item {
-  width: calc(100% / 3);
-}
 .link {
-  color: #ffffff;
+  color: #222222;
   text-decoration: none;
   display: block;
-  padding: 10px;
-  &:hover {
-    background: #181818;
-  }
-  &_active {
-    background: #180402;
+  padding: 20px 0;
+  margin: 0 15px;
+  transition: all 300ms ease;
+  &:hover, &Active {
+    color: #064aff;
   }
 }

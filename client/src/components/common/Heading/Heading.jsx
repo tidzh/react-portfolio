@@ -1,17 +1,20 @@
 import React from "react";
 import style from './Heading.module.scss'
+import app from '../../../App.scss'
+import {Box} from "@material-ui/core";
+import Typography from "@material-ui/core/Typography";
 
 const Heading = props => {
   
   const {title, subtitle, Tag} = props;
   
   return(
-	<div className="text-center">
-	  <div className={`uppercase d-inline-block ${style.title}`}>
-		<div className={style.subTitle}>{subtitle}</div>
-		<Tag className={Tag}>{title}</Tag>
-	  </div>
-	</div>
+	<Box textAlign="center">
+	  <Box display="inline-block" className={`uppercase ${style.title}`}>
+		<Box className={style.subTitle} mb={1}>{subtitle}</Box>
+		<Typography variant={Tag} component={Tag}>{title}</Typography>
+	  </Box>
+	</Box>
   )
 }
 export default Heading

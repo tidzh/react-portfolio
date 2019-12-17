@@ -6,7 +6,7 @@ const Portfolio = require("../models/Portfolio")
 router.get("/portfolios", (req, res)=>{
   let pageOptions = {
 	page: Number(req.query.page) || 1,
-	limit: Number(req.query.limit) || 9
+	limit: Number(req.query.limit) || 8
   }
   Portfolio.count({}, (err,count) => {
 	Portfolio.find({})

@@ -1,5 +1,4 @@
 import React from 'react';
-import FormButton from "../../../common/Button/FormButton";
 import {ADMIN} from "../../../../helpers/lang";
 import style from './AdminPagePortfolio.module.scss'
 import styleForm from "../../../common/Form/Form.module.scss";
@@ -38,7 +37,7 @@ const AdminPagePortfolio = props => {
 		  <Field name='text' onChange={handleChangeInput} placeholder='Описание проекта' value={portfolioDataNew.text}/>
 		</div>
 		<div className={styleForm.form__item}>
-		  <FormButton>{ADMIN.add}</FormButton>
+		  {/*<FormButton>{ADMIN.add}</FormButton>*/}
 		</div>
 	  </Form>
 	  </div>

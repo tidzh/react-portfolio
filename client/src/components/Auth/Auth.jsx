@@ -1,46 +1,42 @@
 import React from 'react';
 import style from "./Auth.module.scss";
-import styleForm from "../../components/common/Form/Form.module.scss";
-import FormButton from "../common/Button/FormButton";
 import {Field} from "redux-form";
-import styleBtn from '../common/Button/FormButton.module.scss'
 import {email, required} from "../../helpers/validators";
 import {Form, renderInput} from "../common/Form/Form";
+import Box from "@material-ui/core/Box";
+import Typography from "@material-ui/core/Typography";
+import Button from "@material-ui/core/Button";
 
 const Auth = props => {
- const {onSubmit, handleSubmit} = props;
- 
+  const {onSubmit, handleSubmit} = props;
+  
   return (
-	<>
-	  <div className={`d-flex ${style.parent}`}>
-		<div className={style.wrap}>
-		<h1 className="h3 mb-20">Авторизироваться</h1>
-		  <Form onSubmit={handleSubmit(onSubmit)}>
-		  <div className={styleForm.item}>
+	<Box display="flex" flexGrow={1} justifyContent="center" alignItems="center" className={style.parent}>
+	  <div className={style.wrap}>
+		<Typography variant="h5" component="h1" gutterBottom={true}>Авторизироваться</Typography>
+		<Form onSubmit={handleSubmit(onSubmit)}>
+		  <Box mt={2}>
 			<Field name={'email'}
-				   className={styleForm.control}
 				   component={renderInput}
 				   placeholder='Введите Email'
 				   validate={[required, email]}/>
-		  </div>
-		  <div className={styleForm.item}>
+		  </Box>
+		  <Box mt={3}>
 			<Field name={'password'}
 				   type='password'
-				   className={styleForm.control}
 				   component={renderInput}
 				   placeholder='Введите пароль'
 				   validate={[required]}/>
-		  </div>
-		  <div className={styleForm.item}>
+		  </Box>
+		  <Box mt={1}>
 			<Field name={'rememberMe'} type={'checkbox'} component={'input'}/> Запомнить меня
-		  </div>
-		  <div className={styleForm.item}>
-			<button className={`${styleBtn.btn} ${styleBtn.btnBlue}`} type="submit">Войти</button>
-		  </div>
+		  </Box>
+		  <Box mt={2}>
+			<Button type="submit" variant="contained" color="primary" size="large">Войти</Button>
+		  </Box>
 		</Form>
-		</div>
 	  </div>
-	</>
+	</Box>
   )
 }
 export default Auth;
