@@ -1,4 +1,4 @@
-import {skillsApi} from "../api/api";
+import {skillsApi} from "../helpers/api";
 
 const SET_SKILLS ='SET_SKILLS'
 

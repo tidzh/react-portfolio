@@ -1,4 +1,4 @@
-import {servicesApi} from "../api/api";
+import {servicesApi} from "../helpers/api";
 
 const SET_SERVICES = 'SET_SERVICES';
 

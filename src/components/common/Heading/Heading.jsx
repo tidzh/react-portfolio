@@ -1,6 +1,5 @@
 import React from "react";
 import style from './Heading.module.scss'
-import app from '../../../App.scss'
 import {Box} from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 

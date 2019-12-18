@@ -1,4 +1,4 @@
-import {portfolioAPI} from "../api/api";
+import {portfolioAPI} from "../helpers/api";
 
 const UPDATE_PORTFOLIO = 'UPDATE_PORTFOLIO',
   NEW_PORTFOLIO = 'NEW_PORTFOLIO',

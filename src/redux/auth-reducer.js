@@ -1,4 +1,4 @@
-import {loginAPI} from "../api/api";
+import {loginAPI} from "../helpers/api";
 import {stopSubmit} from "redux-form";
 
 const SET_USER_DATA = 'SET_USER_DATA',

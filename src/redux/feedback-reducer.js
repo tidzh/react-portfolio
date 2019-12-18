@@ -1,4 +1,4 @@
-import {feedbackApi} from "../api/api";
+import {feedbackApi} from "../helpers/api";
 import {reset} from 'redux-form';
 
 const FEEDBACK_LOADING = 'FEEDBACK_LOADING';

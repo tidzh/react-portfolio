@@ -1,4 +1,4 @@
-import {menuApi} from "../api/api";
+import {menuApi} from "../helpers/api";
 
 const UPDATE_MENU = 'UPDATE-MENU',
       ADD_MENU = 'ADD-MENU',
