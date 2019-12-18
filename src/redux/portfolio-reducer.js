@@ -78,10 +78,10 @@ export const newPortfolioCreator = () => ({type: NEW_PORTFOLIO}),
   setPortfolioLike = portfolioId => ({type: SET_PORTFOLIO_LIKE, portfolioId}),
   setFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching});
 
-export const getPortfolio = (currentPage) => {
+export const getPortfolio = (currentPage, limit) => {
  return (dispatch) => {
 	dispatch(setFetching(true));
-	portfolioAPI.getPortfolio(currentPage).then(data => {
+	portfolioAPI.getPortfolio(currentPage, limit).then(data => {
 	  dispatch(setFetching(false));
 	  dispatch(setPortfolio(data.items, data.totalCount));
 	});

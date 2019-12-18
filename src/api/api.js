@@ -6,8 +6,8 @@ const instance = axios.create({
 });
 
 export const portfolioAPI = {
-  getPortfolio(currentPage = 1) {
-	return instance.get(`/portfolios?page=${currentPage}`).then(response => response.data)
+  getPortfolio(currentPage = 1, limit) {
+	return instance.get(`/portfolios?page=${currentPage}&limit=${limit}`).then(response => response.data)
   },
   getPortfolioSingle(url) {
     return instance.get(`/portfolio/${url}`).then(response => response.data)

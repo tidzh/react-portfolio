@@ -9,8 +9,7 @@ import Pagination from "../../common/Pagination/Pagination";
 
 const PortfolioList = props => {
   
-  const {portfolioList, pageSize, totalPortfolio, currentPage, handlerPagination, isFetching, setPortfolioLike, isLike} =  props;
-  
+  const {portfolioList, pageSize, totalPortfolio, currentPage, handlerPagination, isFetching, setPortfolioLike, isLike, limit} =  props;
   
   const portfolioLists = portfolioList.map((article,index) =>
     <Grid item md={3} key={index}>
@@ -24,7 +23,7 @@ const PortfolioList = props => {
           {isFetching}
           {portfolioLists}
       </Grid>
-        <Pagination currentPage={currentPage} handlerPagination={handlerPagination} totalPortfolio={totalPortfolio} pageSize={pageSize}/>
+      {!limit && <Pagination currentPage={currentPage} handlerPagination={handlerPagination} totalPortfolio={totalPortfolio} pageSize={pageSize}/>}
     </>
   )
 }

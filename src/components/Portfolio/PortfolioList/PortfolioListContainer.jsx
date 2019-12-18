@@ -8,7 +8,7 @@ import {compose} from "redux";
 class PortfolioListContainer extends React.Component {
   
   componentDidMount() {
-	this.props.getPortfolio(this.props.currentPage)
+	this.props.getPortfolio(this.props.currentPage, this.props.limit)
   }
   handlerPagination = (pageNumber) => {
 	this.props.getPortfolio(pageNumber)
@@ -18,7 +18,9 @@ class PortfolioListContainer extends React.Component {
 	this.props.setLikePortfolio(id,likes);
   }
   
+  
   render() {
+    const {limit} = this.props;
 	return (
 	  <PortfolioList portfolioList={this.props.portfolioList}
 					 pageSize={this.props.pageSize}
@@ -27,6 +29,7 @@ class PortfolioListContainer extends React.Component {
 					 currentPage={this.props.currentPage}
 					 handlerPagination={this.handlerPagination}
 					 isLike={this.props.likeInProgress}
+					 limit={limit}
 					 isFetching={this.props.isFetching ? <Preloader/> : null}
 	  />
 	)

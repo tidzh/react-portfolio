@@ -1,44 +1,45 @@
 import React from 'react';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 
-import LayoutFront from "./components/Layout/LayoutFront/LayoutFront";
-import Portfolio from "./components/page/portfolio/Portfolio";
+import LayoutFront from "./pages/_layout/LayoutFront/LayoutFront";
+import Portfolio from "./pages/portfolio/Portfolio";
 import Error404 from "./components/Error/Error404/Error404";
 import ServicesContainer from "./components/Services/ServicesContainer";
-import FeedbackContainer from "./components/page/feedback/FeedbackContainer";
+import FeedbackContainer from "./pages/feedback/FeedbackContainer";
 import PortfolioSingleContainer from "./components/Portfolio/PortfolioSingle/PortfolioSingleContainer";
 import AdminContainer from "./components/Admin/AdminContainer";
 import AdminAuthContainer from "./components/Auth/AuthContainer";
-import PageHomeContainer from "./components/page/home/PageHomeContainer";
+import PageHomeContainer from "./pages/home/PageHomeContainer";
+
 
 
 const App = () => {
-return (
-  <Router>
-      <Switch>
-        <Route exact path='/'>
-          <LayoutFront><PageHomeContainer/></LayoutFront>
-        </Route>
-        <Route exact path='/portfolio'>
-          <LayoutFront><Portfolio/></LayoutFront>
-        </Route>
-        <Route path='/portfolio/:url.html'>
-          <LayoutFront><PortfolioSingleContainer/></LayoutFront>
-        </Route>
-        <Route path='/feedback'>
-          <LayoutFront><FeedbackContainer/></LayoutFront>
-        </Route>
-        <Route path='/services'>
-          <LayoutFront><ServicesContainer/></LayoutFront>
-        </Route>
-        <Route path='/auth/' component={AdminAuthContainer}/>
-        <Route path='/admin' component={AdminContainer}/>
-        <Route path='*'>
-          <LayoutFront><Error404/></LayoutFront>
-        </Route>
-      </Switch>
-  </Router>
-)
+  return (
+	  <Router>
+		<Switch>
+		  <Route exact path='/'>
+			<LayoutFront><PageHomeContainer/></LayoutFront>
+		  </Route>
+		  <Route exact path='/portfolio'>
+			<LayoutFront><Portfolio/></LayoutFront>
+		  </Route>
+		  <Route path='/portfolio/:url.html'>
+			<LayoutFront><PortfolioSingleContainer/></LayoutFront>
+		  </Route>
+		  <Route path='/feedback'>
+			<LayoutFront><FeedbackContainer/></LayoutFront>
+		  </Route>
+		  <Route path='/services'>
+			<LayoutFront><ServicesContainer/></LayoutFront>
+		  </Route>
+		  <Route path='/auth/' component={AdminAuthContainer}/>
+		  <Route path='/admin' component={AdminContainer}/>
+		  <Route path='*'>
+			<LayoutFront><Error404/></LayoutFront>
+		  </Route>
+		</Switch>
+	  </Router>
+  )
 }
 
 export default App;

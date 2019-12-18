@@ -9,7 +9,6 @@ const mapStateToPropsRorRedirect = state => {
   }
 }
 
-
 export const withAuthRedirect = (Component, url = '/auth') => {
  
 	class RedirectComponent extends React.Component {

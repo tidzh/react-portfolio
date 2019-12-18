@@ -1,6 +1,6 @@
 import React from 'react';
 import ServicesList from "./ServicesList/ServicesList";
-import LayoutFront from "../Layout/LayoutFront/LayoutFront";
+import LayoutFront from "../../pages/_layout/LayoutFront/LayoutFront";
 
 const Services = props => {
   const {servicesData} = props;
