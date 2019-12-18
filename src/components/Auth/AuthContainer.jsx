@@ -1,16 +1,13 @@
 import React from 'react';
 import {connect} from "react-redux";
 import Auth from "./Auth";
-import {checkToken, authUser, setAuthUserInput} from "../../redux/auth-reducer";
+import {checkToken, authUser} from "../../redux/auth-reducer";
 import {Redirect} from "react-router-dom";
 import {compose} from "redux";
 import {reduxForm} from "redux-form";
 
 
 class AuthContainer extends React.Component {
-  state = {
-	error: false
-  }
   
   onSubmit = formData => {
 	this.props.authUser(formData.email, formData.password);
@@ -33,7 +30,7 @@ const mapStateToProps = state => {
 
 
 export default compose(
-  connect(mapStateToProps, {checkToken, authUser, setAuthUserInput}),
+  connect(mapStateToProps, {checkToken, authUser}),
   reduxForm({
 	form: 'auth',
   }),

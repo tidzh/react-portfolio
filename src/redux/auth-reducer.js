@@ -2,7 +2,6 @@ import {loginAPI} from "../api/api";
 import {stopSubmit} from "redux-form";
 
 const SET_USER_DATA = 'SET_USER_DATA',
-      SET_USER_INPUT = 'SET_USER_INPUT',
       IS_AUTH_USER = 'IS_AUTH_USER';
 
 const initialState = {
@@ -16,8 +15,6 @@ const initialState = {
 
 const authReducer = (state=initialState, action) => {
   switch (action.type) {
-	case SET_USER_INPUT:
-	  return {...state, ...action.value}
 	  case SET_USER_DATA:
 	  return {...state, email:'', password:'', isAuth:true}
 	case IS_AUTH_USER:
@@ -28,8 +25,7 @@ const authReducer = (state=initialState, action) => {
 }
 
 
-export  const setAuthUserData = () => ({type: SET_USER_DATA}),
-              setAuthUserInput = value => ({type:SET_USER_INPUT, value}),
+export const setAuthUserData = () => ({type: SET_USER_DATA}),
               isAuthUser = (flag, email, name, ava) => ({type:IS_AUTH_USER, flag, email, name, ava});
 
 export const checkToken = () => {
@@ -54,7 +50,8 @@ export const authUser = (email, password) => {
 		  dispatch(setAuthUserData())
 		}
 	  }).catch(err => {
-	  dispatch(stopSubmit('auth', {_error: err.response.data.error}))
+	    console.error(err.response)
+	  dispatch(stopSubmit('auth', {email:'Ошибка', password:'Ошибка', _error: err.response.data.error}))
 	});
   }
 }
