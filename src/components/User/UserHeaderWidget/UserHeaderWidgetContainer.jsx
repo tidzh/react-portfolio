@@ -1,19 +1,15 @@
 import React from 'react';
 import {connect} from "react-redux";
 import UserHeaderWidget from "./UserHeaderWidget";
-import {logout} from "../../../reducers/auth";
 import {UserContext} from "../../../helpers/contextApi";
-import {compose} from "redux";
+import {logout} from "../../../actions/auth";
 
 const UserHeaderWidgetContainer = props => {
-  
-  console.log(props)
-  
   
   const logout = (evt) => {
     evt.preventDefault();
     props.logout()
-  }
+  };
   
   
   return (

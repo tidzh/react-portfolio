@@ -1,15 +1,15 @@
 import React from 'react';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import style from './assets/styles/styles.scss'
-import LayoutFront from "./components/pages/_layout/LayoutFront/LayoutFront";
-import Portfolio from "./components/pages/portfolio/Portfolio";
-import Error404 from "./components/Error/Error404/Error404";
+import LayoutFront from "./components/Pages/_layout/LayoutFront/LayoutFront";
+import Portfolio from "./components/Pages/Portfolio/Portfolio";
+import Error404 from "./components/Helpers/Error/Error404/Error404";
 import ServicesContainer from "./components/Services/ServicesContainer";
-import FeedbackContainer from "./components/pages/feedback/FeedbackContainer";
+import FeedbackContainer from "./components/Pages/Feedback/FeedbackContainer";
 import PortfolioSingleContainer from "./components/Portfolio/PortfolioSingle/PortfolioSingleContainer";
 import AdminContainer from "./components/Admin/AdminContainer";
 import AdminAuthContainer from "./components/Auth/AuthContainer";
-import PageHomeContainer from "./components/pages/home/PageHomeContainer";
+import PageHomeContainer from "./components/Pages/Home/PageHomeContainer";
 
 
 const App = () => {

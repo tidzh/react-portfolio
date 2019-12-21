@@ -3,7 +3,7 @@ import {Route, Switch, useRouteMatch} from "react-router-dom";
 import style from "./Admin.module.scss";
 import AdminMenuContainer from "./AdminMenu/AdminMenuContainer";
 import AdminPagePortfolioContainer from "./AdminPage/AdminPagePortfolio/AdminPagePortfolioContainer";
-import HeaderAdmin from "../pages/_layout/Header/HeaderAdmin/HeaderAdmin";
+import HeaderAdmin from "../Pages/_layout/Header/HeaderAdmin/HeaderAdmin";
 import AdminPageMenuContainer from "./AdminPage/AdminPageMenu/AdminPageMenuContainer";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
