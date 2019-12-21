@@ -1,7 +1,7 @@
 import React from 'react';
 import {Redirect} from "react-router-dom";
 import {connect} from "react-redux";
-import {checkToken} from "../redux/auth-reducer";
+import {checkToken} from "../reducers/auth";
 
 const mapStateToPropsRorRedirect = state => {
   return {

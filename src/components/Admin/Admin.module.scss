@@ -1,12 +1,10 @@
-.wrap {
-  background: #f3f4f6;
-  width: 100vw;
-  min-height: 100vh;
-  display: flex;
-}
-.main {
-  margin: 25px;
-  width: calc(100% - 300px);
-  display: flex;
-  flex-direction: column;
+@import "../../assets/styles/smart-grid";
+.root {
+  padding: 24px;
+  flex-grow: 1;
+  margin-top: 48px;
+  background: #fbfbfb;
+  @include xs-block() {
+    margin-top: 68px;
+  }
 }

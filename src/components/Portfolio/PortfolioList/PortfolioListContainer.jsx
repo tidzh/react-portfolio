@@ -1,6 +1,6 @@
 import React from "react";
 import {connect} from "react-redux";
-import {getPortfolio, setLikePortfolio} from "../../../redux/portfolio-reducer";
+import {getPortfolio, setLikePortfolio} from "../../../reducers/portfolio";
 import PortfolioList from "./PortfolioList";
 import Preloader from "../../common/Preloader/Preloader";
 import {compose} from "redux";

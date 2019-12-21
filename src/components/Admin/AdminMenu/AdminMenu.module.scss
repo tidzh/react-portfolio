@@ -1,32 +1,10 @@
-.aside {
-  width: 300px;
-  background: #fff;
-  padding-top: 20px;
-  display: flex;
-  flex-direction: column;
-}
-.asideTitle {
-  padding: 10px 15px;
-  letter-spacing: .05em;
-  pointer-events: none;
-  cursor: default;
-  font-size: 11px;
-  text-transform: uppercase;
-  color: #6f7377;
-  font-weight: 700;
-}
-
 .menuLink {
-  display: block;
-  padding: 10px 10px 10px 30px;
+  display: flex;
   color: #74788d;
   text-decoration: none;
-  font-size: 15px;
-  transition: all .3s ease;
+  align-items: center;
+  width: 100%;
   &:hover, &Active {
     color: #3f87fd
-  }
-  &:hover {
-    padding: 10px 10px 10px 31px;
   }
 }

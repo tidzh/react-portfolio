@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from "react-redux";
 import Auth from "./Auth";
-import {checkToken, authUser} from "../../redux/auth-reducer";
+import {checkToken, authUser} from "../../reducers/auth";
 import {Redirect} from "react-router-dom";
 import {compose} from "redux";
 import {reduxForm} from "redux-form";

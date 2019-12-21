@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from "react-redux";
 import UserHeaderWidget from "./UserHeaderWidget";
-import {logout} from "../../../redux/auth-reducer";
+import {logout} from "../../../reducers/auth";
 import {UserContext} from "../../../helpers/contextApi";
 import {compose} from "redux";
 

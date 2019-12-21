@@ -22,10 +22,15 @@ const Theme = createMuiTheme({
 	h2: {
 	  fontSize: "2rem",
 	  fontWeight: "bold",
+	},
+	h4: {
+	  fontSize: "1.5rem",
+	  fontWeight: "bold",
 	}
   },
   palette: {
 	bgGrey: '#f7f7f7',
-  }
+	bgWhite: '#ffffff'
+  },
 });
 export default Theme;

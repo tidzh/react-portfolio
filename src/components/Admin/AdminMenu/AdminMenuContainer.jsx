@@ -8,5 +8,14 @@ const mapStateToProps = state => {
   }
 }
 
+const AdminMenuContainer = props => {
+  
+  const {isOpen, handleDrawerClose, adminSidebar} = props;
+  
+  return <AdminMenu isOpen={isOpen}
+					handleDrawerClose={handleDrawerClose}
+					adminSidebar={adminSidebar}/>
+}
 
-export default connect(mapStateToProps)(AdminMenu);
+
+export default connect(mapStateToProps)(AdminMenuContainer);
