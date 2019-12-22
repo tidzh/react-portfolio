@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import style from './assets/styles/styles.scss'
 import LayoutFront from "./components/Pages/_layout/LayoutFront/LayoutFront";
@@ -10,10 +10,26 @@ import PortfolioSingleContainer from "./components/Portfolio/PortfolioSingle/Por
 import AdminContainer from "./components/Admin/AdminContainer";
 import AdminAuthContainer from "./components/Auth/AuthContainer";
 import PageHomeContainer from "./components/Pages/Home/PageHomeContainer";
+import {connect} from "react-redux";
+import {initializeApp} from "./actions/app";
+import CircularProgress from "@material-ui/core/CircularProgress";
+import {Box} from "@material-ui/core";
 
 
-const App = () => {
-  return (
+class App extends Component {
+  componentDidMount() {
+	this.props.initializeApp();
+  }
+  
+  render() {
+	if (!this.props.initialize) {
+	  return (
+		  <Box display="flex" justifyContent="center">
+			<CircularProgress size={70}/>
+		  </Box>
+	  )
+	}
+	return (
 	  <Router>
 		<Switch>
 		  <Route exact path='/'>
@@ -38,7 +54,13 @@ const App = () => {
 		  </Route>
 		</Switch>
 	  </Router>
-  )
+	)
+  }
+}
+const mapStateToProps = state => {
+  return {
+	initialize: state.app.initialize
+  }
 }
 
-export default App;
+export default connect(mapStateToProps, {initializeApp})(App);
