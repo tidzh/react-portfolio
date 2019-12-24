@@ -8,9 +8,8 @@ const UserHeaderWidgetContainer = props => {
   
   const logout = (evt) => {
     evt.preventDefault();
-    props.logout()
+    props.logout();
   };
-  
   
   return (
     <UserContext.Consumer>

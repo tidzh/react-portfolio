@@ -4,23 +4,31 @@ import PortfolioList from "./PortfolioList";
 import Preloader from "../../common/Preloader/Preloader";
 import {compose} from "redux";
 import {getPortfolio, setLikePortfolio} from "../../../actions/portfolio";
+import {
+  getCurrentPage,
+  getIsFetching, getLikeInProgress,
+  getPageSize,
+  getPortfolioList,
+  getTotalPortfolio
+} from "../../../selectors/portfolio";
 
 class PortfolioListContainer extends React.Component {
   
   componentDidMount() {
 	this.props.getPortfolio(this.props.currentPage, this.props.limit)
   }
-  handlerPagination = (pageNumber) => {
+  
+  handlerPagination = pageNumber => {
 	this.props.getPortfolio(pageNumber)
   }
   
   setPortfolioLike = (id, likes) => {
-	this.props.setLikePortfolio(id,likes);
+	this.props.setLikePortfolio(id, likes);
   }
   
   
   render() {
-    const {limit} = this.props;
+	const {limit} = this.props;
 	return (
 	  <PortfolioList portfolioList={this.props.portfolioList}
 					 pageSize={this.props.pageSize}
@@ -38,12 +46,12 @@ class PortfolioListContainer extends React.Component {
 
 const mapStateToProps = state => {
   return {
-	portfolioList: state.portfolioPage.portfolio,
-	pageSize: state.portfolioPage.pageSize,
-	totalPortfolio: state.portfolioPage.totalPortfolio,
-	currentPage: state.portfolioPage.currentPage,
-	isFetching: state.portfolioPage.isFetching,
-	likeInProgress: state.portfolioPage.likeInProgress
+	portfolioList: getPortfolioList(state),
+	pageSize: getPageSize(state),
+	totalPortfolio: getTotalPortfolio(state),
+	currentPage: getCurrentPage(state),
+	isFetching: getIsFetching(state),
+	likeInProgress: getLikeInProgress(state)
   }
 }
 

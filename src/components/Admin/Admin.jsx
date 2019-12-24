@@ -11,7 +11,7 @@ import Box from "@material-ui/core/Box";
 
 const Admin = props => {
   const {path} = useRouteMatch(),
-	{userEmail, userName} = props,
+	{feedbackCount} = props,
 	[open, setOpen] = React.useState(false);
   
   const handleDrawerOpen = () => {
@@ -24,7 +24,7 @@ const Admin = props => {
   
   return (
 	<Box display='flex'>
-	  <HeaderAdmin handleDrawerOpen={handleDrawerOpen} isOpen={open}/>
+	  <HeaderAdmin handleDrawerOpen={handleDrawerOpen} isOpen={open} feedbackCount={feedbackCount}/>
 	  <AdminMenuContainer handleDrawerClose={handleDrawerClose} isOpen={open}/>
 	  <main className={style.root}>
 		<Switch>
