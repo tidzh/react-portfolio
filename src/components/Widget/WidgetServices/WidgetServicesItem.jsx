@@ -1,9 +1,10 @@
 import React from "react";
 import Grid from '@material-ui/core/Grid';
 import style from "./WidgetServices.module.scss";
+import {NavLink} from "react-router-dom";
 
 const WidgetServicesItem = props => {
-  const {name, img, text} = props.servicesItem
+  const {name, img, text, url} = props.servicesItem
   return(
     <Grid item xs={4}>
         <div className={style.servicesFlip}>
@@ -24,6 +25,7 @@ const WidgetServicesItem = props => {
                 </div>
               </div>
             </div>
+            <NavLink to={`/services/${url}.html`} className={style.link}>{name}</NavLink>
           </div>
         </div>
     </Grid>

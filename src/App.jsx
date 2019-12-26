@@ -4,7 +4,7 @@ import style from './assets/styles/styles.scss'
 import LayoutFront from "./components/Pages/_layout/LayoutFront/LayoutFront";
 import Portfolio from "./components/Pages/Portfolio/Portfolio";
 import Error404 from "./components/Helpers/Error/Error404/Error404";
-import ServicesContainer from "./components/Services/ServicesContainer";
+import ServicesContainer from "./components/Pages/Services/ServicesContainer";
 import FeedbackContainer from "./components/Pages/Feedback/FeedbackContainer";
 import PortfolioSingleContainer from "./components/Portfolio/PortfolioSingle/PortfolioSingleContainer";
 import AdminContainer from "./components/Admin/AdminContainer";
@@ -14,6 +14,7 @@ import {connect} from "react-redux";
 import {initializeApp} from "./actions/app";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import {Box} from "@material-ui/core";
+import ServicesSingleContainer from "./components/Pages/Services/ServicesSingle/ServicesSingleContainer";
 
 
 class App extends Component {
@@ -44,8 +45,11 @@ class App extends Component {
 		  <Route path='/feedback'>
 			<LayoutFront><FeedbackContainer/></LayoutFront>
 		  </Route>
-		  <Route path='/services'>
+		  <Route exact path='/services'>
 			<LayoutFront><ServicesContainer/></LayoutFront>
+		  </Route>
+		  <Route path='/services/:url.html'>
+			<LayoutFront><ServicesSingleContainer/></LayoutFront>
 		  </Route>
 		  <Route path='/auth/' component={AdminAuthContainer}/>
 		  <Route path='/admin' component={AdminContainer}/>

@@ -30,7 +30,10 @@ const Theme = createMuiTheme({
   },
   palette: {
 	bgGrey: '#f7f7f7',
-	bgWhite: '#ffffff'
+	bgWhite: '#ffffff',
+	bgDark:'#1B2934',
+	white: '#ffffff',
+	grey2:'#7f7f7f'
   },
 });
 export default Theme;
