@@ -4,7 +4,13 @@
   text-decoration: none;
   align-items: center;
   width: 100%;
-  &:hover, &Active {
-    color: #3f87fd
+  &:hover {
+    color: #727cf5;
+    svg {
+      color: #727cf5;
+    }
+  }
+  &Active {
+    color: #727cf5
   }
 }

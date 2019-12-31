@@ -6,7 +6,7 @@ const mapStateToProps = state => {
   return {
 	adminSidebar: state.adminPage.adminSidebar
   }
-}
+};
 
 const AdminMenuContainer = props => {
   
@@ -15,7 +15,6 @@ const AdminMenuContainer = props => {
   return <AdminMenu isOpen={isOpen}
 					handleDrawerClose={handleDrawerClose}
 					adminSidebar={adminSidebar}/>
-}
-
+};
 
 export default connect(mapStateToProps)(AdminMenuContainer);

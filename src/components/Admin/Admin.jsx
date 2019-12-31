@@ -7,6 +7,8 @@ import HeaderAdmin from "../Pages/_layout/Header/HeaderAdmin/HeaderAdmin";
 import AdminPageMenuContainer from "./AdminPage/AdminPageMenu/AdminPageMenuContainer";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
+import ServicesContainer from "../Dashboard/Services/ServicesContainer";
+import ServicesSingleContainer from "../Dashboard/Services/ServicesSingle/ServicesSingleContainer";
 
 
 const Admin = props => {
@@ -17,14 +19,14 @@ const Admin = props => {
   const handleDrawerOpen = () => {
 	setOpen(true);
   };
-  
   const handleDrawerClose = () => {
 	setOpen(false);
   };
   
   return (
-	<Box display='flex'>
+	<>
 	  <HeaderAdmin handleDrawerOpen={handleDrawerOpen} isOpen={open} feedbackCount={feedbackCount}/>
+	  <Box display='flex' flex={1}>
 	  <AdminMenuContainer handleDrawerClose={handleDrawerClose} isOpen={open}/>
 	  <main className={style.root}>
 		<Switch>
@@ -38,9 +40,12 @@ const Admin = props => {
 		  </Route>
 		  <Route path={`${path}/menu`} component={AdminPageMenuContainer}/>
 		  <Route path={`${path}/portfolio`} component={AdminPagePortfolioContainer}/>
+		  <Route exact path={`${path}/services`} component={ServicesContainer}/>
+		  <Route path={`${path}/services/:url.html`} component={ServicesSingleContainer}/>
 		</Switch>
 	  </main>
-	</Box>
+	  </Box>
+	</>
   )
-}
+};
 export default Admin

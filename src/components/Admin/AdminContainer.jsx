@@ -42,5 +42,5 @@ const mapStateToProps = state => {
 // export default withAuthRedirect(connect(mapStateToProps)(AdminContainer), '/auth');
 export default compose(
   connect(mapStateToProps, {setFeedbackCountRequest}),
-  withAuthRedirect,
+  withAuthRedirect
 )(AdminContainer)

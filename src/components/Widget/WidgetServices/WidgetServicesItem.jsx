@@ -9,7 +9,7 @@ const WidgetServicesItem = props => {
     <Grid item xs={4}>
         <div className={style.servicesFlip}>
           <div className={style.servicesList}>
-            <div className={style.servicesListFront} style={{backgroundImage:`url(assets/img/${img})`}}>
+            <div className={style.servicesListFront} style={{backgroundImage:`url(/assets/img/${img})`}}>
               <div className={style.flipContent}>
                 <div className={style.flipContentTitle}>{name}</div>
               </div>
