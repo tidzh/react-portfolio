@@ -1,21 +1,25 @@
 import React from 'react';
-import style from './Breadcrumbs.module.scss'
+import Link from '@material-ui/core/Link';
+import BreadcrumbsWrap from '@material-ui/core/Breadcrumbs';
+import Typography from "@material-ui/core/Typography";
 import {NavLink} from "react-router-dom";
 
 const Breadcrumbs = props => {
   
-  const breadcrumb = props.data.map((breadcrumbItem, index, currentValue) =>
-	<li key={index} className={style.breadcrumbs__item}>
-	  {currentValue.length - 1 === index ? `${breadcrumbItem.name}` :
-		<NavLink to={breadcrumbItem.url} className={style.breadcrumbs__link}>{breadcrumbItem.name}</NavLink>}
-	</li>
-  )
   
-  return(
-	<ul className={`d-flex ${style.breadcrumbs}`}>
-	  <li className={style.breadcrumbs__item}><NavLink to='/' className={style.breadcrumbs__link}>Главная</NavLink></li>
+  const {data, dashboard = false} = props;
+  
+  const breadcrumb = data.map((breadcrumbItem, index, currentValue) =>
+	  currentValue.length - 1 === index ?
+		<Typography color="textPrimary" key={index}>{breadcrumbItem.name}</Typography> :
+		<Link component={NavLink} key={index} to={breadcrumbItem.url} color="inherit">{breadcrumbItem.name}</Link>
+  );
+  
+  return (
+	<BreadcrumbsWrap separator="›" aria-label="breadcrumb">
+	  <Link component={NavLink} to={!dashboard ? '/': '/admin/'} color="inherit">{!dashboard ? 'Главная': 'Dashboard'}</Link>
 	  {breadcrumb}
-	</ul>
+	</BreadcrumbsWrap>
   )
-}
+};
 export default Breadcrumbs;

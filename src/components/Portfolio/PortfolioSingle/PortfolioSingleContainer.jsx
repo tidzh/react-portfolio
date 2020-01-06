@@ -24,7 +24,7 @@ class PortfolioSingleContainer extends React.Component{
 	  {
 		'name': `${this.props.portfolioSingle.title}`,
 		'url':`${this.props.match.url}`
-	  }]
+	  }];
 	
     return(
       <PortfolioSingle portfolioSingle={this.props.portfolioSingle} breadcrumbs={<Breadcrumbs data={breadcrumbsConstructor}/>}/>

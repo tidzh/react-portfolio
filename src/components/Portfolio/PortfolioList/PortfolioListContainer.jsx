@@ -20,11 +20,11 @@ class PortfolioListContainer extends React.Component {
   
   handlerPagination = pageNumber => {
 	this.props.getPortfolio(pageNumber)
-  }
+  };
   
   setPortfolioLike = (id, likes) => {
 	this.props.setLikePortfolio(id, likes);
-  }
+  };
   
   
   render() {
