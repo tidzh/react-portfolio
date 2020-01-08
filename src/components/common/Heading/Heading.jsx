@@ -15,5 +15,5 @@ const Heading = props => {
 	  </Box>
 	</Box>
   )
-}
+};
 export default Heading

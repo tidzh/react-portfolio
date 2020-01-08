@@ -5,7 +5,7 @@ import Box from "@material-ui/core/Box";
 
 
 const PortfolioListItem = props => {
-	const {articleItem, setPortfolioLike, isLike} = props;
+	const {articleItem} = props;
 	
 	return(
 		<div className={style.item}>

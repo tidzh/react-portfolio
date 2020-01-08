@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
-import style from './assets/styles/styles.scss'
+import './assets/styles/styles.scss'
 import LayoutFront from "./components/Pages/_layout/LayoutFront/LayoutFront";
 import Portfolio from "./components/Pages/Portfolio/Portfolio";
 import Error404 from "./components/Helpers/Error/Error404/Error404";
 import ServicesContainer from "./components/Pages/Services/ServicesContainer";
 import FeedbackContainer from "./components/Pages/Feedback/FeedbackContainer";
 import PortfolioSingleContainer from "./components/Portfolio/PortfolioSingle/PortfolioSingleContainer";
-import AdminContainer from "./components/Admin/AdminContainer";
+import AdminContainer from "./components/Dashboard/DashboardContainer";
 import AdminAuthContainer from "./components/Auth/AuthContainer";
 import PageHomeContainer from "./components/Pages/Home/PageHomeContainer";
 import {connect} from "react-redux";
@@ -25,9 +25,9 @@ class App extends Component {
   render() {
 	if (!this.props.initialize) {
 	  return (
-		  <Box display="flex" justifyContent="center">
-			<CircularProgress size={70}/>
-		  </Box>
+		<Box display="flex" justifyContent="center">
+		  <CircularProgress size={70}/>
+		</Box>
 	  )
 	}
 	return (
@@ -61,10 +61,11 @@ class App extends Component {
 	)
   }
 }
+
 const mapStateToProps = state => {
   return {
 	initialize: state.app.initialize
   }
-}
+};
 
 export default connect(mapStateToProps, {initializeApp})(App);

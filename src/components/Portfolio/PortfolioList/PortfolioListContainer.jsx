@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Component} from "react";
 import {connect} from "react-redux";
 import PortfolioList from "./PortfolioList";
 import Preloader from "../../common/Preloader/Preloader";
@@ -12,7 +12,7 @@ import {
   getTotalPortfolio
 } from "../../../selectors/portfolio";
 
-class PortfolioListContainer extends React.Component {
+class PortfolioListContainer extends Component {
   
   componentDidMount() {
 	this.props.getPortfolio(this.props.currentPage, this.props.limit)

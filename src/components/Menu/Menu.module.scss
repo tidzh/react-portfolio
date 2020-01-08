@@ -1,3 +1,13 @@
+@import "../../assets/styles/smart-grid";
+
+.root {
+  width: 100%;
+  display: none;
+  @include xs-block() {
+    display: flex;
+    width: inherit;
+  }
+}
 .link {
   color: #222222;
   text-decoration: none;

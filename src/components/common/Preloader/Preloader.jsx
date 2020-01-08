@@ -1,10 +1,10 @@
 import React from 'react';
 import style from './Preloader.module.scss'
-import preloading from '../../../assets/img/loading.svg';
+import CircularProgress from "@material-ui/core/CircularProgress";
 
-const Preloader = props => {
-  return(
-	<img className={style.preloader} src={preloading}/>
-  )
-}
-export default Preloader;
+const Preloader = () => {
+  return <CircularProgress className={style.preloader} size={10}/>
+  
+};
+
+export default Preloader

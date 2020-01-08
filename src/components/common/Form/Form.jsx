@@ -1,5 +1,4 @@
 import React from 'react'
-import style from './Form.module.scss'
 import FormControl from "@material-ui/core/FormControl";
 import TextField from "@material-ui/core/TextField";
 import makeStyles from "@material-ui/core/styles/makeStyles";
