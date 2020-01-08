@@ -2,43 +2,44 @@ import React from 'react';
 import PortfolioSingle from "./PortfolioSingle";
 import {connect} from "react-redux";
 import Breadcrumbs from "../../common/Breadcrumbs/Breadcrumbs";
-import {withRouter} from "react-router-dom";
-import {compose} from "redux";
-import {getPortfolioSingle} from "../../../actions/portfolio";
+import {getPortfolioSingleRequest} from "../../../actions/portfolio";
+import Page from "../../layout/Page/Page";
+import {getPortfolioSingle} from "../../../selectors/portfolio";
 
-class PortfolioSingleContainer extends React.Component{
+class PortfolioSingleContainer extends React.Component {
   
   componentDidMount() {
-    const url = this.props.match.params.url;
-	this.props.getPortfolioSingle(url)
+	const url = this.props.match.params.url;
+	this.props.getPortfolioSingleRequest(url)
   }
+  
   render() {
-    if(!this.props.portfolioSingle) {
-       return false
-	}
+	if (!this.props.portfolioSingle) return false;
 	const breadcrumbsConstructor = [
 	  {
-		'name':'Портфолио',
-		'url':'/Portfolio/'
+		'name': 'Портфолио',
+		'url': '/Portfolio/'
 	  },
 	  {
 		'name': `${this.props.portfolioSingle.title}`,
-		'url':`${this.props.match.url}`
+		'url': `${this.props.match.url}`
 	  }];
 	
-    return(
-      <PortfolioSingle portfolioSingle={this.props.portfolioSingle} breadcrumbs={<Breadcrumbs data={breadcrumbsConstructor}/>}/>
+	return (
+	  <Page pageMeta={{
+		title: `${this.props.portfolioSingle.title}`,
+		description: 'Бла бла бла'}}>
+		<PortfolioSingle portfolioSingle={this.props.portfolioSingle}
+						 breadcrumbs={<Breadcrumbs data={breadcrumbsConstructor}/>}/>
+	  </Page>
 	)
   }
 }
+
 const mapStateToProps = state => {
   return {
-	portfolioSingle: state.portfolioPage.portfolioSingle
+	portfolioSingle: getPortfolioSingle(state)
   }
-}
+};
 
-
-export default compose(
-  connect(mapStateToProps, {getPortfolioSingle}),
-  withRouter
-)(PortfolioSingleContainer)
+export default connect(mapStateToProps, {getPortfolioSingleRequest})(PortfolioSingleContainer)

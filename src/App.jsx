@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import './assets/styles/styles.scss'
-import LayoutFront from "./components/Pages/_layout/LayoutFront/LayoutFront";
 import Portfolio from "./components/Pages/Portfolio/Portfolio";
 import Error404 from "./components/Helpers/Error/Error404/Error404";
-import ServicesContainer from "./components/Pages/Services/ServicesContainer";
 import FeedbackContainer from "./components/Pages/Feedback/FeedbackContainer";
 import PortfolioSingleContainer from "./components/Portfolio/PortfolioSingle/PortfolioSingleContainer";
 import AdminContainer from "./components/Dashboard/DashboardContainer";
@@ -15,7 +13,6 @@ import {initializeApp} from "./actions/app";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import {Box} from "@material-ui/core";
 import ServicesSingleContainer from "./components/Pages/Services/ServicesSingle/ServicesSingleContainer";
-
 
 class App extends Component {
   componentDidMount() {
@@ -33,29 +30,14 @@ class App extends Component {
 	return (
 	  <Router>
 		<Switch>
-		  <Route exact path='/'>
-			<LayoutFront><PageHomeContainer/></LayoutFront>
-		  </Route>
-		  <Route exact path='/portfolio'>
-			<LayoutFront><Portfolio/></LayoutFront>
-		  </Route>
-		  <Route path='/portfolio/:url.html'>
-			<LayoutFront><PortfolioSingleContainer/></LayoutFront>
-		  </Route>
-		  <Route path='/feedback'>
-			<LayoutFront><FeedbackContainer/></LayoutFront>
-		  </Route>
-		  <Route exact path='/services'>
-			<LayoutFront><ServicesContainer/></LayoutFront>
-		  </Route>
-		  <Route path='/services/:url.html'>
-			<LayoutFront><ServicesSingleContainer/></LayoutFront>
-		  </Route>
+		  <Route exact path='/' component={PageHomeContainer}/>
+		  <Route exact path='/portfolio' component={Portfolio}/>
+		  <Route path='/portfolio/:url.html' component={PortfolioSingleContainer}/>
+		  <Route path='/feedback' component={FeedbackContainer}/>
+		  <Route path='/services/:url.html' component={ServicesSingleContainer}/>
 		  <Route path='/auth/' component={AdminAuthContainer}/>
 		  <Route path='/admin' component={AdminContainer}/>
-		  <Route path='*'>
-			<LayoutFront><Error404/></LayoutFront>
-		  </Route>
+		  <Route path='*' component={Error404}/>
 		</Switch>
 	  </Router>
 	)

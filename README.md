@@ -3,10 +3,9 @@
 
 Используемый стек:
 * React
-* Redux
-* Redux Form
-* Redux Thunk
+* Redux / Redux Thunk / Redux Form
 * Reselect
 * Material Ui
+* Draft.js
 
 
