@@ -1,30 +1,29 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {connect} from "react-redux";
 import Auth from "./Auth";
 import {Redirect} from "react-router-dom";
 import {compose} from "redux";
 import {reduxForm} from "redux-form";
 import {authUser, checkToken} from "../../actions/auth";
+import {getEmail, getIsAuth, getPassword} from "../../selectors/auth";
 
 
-class AuthContainer extends React.Component {
+class AuthContainer extends Component {
   
   onSubmit = formData => {
-	this.props.authUser(formData.email, formData.password);
+	this.props.authUser(formData);
   };
   render() {
 	if (this.props.isAuth) return <Redirect to='/admin'/>;
-	return (
-	  <Auth {...this.props} onSubmit={this.onSubmit}/>
-	)
+	return <Auth {...this.props} onSubmit={this.onSubmit}/>
   }
 }
 
 const mapStateToProps = state => {
   return {
-	email: state.auth.email,
-	password: state.auth.password,
-	isAuth: state.auth.isAuth,
+	email: getEmail(state),
+	password: getPassword(state),
+	isAuth: getIsAuth(state),
   }
 };
 

@@ -1,13 +1,15 @@
 .item {
   &:hover {
     .img {
-      background-color: rgba(23,23,23,0.1);
+      background-color: rgba(23, 23, 23, 0.1);
     }
   }
 }
+
 .link {
   text-decoration: none;
 }
+
 .img {
   position: relative;
   margin-top: 20px;
@@ -15,16 +17,19 @@
   height: 270px;
   overflow: hidden;
 }
+
 .footer {
   background: #e0e0e0;
   text-align: center;
   text-transform: uppercase;
 }
+
 .name {
   color: #575757;
   font-size: 16px;
   margin-bottom: 4px;
 }
+
 .category {
   color: #939393;
   font-size: 11px;

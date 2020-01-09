@@ -6,7 +6,7 @@ import Error404 from "./components/Helpers/Error/Error404/Error404";
 import FeedbackContainer from "./components/Pages/Feedback/FeedbackContainer";
 import PortfolioSingleContainer from "./components/Portfolio/PortfolioSingle/PortfolioSingleContainer";
 import AdminContainer from "./components/Dashboard/DashboardContainer";
-import AdminAuthContainer from "./components/Auth/AuthContainer";
+import AuthContainer from "./components/Auth/AuthContainer";
 import PageHomeContainer from "./components/Pages/Home/PageHomeContainer";
 import {connect} from "react-redux";
 import {initializeApp} from "./actions/app";
@@ -35,7 +35,7 @@ class App extends Component {
 		  <Route path='/portfolio/:url.html' component={PortfolioSingleContainer}/>
 		  <Route path='/feedback' component={FeedbackContainer}/>
 		  <Route path='/services/:url.html' component={ServicesSingleContainer}/>
-		  <Route path='/auth/' component={AdminAuthContainer}/>
+		  <Route path='/auth/' component={AuthContainer}/>
 		  <Route path='/admin' component={AdminContainer}/>
 		  <Route path='*' component={Error404}/>
 		</Switch>
