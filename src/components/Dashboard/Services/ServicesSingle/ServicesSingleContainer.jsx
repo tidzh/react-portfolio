@@ -3,8 +3,8 @@ import ServicesSingle from "./ServicesSingle";
 import {connect} from "react-redux";
 import {compose} from "redux";
 import {reduxForm} from "redux-form";
-import {getServiceSingle} from "../../../../selectors/services";
-import {setServiceSingleRequest, updateServiceSingleRequest, clearServiceSingle} from "../../../../actions/services";
+import {getServiceSingle} from "../../../../redux/selectors/services";
+import {setServiceSingleRequest, updateServiceSingleRequest, clearServiceSingle} from "../../../../redux/actions/services";
 import Breadcrumbs from "../../../common/Breadcrumbs/Breadcrumbs";
 
 class ServicesSingleContainer extends Component {

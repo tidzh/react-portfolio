@@ -1,7 +1,7 @@
 import React from 'react';
 import style from "./Auth.module.scss";
 import {Field} from "redux-form";
-import {email, required} from "../../helpers/validators";
+import {email, required} from "../../utils/validators";
 import {Form, renderInput} from "../common/Form/Form";
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";

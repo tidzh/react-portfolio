@@ -1,6 +1,6 @@
 import AdminPagePortfolio from "./AdminPagePortfolio";
 import {connect} from "react-redux";
-import {newPortfolioCreator, updatePortfolioCreator} from "../../../../actions/portfolio";
+import {newPortfolioCreator, updatePortfolioCreator} from "../../../../redux/actions/portfolio";
 
 const mapStateToProps = state => {
   return {

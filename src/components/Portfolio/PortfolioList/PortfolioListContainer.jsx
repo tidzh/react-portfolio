@@ -3,14 +3,14 @@ import {connect} from "react-redux";
 import PortfolioList from "./PortfolioList";
 import Preloader from "../../common/Preloader/Preloader";
 import {compose} from "redux";
-import {getPortfolio, setLikePortfolio} from "../../../actions/portfolio";
+import {getPortfolio, setLikePortfolio} from "../../../redux/actions/portfolio";
 import {
   getCurrentPage,
   getIsFetching, getLikeInProgress,
   getPageSize,
   getPortfolioList,
   getTotalPortfolio
-} from "../../../selectors/portfolio";
+} from "../../../redux/selectors/portfolio";
 
 class PortfolioListContainer extends Component {
   

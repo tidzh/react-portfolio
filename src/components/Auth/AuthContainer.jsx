@@ -4,8 +4,8 @@ import Auth from "./Auth";
 import {Redirect} from "react-router-dom";
 import {compose} from "redux";
 import {reduxForm} from "redux-form";
-import {authUser, checkToken} from "../../actions/auth";
-import {getEmail, getIsAuth, getPassword} from "../../selectors/auth";
+import {authUser, checkToken} from "../../redux/actions/auth";
+import {getEmail, getIsAuth, getPassword} from "../../redux/selectors/auth";
 
 
 class AuthContainer extends Component {

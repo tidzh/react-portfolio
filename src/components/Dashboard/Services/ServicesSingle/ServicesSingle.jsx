@@ -4,7 +4,7 @@ import {Box} from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 import {Field} from "redux-form";
 import {Form, renderInput} from "../../../common/Form/Form";
-import {required} from "../../../../helpers/validators";
+import {required} from "../../../../utils/validators";
 import Button from "@material-ui/core/Button";
 // import style from './ServicesSingle.module.scss';
 import WYSIWYG from "../../../common/WYSIWYG/WYSIWYG";

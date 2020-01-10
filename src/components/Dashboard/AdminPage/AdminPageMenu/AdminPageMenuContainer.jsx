@@ -3,7 +3,7 @@ import AdminPageMenu from "./AdminPageMenu";
 import {connect} from "react-redux";
 import {compose} from "redux";
 import {reduxForm} from "redux-form";
-import {deleteMenuRequest, fetchMenuRequest, sendMenuRequest} from "../../../../actions/menu";
+import {deleteMenuRequest, fetchMenuRequest, sendMenuRequest} from "../../../../redux/actions/menu";
 
 
 class AdminPageMenuContainer extends React.Component {

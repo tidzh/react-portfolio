@@ -4,7 +4,7 @@ import img from '../../../../assets/img/404.svg'
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import {Box} from "@material-ui/core";
-import Page from "../../../layout/Page/Page";
+import Page from "../../../../pages/_layout/Page/Page";
 
 const Error404 = () => {
   return (

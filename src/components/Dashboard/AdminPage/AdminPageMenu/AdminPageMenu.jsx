@@ -2,7 +2,7 @@ import React from 'react';
 import {Form, renderInput} from "../../../common/Form/Form";
 import {Field} from "redux-form";
 import Button from "@material-ui/core/Button";
-import {required} from "../../../../helpers/validators";
+import {required} from "../../../../utils/validators";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import List from "@material-ui/core/List";

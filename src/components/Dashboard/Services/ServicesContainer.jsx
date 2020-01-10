@@ -1,8 +1,8 @@
 import React, {Component} from "react";
 import Services from "./Services";
 import {connect} from "react-redux";
-import {setServicesRequest} from "../../../actions/services";
-import {getServices} from "../../../selectors/services";
+import {setServicesRequest} from "../../../redux/actions/services";
+import {getServices} from "../../../redux/selectors/services";
 
 class ServicesContainer extends Component {
   componentDidMount() {

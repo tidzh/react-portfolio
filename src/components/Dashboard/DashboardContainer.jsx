@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
 import Dashboard from "./Dashboard";
-import {withAuthRedirect} from "../../hoc/withAuthRedirect";
+import {withAuthRedirect} from "../../utils/hoc/withAuthRedirect";
 import {compose} from "redux";
-import {UserContext} from "../../helpers/contextApi";
-import {setFeedbackCountRequest} from "../../actions/feedback";
-import {feedbackCount, getFeedback, getUserAva, getUserEmail, getUserName} from "../../selectors/admin";
+import {UserContext} from "../../utils/contextApi";
+import {setFeedbackCountRequest} from "../../redux/actions/feedback";
+import {feedbackCount, getFeedback, getUserAva, getUserEmail, getUserName} from "../../redux/selectors/admin";
 
 
 class DashboardContainer extends Component {

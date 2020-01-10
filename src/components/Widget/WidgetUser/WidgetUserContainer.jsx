@@ -1,8 +1,8 @@
 import React from 'react';
 import {connect} from "react-redux";
 import WidgetUser from "./WidgetUser";
-import {UserContext} from "../../../helpers/contextApi";
-import {logout} from "../../../actions/auth";
+import {UserContext} from "../../../utils/contextApi";
+import {logout} from "../../../redux/actions/auth";
 
 const WidgetUserContainer = props => {
   

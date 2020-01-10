@@ -2,9 +2,9 @@ import React from 'react';
 import PortfolioSingle from "./PortfolioSingle";
 import {connect} from "react-redux";
 import Breadcrumbs from "../../common/Breadcrumbs/Breadcrumbs";
-import {getPortfolioSingleRequest} from "../../../actions/portfolio";
-import Page from "../../layout/Page/Page";
-import {getPortfolioSingle} from "../../../selectors/portfolio";
+import {getPortfolioSingleRequest} from "../../../redux/actions/portfolio";
+import Page from "../../../pages/_layout/Page/Page";
+import {getPortfolioSingle} from "../../../redux/selectors/portfolio";
 
 class PortfolioSingleContainer extends React.Component {
   

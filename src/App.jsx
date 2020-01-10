@@ -1,18 +1,18 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import './assets/styles/styles.scss'
-import Portfolio from "./components/Pages/Portfolio/Portfolio";
+import Portfolio from "./pages/Portfolio/Portfolio";
 import Error404 from "./components/Helpers/Error/Error404/Error404";
-import FeedbackContainer from "./components/Pages/Feedback/FeedbackContainer";
+import FeedbackContainer from "./pages/Feedback/FeedbackContainer";
 import PortfolioSingleContainer from "./components/Portfolio/PortfolioSingle/PortfolioSingleContainer";
 import AdminContainer from "./components/Dashboard/DashboardContainer";
 import AuthContainer from "./components/Auth/AuthContainer";
-import PageHomeContainer from "./components/Pages/Home/PageHomeContainer";
+import PageHomeContainer from "./pages/Home/PageHomeContainer";
 import {connect} from "react-redux";
-import {initializeApp} from "./actions/app";
+import {initializeApp} from "./redux/actions/app";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import {Box} from "@material-ui/core";
-import ServicesSingleContainer from "./components/Pages/Services/ServicesSingle/ServicesSingleContainer";
+import ServicesSingleContainer from "./pages/Services/ServicesSingle/ServicesSingleContainer";
 
 class App extends Component {
   componentDidMount() {
