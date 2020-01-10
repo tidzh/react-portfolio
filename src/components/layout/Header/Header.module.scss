@@ -1,0 +1,18 @@
+@import "../../../assets/styles/smart-grid";
+.root {
+  background: #000000;
+}
+.wrap {
+  flex: 0 0 100%;
+  @include xs-block() {
+    flex: 1;
+  }
+}
+.logo {
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.6;
+  flex: 1;
+  text-decoration: none;
+  color: #000000;
+}

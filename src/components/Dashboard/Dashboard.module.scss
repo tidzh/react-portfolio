@@ -1,0 +1,12 @@
+@import "../../assets/styles/smart-grid";
+
+
+.root {
+  padding: 24px;
+  flex-grow: 1;
+  margin-top: 48px;
+  background: #fbfbfb;
+  @include xs-block() {
+    margin-top: 68px;
+  }
+}

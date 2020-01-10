@@ -1,0 +1,16 @@
+.menuLink {
+  display: flex;
+  color: #74788d;
+  text-decoration: none;
+  align-items: center;
+  width: 100%;
+  &:hover {
+    color: #727cf5;
+    svg {
+      color: #727cf5;
+    }
+  }
+  &Active {
+    color: #727cf5
+  }
+}

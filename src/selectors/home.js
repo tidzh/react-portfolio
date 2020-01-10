@@ -1,0 +1,1 @@
+export const getSkills = state => state.home.skills;

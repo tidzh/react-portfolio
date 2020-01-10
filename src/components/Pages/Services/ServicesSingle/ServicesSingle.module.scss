@@ -1,0 +1,70 @@
+.top {
+  background: url("../../../../assets/img/breadcrumbs.jpg");
+  padding: 50px 0;
+  text-align: center;
+}
+.content {
+  background: #f5f5f5;
+  line-height: 1.5;
+  font-size: 18px;
+  h2 {
+    font-size: 1.7rem;
+    font-weight: bold;
+  }
+  p {
+    margin-bottom: 15px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  ul {
+    margin-top: 10px;
+    li {
+      padding: 0 0 .85rem 2.3rem;
+      background: url('../../../../assets/img/marker-gray.svg') left 0.6rem no-repeat;
+    }
+  }
+  ol {
+    li {
+      margin-bottom: 10px;
+    }
+  }
+}
+.list {
+  margin-top: 20px;
+}
+.listItem {
+  margin-bottom: 5px;
+  border-bottom: 1px solid #e1e1e1;
+  &:first-child {
+    border-top: 1px solid #e1e1e1;
+  }
+}
+.listItemLink {
+  padding: 10px 0 10px 15px;
+  color: #323232;
+  text-decoration: none;
+  display: block;
+  position: relative;
+  &:hover {
+    color: #ff497c;
+  }
+  &:before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #ff497c;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -4px;
+  }
+}
+.listItemActive {
+  color: #ff497c;
+}
+.img {
+  object-fit: fill;
+  width: 100%;
+}
