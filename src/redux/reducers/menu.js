@@ -14,12 +14,11 @@ const menuReducer = (state = initialState, action) => {
 	case ADD_MENU:
 	  return {
 		...state,
-		menuList: [...state.menuList, {name: action.name, url: action.url}]
+		menuList: [...state.menuList, {...action.formData}]
 	  };
 	case UPDATE_MENU:
 	  let stateCopy = {...state};
 	  if (action.item !== false) {
-		//stateCopy.menuList = [...state.menuList]
 		stateCopy.menuList[action.item - 1][action.name] = action.value;
 	  } else {
 		stateCopy.menuNew = {...state.menuNew};

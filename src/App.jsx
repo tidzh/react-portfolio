@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import './assets/styles/styles.scss'
 import PortfolioPage from "./pages/PortfolioPage/PortfolioPage";
-import Error404 from "./pages/ErrorPage/Error404/Error404";
+import Error404 from "./pages/Error404Page/Error404";
 import FeedbackContainer from "./pages/FeedbackPage/FeedbackContainer";
 import PortfolioSingleContainer from "./pages/PortfolioSinglePage/PortfolioSingleContainer";
 import AdminContainer from "./pages/Dashboard/DashboardContainer";

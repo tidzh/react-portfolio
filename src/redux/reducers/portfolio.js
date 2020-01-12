@@ -19,7 +19,7 @@ const initialState = {
 	"title": '',
 	"text": ''
   }
-}
+};
 
 
 const portfolioReducer = (state = initialState, action) => {
@@ -28,8 +28,8 @@ const portfolioReducer = (state = initialState, action) => {
 	case SET_PORTFOLIO:
 	  return {
 		...state,
-		portfolio: [...action.portfolios],
-		totalPortfolio: action.totalCount
+		portfolio: [...action.data.items],
+		totalPortfolio: action.data.totalCount
 	  };
 	case SET_CURRENT_PAGE:
 	  return {
@@ -70,6 +70,5 @@ const portfolioReducer = (state = initialState, action) => {
 	  return state;
   }
 };
-
 
 export default portfolioReducer;

@@ -13,8 +13,7 @@ class FeedbackContainer extends React.Component {
   
   onSubmit = formData => {
 	this.setState({formLoading: true})
-	this.props.addFeedbackRequest(formData.subject, formData.name, formData.email, formData.text);
-	// this.setState({formLoading: false})
+	this.props.addFeedbackRequest(formData);
   };
   
   render() {

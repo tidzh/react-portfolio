@@ -43,9 +43,7 @@ const HomePage = props => {
 		  <WidgetResume skills={skills}/>
 		</Container>
 	  </Box>
-	  <Box component="section" pt={8} pb={14} bgcolor="bgDark" color="white">
 		<WidgetReviews reviews={reviews}/>
-	  </Box>
 	</>
   )
 };

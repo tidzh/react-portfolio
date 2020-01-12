@@ -28,9 +28,8 @@ const WidgetReviews = props => {
 	</Box>
   ));
   
-  
   return (
-	<Box position="relative">
+	<Box component="section" pt={8} pb={14} color="white" className={style.bg} position="relative">
 	  <Container>
 		<Heading title='Отзывы' subtitle='Что говорят мои клиенты' Tag={'h1'}/>
 		<Box maxWidth={700} mx="auto">

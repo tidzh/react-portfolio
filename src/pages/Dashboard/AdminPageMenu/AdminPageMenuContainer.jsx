@@ -13,7 +13,7 @@ class AdminPageMenuContainer extends React.Component {
   }
   
   onSubmit = formData => {
-    this.props.sendMenuRequest(formData.name, formData.url);
+    this.props.sendMenuRequest(formData);
   };
   handlerDelete = id => {
     this.props.deleteMenuRequest(id)
