@@ -13,12 +13,12 @@ const store = {
 		{
 		  "id":2,
 		  "name":"Портфолио",
-		  "url":"/Portfolio"
+		  "url":"/PortfolioPage"
 		},
 		{
 		  "id":3,
 		  "name":"Обратная связь",
-		  "url":"/Feedback"
+		  "url":"/FeedbackPage"
 		},
 		{
 		  "id":4,

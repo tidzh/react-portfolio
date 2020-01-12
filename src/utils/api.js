@@ -6,13 +6,13 @@ const instance = axios.create({
 });
 
 export const portfolioAPI = {
-  getPortfolio(currentPage = 1, limit) {
+  get(currentPage = 1, limit) {
 	return instance.get(`/portfolios?page=${currentPage}&limit=${limit}`).then(response => response.data)
   },
-  getPortfolioSingle(url) {
+  getSingle(url) {
     return instance.get(`/portfolio/${url}`).then(response => response.data)
   },
-  setPortfolioLike(id, likes) {
+  setLike(id, likes) {
 	return instance.put(`/portfolio/${id}`, {"like": likes + 1}).then(response => response.data)
   }
 };

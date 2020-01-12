@@ -1,18 +1,18 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import './assets/styles/styles.scss'
-import Portfolio from "./pages/Portfolio/Portfolio";
-import Error404 from "./components/Helpers/Error/Error404/Error404";
-import FeedbackContainer from "./pages/Feedback/FeedbackContainer";
-import PortfolioSingleContainer from "./components/Portfolio/PortfolioSingle/PortfolioSingleContainer";
-import AdminContainer from "./components/Dashboard/DashboardContainer";
+import PortfolioPage from "./pages/PortfolioPage/PortfolioPage";
+import Error404 from "./pages/ErrorPage/Error404/Error404";
+import FeedbackContainer from "./pages/FeedbackPage/FeedbackContainer";
+import PortfolioSingleContainer from "./pages/PortfolioSinglePage/PortfolioSingleContainer";
+import AdminContainer from "./pages/Dashboard/DashboardContainer";
 import AuthContainer from "./components/Auth/AuthContainer";
-import PageHomeContainer from "./pages/Home/PageHomeContainer";
+import PageHomeContainer from "./pages/HomePage/HomePageContainer";
 import {connect} from "react-redux";
 import {initializeApp} from "./redux/actions/app";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import {Box} from "@material-ui/core";
-import ServicesSingleContainer from "./pages/Services/ServicesSingle/ServicesSingleContainer";
+import ServicesSingleContainer from "./pages/ServicesSinglePage/ServicesSingleContainer";
 
 class App extends Component {
   componentDidMount() {
@@ -31,7 +31,7 @@ class App extends Component {
 	  <Router>
 		<Switch>
 		  <Route exact path='/' component={PageHomeContainer}/>
-		  <Route exact path='/portfolio' component={Portfolio}/>
+		  <Route exact path='/portfolio' component={PortfolioPage}/>
 		  <Route path='/portfolio/:url.html' component={PortfolioSingleContainer}/>
 		  <Route path='/feedback' component={FeedbackContainer}/>
 		  <Route path='/services/:url.html' component={ServicesSingleContainer}/>

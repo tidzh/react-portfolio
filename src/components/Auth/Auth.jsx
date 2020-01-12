@@ -39,5 +39,5 @@ const Auth = props => {
 	  </div>
 	</Box>
   )
-}
+};
 export default Auth;

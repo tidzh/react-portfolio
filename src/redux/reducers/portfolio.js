@@ -1,5 +1,5 @@
 import {
-  NEW_PORTFOLIO,
+  ADD_PORTFOLIO,
   SET_CURRENT_PAGE,
   SET_PORTFOLIO,
   SET_PORTFOLIO_LIKE, SET_PORTFOLIO_SINGLE, TOGGLE_IS_FETCHING,
@@ -36,7 +36,7 @@ const portfolioReducer = (state = initialState, action) => {
 		...state,
 		currentPage: action.currentPage
 	  };
-	case NEW_PORTFOLIO:
+	case ADD_PORTFOLIO:
 	  const newPortfolioItem = {
 		id: state.portfolio.length + 1,
 		title: state.newPortfolio.title,
