@@ -8,10 +8,12 @@ import Box from "@material-ui/core/Box";
 import Hello from "../../components/Hello/Hello";
 import Button from "@material-ui/core/Button";
 import {NavLink} from "react-router-dom";
+import WidgetFeedback from "../../components/Widget/WidgetFeedback/WidgetFeedback";
+import WidgetReviews from "../../components/Widget/WidgetReviews/WidgetReviews";
 
 
 const PageHome = props => {
-  const {services, skills} = props;
+  const {services, skills, reviews} = props;
   return (
 	<>
 	  <Hello/>
@@ -26,10 +28,8 @@ const PageHome = props => {
 		  </Box>
 		</Container>
 	  </Box>
-	  <Box component="section" pt={8} pb={6} bgcolor="bgDark" color="white">
-		<Container>
-		  ggggg
-		</Container>
+	  <Box component="section" pt={8} pb={8} bgcolor="bgDark" color="white">
+		  <WidgetFeedback/>
 	  </Box>
 	  <Box component="section" pt={8} pb={6}>
 		<Container>
@@ -42,6 +42,9 @@ const PageHome = props => {
 		  <Heading title={'Мое резюме'} subtitle='Что я умею' Tag={'h2'}/>
 		  <WidgetResume skills={skills}/>
 		</Container>
+	  </Box>
+	  <Box component="section" pt={8} pb={14} bgcolor="bgDark" color="white">
+		<WidgetReviews reviews={reviews}/>
 	  </Box>
 	</>
   )

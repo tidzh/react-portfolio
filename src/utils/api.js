@@ -64,3 +64,8 @@ export const feedbackApi = {
     return instance.post('/feedback', {subject, name, email, text, status}).then(response => response.status)
   }
 };
+export const reviewsAPI = {
+  get() {
+    return instance.get('/reviews').then(response => response.data)
+  },
+};

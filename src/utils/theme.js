@@ -31,7 +31,7 @@ const Theme = createMuiTheme({
   palette: {
 	bgGrey: '#f7f7f7',
 	bgWhite: '#ffffff',
-	bgDark:'#1B2934',
+	bgDark:'#212333',
 	white: '#ffffff',
 	grey2:'#7f7f7f'
   },

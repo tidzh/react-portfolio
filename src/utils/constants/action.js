@@ -4,6 +4,7 @@ export const SET_MENU = 'SET_MENU';
 export const DELETE_MENU = 'DELETE_MENU';
 
 export const SET_SKILLS = 'SET_SKILLS';
+export const SET_REVIEWS = 'SET_REVIEWS';
 
 export const SET_USER_DATA = 'SET_USER_DATA';
 export const IS_AUTH_USER = 'IS_AUTH_USER';

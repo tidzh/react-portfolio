@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
 import PageHome from "./PageHome";
-import {setSkillsRequest} from "../../redux/actions/home";
+import {setReviewsRequest, setSkillsRequest} from "../../redux/actions/home";
 import {setServicesRequest} from "../../redux/actions/services";
 import Page from "../_layout/Page/Page";
-import {getSkills} from "../../redux/selectors/home";
+import {getReviews, getSkills} from "../../redux/selectors/home";
 import {getServices} from "../../redux/selectors/services";
 
 
@@ -12,13 +12,17 @@ class PageHomeContainer extends Component {
   componentDidMount() {
     this.props.setSkillsRequest();
     this.props.setServicesRequest();
+    this.props.setReviewsRequest();
   }
   render() {
     return(
 	  <Page pageMeta={{
 		title: "Разработка сайта в Воронеже - Kondakov.Dev",
 		description: 'Бла бла бла'}}>
-		<PageHome skills={this.props.skills} services={this.props.services}/>
+		<PageHome skills={this.props.skills}
+				  services={this.props.services}
+				  reviews={this.props.reviews}
+		/>
 	  </Page>
 	)
   }
@@ -26,7 +30,8 @@ class PageHomeContainer extends Component {
 const mapStateToProps = state => {
   return {
 	skills:getSkills(state),
-	services:getServices(state)
+	services:getServices(state),
+	reviews:getReviews(state)
   }
 };
-export default connect(mapStateToProps, {setSkillsRequest, setServicesRequest})(PageHomeContainer)
+export default connect(mapStateToProps, {setSkillsRequest, setServicesRequest, setReviewsRequest})(PageHomeContainer)

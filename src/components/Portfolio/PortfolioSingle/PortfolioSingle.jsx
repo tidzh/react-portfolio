@@ -1,14 +1,17 @@
 import React from 'react';
 import style from './PortfolioSingle.module.scss'
-import icon from '../../../assets/img/icons.svg'
+import LinkIcon from '@material-ui/icons/Link';
+import DateRangeIcon from '@material-ui/icons/DateRange';
+import {Container} from "@material-ui/core";
+import Box from "@material-ui/core/Box";
 
 const PortfolioSingle = props => {
   
   const {title, text, img} = props.portfolioSingle;
   
   return (
-	<>
-	  <div className="wrapper">
+	<Container maxWidth="lg">
+	  <Box mt={5}>
 		{props.breadcrumbs}
 		<h1 className={style.h1}>{title}</h1>
 		<div className={style.wrap}>
@@ -21,16 +24,12 @@ const PortfolioSingle = props => {
 			<div className={style.projectItem}>
 			  <div className={style.title}>Описание проекта</div>
 			  <ul className={style.mainInfo}>
-				<li className={`d-flex align-items-center ${style.mainInfoItem}`}>
-				  <svg className="icon-link">
-					<use xlinkHref={`${icon}#icon-link`}></use>
-				  </svg>
+				<li className={style.mainInfoItem}>
+				  <LinkIcon/>
 				  <a href="www.project-site.com" target='_self' className={style.url}>www.project-site.com</a>
 				</li>
-				<li className='d-flex align-items-center'>
-				  <svg className="icon-link">
-					<use xlinkHref={`${icon}#icon-calendar`}></use>
-				  </svg>
+				<li className={style.mainInfoItem}>
+				  <DateRangeIcon/>
 				  ~ 14 дней
 				</li>
 			  </ul>
@@ -56,8 +55,8 @@ const PortfolioSingle = props => {
 			</div>
 		  </div>
 		</div>
-	  </div>
-	</>
+	  </Box>
+	</Container>
   )
 };
 export default PortfolioSingle;
