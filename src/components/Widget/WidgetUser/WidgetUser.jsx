@@ -3,12 +3,9 @@ import style from './WidgetUser.module.scss'
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import EditIcon from '@material-ui/icons/Edit';
 
-const WidgetUser = props => {
+const WidgetUser = ({logout, userData: {userEmail, userName, userAva}}) => {
   
-  const {logout} = props,
-	{userEmail, userName, userAva} = props.userData,
-	[isOpen, setIsOpen] = useState(false);
-  
+  const [isOpen, setIsOpen] = useState(false);
   
   const handlerDropdown = evt => {
 	evt.preventDefault();

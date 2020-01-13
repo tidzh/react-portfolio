@@ -1,5 +1,5 @@
 import React from "react";
-import style from './Services.module.scss';
+import style from './PageServices.module.scss';
 import Typography from "@material-ui/core/Typography";
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -13,8 +13,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import Box from "@material-ui/core/Box";
 import {NavLink} from "react-router-dom";
 
-const Services = props => {
-  const {services, match} = props;
+const PageServices = ({services, match}) => {
   return (
 	<>
 	  <Typography variant="h4" component="h1" gutterBottom={true}>
@@ -52,4 +51,4 @@ const Services = props => {
 	</>
   )
 };
-export default Services;
+export default PageServices;

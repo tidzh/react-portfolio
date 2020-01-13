@@ -20,10 +20,9 @@ import EmailIcon from '@material-ui/icons/Email';
 import {useTheme} from '@material-ui/core/styles';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 
-const MenuDashboard = props => {
+const MenuDashboard = ({adminSidebar, isOpen, handleDrawerClose}) => {
   
-  const {adminSidebar, isOpen, handleDrawerClose} = props,
-	drawerWidth = 240;
+  const drawerWidth = 240;
   
   const useStyles = makeStyles(theme => ({
 	toolbar: {

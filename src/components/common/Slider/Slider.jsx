@@ -4,8 +4,7 @@ import './slider.scss'
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
 
-const NextArrow = props => {
-  const {className, onClick, style} = props;
+const NextArrow = ({className, onClick, style}) => {
   return (
 	<div onClick={onClick} style={{...style}} className={className}>
 	  <NavigateNextIcon/>

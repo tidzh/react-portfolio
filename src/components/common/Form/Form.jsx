@@ -11,12 +11,11 @@ const helperTextStyles = makeStyles(theme => ({
   }
 }));
 
-export const Form = props => {
-  const {onSubmit} = props;
+export const Form = ({onSubmit, children}) => {
   return (
 	<form onSubmit={onSubmit}>
 	  <FormControl fullWidth>
-		{props.children}
+		{children}
 	  </FormControl>
 	</form>
   )

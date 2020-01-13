@@ -8,9 +8,7 @@ const mapStateToProps = state => {
   }
 };
 
-const MenuContainer = props => {
-  
-  const {isOpen, handleDrawerClose, adminSidebar} = props;
+const MenuContainer = ({isOpen, handleDrawerClose, adminSidebar}) => {
   
   return <MenuDashboard isOpen={isOpen}
 						handleDrawerClose={handleDrawerClose}

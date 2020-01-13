@@ -4,10 +4,7 @@ import BreadcrumbsWrap from '@material-ui/core/Breadcrumbs';
 import Typography from "@material-ui/core/Typography";
 import {NavLink} from "react-router-dom";
 
-const Breadcrumbs = props => {
-  
-  
-  const {data, dashboard = false} = props;
+const Breadcrumbs = ({data, dashboard = false}) => {
   
   const breadcrumb = data.map((breadcrumbItem, index, currentValue) =>
 	  currentValue.length - 1 === index ?

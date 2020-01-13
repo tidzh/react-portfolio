@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 import PortfolioList from "./PortfolioList";
 import Preloader from "../../common/Preloader/Preloader";
 import {compose} from "redux";
-import {getPortfolio, setLikePortfolio} from "../../../redux/actions/portfolio";
+import {getPortfolioRequest, setLikePortfolio} from "../../../redux/actions/portfolio";
 import {
   getCurrentPage,
   getIsFetching, getLikeInProgress,
@@ -15,11 +15,11 @@ import {
 class PortfolioListContainer extends Component {
   
   componentDidMount() {
-	this.props.getPortfolio(this.props.currentPage, this.props.limit)
+	this.props.getPortfolioRequest(this.props.currentPage, this.props.limit)
   }
   
   handlerPagination = pageNumber => {
-	this.props.getPortfolio(pageNumber)
+	this.props.getPortfolioRequest(pageNumber)
   };
   
   setPortfolioLike = (id, likes) => {
@@ -56,5 +56,5 @@ const mapStateToProps = state => {
 }
 
 export default compose(
-  connect(mapStateToProps, {setLikePortfolio, getPortfolio})
+  connect(mapStateToProps, {setLikePortfolio, getPortfolioRequest})
 )(PortfolioListContainer)

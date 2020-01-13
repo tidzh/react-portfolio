@@ -6,8 +6,7 @@ import Heading from "../../common/Heading/Heading";
 import Slider from "../../common/Slider/Slider";
 import FormatQuoteIcon from '@material-ui/icons/FormatQuote';
 
-const WidgetReviews = props => {
-  const {reviews} = props;
+const WidgetReviews = ({reviews}) => {
   
   const settings = {
 	customPaging: i => (

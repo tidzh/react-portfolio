@@ -2,18 +2,17 @@ import React from 'react';
 import {Route, Switch, useRouteMatch} from "react-router-dom";
 import style from "./Dashboard.module.scss";
 import AdminMenuContainer from "../../components/Menu/MenuDashboard/MenuContainer";
-import AdminPagePortfolioContainer from "./AdminPagePortfolio/AdminPagePortfolioContainer";
+import AdminPagePortfolioContainer from "./PagePortfolio/PagePortfolioContainer";
 import HeaderAdmin from "../_layout/Header/HeaderAdmin/HeaderAdmin";
-import AdminPageMenuContainer from "./AdminPageMenu/AdminPageMenuContainer";
+import AdminPageMenuContainer from "./PageMenu/PageMenuContainer";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
-import ServicesContainer from "./Services/ServicesContainer";
-import ServicesSingleContainer from "./Services/ServicesSingle/ServicesSingleContainer";
+import ServicesContainer from "./PageServices/PageServicesContainer";
+import ServicesSingleContainer from "./PageServices/ServicesSingle/ServicesSingleContainer";
 
 
-const Dashboard = props => {
+const Dashboard = ({feedbackCount}) => {
   const {path} = useRouteMatch(),
-	{feedbackCount} = props,
 	[open, setOpen] = React.useState(false);
   
   const handleDrawerOpen = () => {

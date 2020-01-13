@@ -6,7 +6,7 @@ const instance = axios.create({
 });
 
 export const portfolioAPI = {
-  get(currentPage = 1, limit) {
+  get(currentPage = 1, limit = 10) {
 	return instance.get(`/portfolios?page=${currentPage}&limit=${limit}`).then(response => response.data)
   },
   getSingle(url) {

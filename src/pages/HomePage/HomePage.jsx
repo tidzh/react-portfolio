@@ -12,8 +12,7 @@ import WidgetFeedback from "../../components/Widget/WidgetFeedback/WidgetFeedbac
 import WidgetReviews from "../../components/Widget/WidgetReviews/WidgetReviews";
 
 
-const HomePage = props => {
-  const {services, skills, reviews} = props;
+const HomePage = ({services, skills, reviews}) => {
   return (
 	<>
 	  <Hello/>

@@ -5,14 +5,12 @@ import DateRangeIcon from '@material-ui/icons/DateRange';
 import {Container} from "@material-ui/core";
 import Box from "@material-ui/core/Box";
 
-const PortfolioSinglePage = props => {
-  
-  const {title, text, img} = props.portfolioSingle;
+const PortfolioSinglePage = ({breadcrumbs, portfolioSingle:{title, text, img}}) => {
   
   return (
 	<Container maxWidth="lg">
 	  <Box mt={5}>
-		{props.breadcrumbs}
+		{breadcrumbs}
 		<h1 className={style.h1}>{title}</h1>
 		<div className={style.wrap}>
 		  <div className={style.left}>

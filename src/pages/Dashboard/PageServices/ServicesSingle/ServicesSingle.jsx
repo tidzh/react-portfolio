@@ -9,8 +9,7 @@ import Button from "@material-ui/core/Button";
 // import style from './ServicesSinglePage.module.scss';
 import WYSIWYG from "../../../../components/common/WYSIWYG/WYSIWYG";
 
-const ServicesSingle = props => {
-  const {onSubmit, handleSubmit, breadcrumbs, initialValues: {name}} = props;
+const ServicesSingle = ({onSubmit, handleSubmit, breadcrumbs, initialValues: {name}}) => {
   return (
 	<Box>
       <Box mb={2}>{breadcrumbs}</Box>

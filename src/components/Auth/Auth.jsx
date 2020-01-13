@@ -7,8 +7,7 @@ import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 
-const Auth = props => {
-  const {onSubmit, handleSubmit, error} = props;
+const Auth = ({onSubmit, handleSubmit, error})=> {
   
   return (
 	<Box display="flex" flexGrow={1} justifyContent="center" alignItems="center" className={style.parent}>

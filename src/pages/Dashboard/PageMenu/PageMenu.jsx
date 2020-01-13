@@ -14,10 +14,7 @@ import EditIcon from '@material-ui/icons/Edit';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 
 
-const AdminPageMenu = props => {
-  
-  const {menuData, onSubmit, handleSubmit, handlerDelete} = props;
-  
+const PageMenu = ({menuData, onSubmit, handleSubmit, handlerDelete}) => {
   
   const menuLists = menuData.map((menuList, index) => (
 	<ListItem key={menuList._id}>
@@ -70,4 +67,4 @@ const AdminPageMenu = props => {
   )
 };
 
-export default AdminPageMenu;
+export default PageMenu;

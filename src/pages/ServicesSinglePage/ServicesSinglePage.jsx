@@ -10,10 +10,8 @@ import {Form, renderInput} from "../../components/common/Form/Form";
 import {email, maxLength, required} from "../../utils/validators";
 import Button from "@material-ui/core/Button";
 
-const ServicesSinglePage = props => {
-  const {sidebar, single} = props,
-	{name, img, textFull} = single,
-	maxLength1000 = maxLength(1000);
+const ServicesSinglePage = ({sidebar, single: {name, img, textFull}}) => {
+  const maxLength1000 = maxLength(1000);
   
   return (
 	<>

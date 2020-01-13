@@ -3,9 +3,7 @@ import style from './Heading.module.scss'
 import {Box} from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 
-const Heading = props => {
-  
-  const {title, subtitle, Tag} = props;
+const Heading = ({title, subtitle, Tag}) => {
   
   return(
 	<Box textAlign="center">

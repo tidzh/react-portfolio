@@ -2,8 +2,7 @@ import React from "react";
 import style from './WidgetResume.module.scss'
 import Grid from "@material-ui/core/Grid";
 
-const WidgetResume = props => {
-  const {skills} = props;
+const WidgetResume = ({skills}) => {
   
   const skillsResult = skills.map(skillsParent =>
 	<Grid item md={6} xs={12} key={skillsParent._id}>
@@ -19,8 +18,7 @@ const WidgetResume = props => {
 	<Grid container spacing={3}>{skillsResult}</Grid>
   )
 };
-const WidgetResumeItem = props => {
-  const {skillsChild} = props;
+const WidgetResumeItem = ({skillsChild}) => {
   return (
 	<div className={style.skills}>
 	  <div className={style.skillsTitle}>{skillsChild.name}</div>

@@ -11,10 +11,8 @@ import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
 
-
-const FeedbackPage = props => {
-  const {onSubmit, handleSubmit, formLoading} = props,
-	maxLength1000 = maxLength(1000);
+const FeedbackPage = ({onSubmit, handleSubmit, formLoading}) => {
+  const maxLength1000 = maxLength(1000);
   
   return (
 	<>
@@ -107,5 +105,5 @@ const FeedbackPage = props => {
 	  </Box>
 	</>
   )
-}
+};
 export default FeedbackPage;

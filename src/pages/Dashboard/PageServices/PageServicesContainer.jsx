@@ -1,10 +1,10 @@
 import React, {Component} from "react";
-import Services from "./Services";
+import PageServices from "./PageServices";
 import {connect} from "react-redux";
 import {setServicesRequest} from "../../../redux/actions/services";
 import {getServices} from "../../../redux/selectors/services";
 
-class ServicesContainer extends Component {
+class PageServicesContainer extends Component {
   componentDidMount() {
 	this.props.setServicesRequest();
   }
@@ -12,7 +12,7 @@ class ServicesContainer extends Component {
   render() {
 	const {services} = this.props;
     if (services.length === 0) return false;
-	return <Services {...this.props}/>
+	return <PageServices {...this.props}/>
   }
 }
 
@@ -22,4 +22,4 @@ const mapStateToProps = state => {
   }
 };
 
-export default connect(mapStateToProps, {setServicesRequest})(ServicesContainer);
+export default connect(mapStateToProps, {setServicesRequest})(PageServicesContainer);

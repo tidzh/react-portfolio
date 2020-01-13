@@ -1,12 +1,12 @@
 import React from 'react';
-import AdminPageMenu from "./AdminPageMenu";
+import PageMenu from "./PageMenu";
 import {connect} from "react-redux";
 import {compose} from "redux";
 import {reduxForm} from "redux-form";
 import {deleteMenuRequest, fetchMenuRequest, sendMenuRequest} from "../../../redux/actions/menu";
 
 
-class AdminPageMenuContainer extends React.Component {
+class PageMenuContainer extends React.Component {
   
   componentDidMount() {
 	this.props.fetchMenuRequest();
@@ -21,7 +21,7 @@ class AdminPageMenuContainer extends React.Component {
   
   render() {
 	return (
-	  <AdminPageMenu {...this.props} onSubmit={this.onSubmit} handlerDelete={this.handlerDelete}/>
+	  <PageMenu {...this.props} onSubmit={this.onSubmit} handlerDelete={this.handlerDelete}/>
 	)
   }
 }
@@ -37,4 +37,4 @@ const mapStateToProps = state => {
 export default compose(
   connect(mapStateToProps, {fetchMenuRequest, sendMenuRequest, deleteMenuRequest}),
   reduxForm({form: 'add-menu'})
-)(AdminPageMenuContainer)
+)(PageMenuContainer)

@@ -6,5 +6,4 @@ const Preloader = () => {
   return <CircularProgress className={style.preloader} size={10}/>
   
 };
-
 export default Preloader

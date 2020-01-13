@@ -4,9 +4,7 @@ import {Editor} from 'react-draft-wysiwyg';
 import {stateToHTML} from 'draft-js-export-html';
 import './WYSIWYG.css';
 
-const WYSIWYG = props => {
-  
-  const {input, placeholder} = props;
+const WYSIWYG = ({input, placeholder} ) => {
   
   const _editorState = () => {
 	let editorState = EditorState.createEmpty();

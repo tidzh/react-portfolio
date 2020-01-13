@@ -15,13 +15,12 @@ class HomePageContainer extends Component {
     this.props.setReviewsRequest();
   }
   render() {
+	const {skills, services, reviews} = this.props;
     return(
 	  <Page pageMeta={{
 		title: "Разработка сайта в Воронеже - Kondakov.Dev",
 		description: 'Бла бла бла'}}>
-		<HomePage skills={this.props.skills}
-				  services={this.props.services}
-				  reviews={this.props.reviews}
+		<HomePage skills={skills} services={services} reviews={reviews}
 		/>
 	  </Page>
 	)

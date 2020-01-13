@@ -5,7 +5,7 @@ import Typed from 'react-typed';
 import style from './Hello.module.scss'
 import 'react-typed/dist/animatedCursor.css';
 
-const Hello = props => {
+const Hello = () => {
   return (
 	<Box component="section" className={style.root} pt={25} pb={25}>
 	  <Container>
@@ -23,5 +23,5 @@ const Hello = props => {
 	  </Container>
 	</Box>
   )
-}
+};
 export default Hello
