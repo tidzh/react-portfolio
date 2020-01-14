@@ -9,9 +9,9 @@ class HeaderContainer extends Component {
     this.props.fetchMenuRequest()
   }
   render() {
-    return(
-      <Header menuData={this.props.menuData}/>
-    )
+    const {menuData} = this.props;
+    if(menuData.length === 0) return false;
+    return <Header menuData={menuData}/>
   }
 }
 

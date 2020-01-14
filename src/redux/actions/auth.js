@@ -1,8 +1,7 @@
-import {IS_AUTH_USER, SET_USER_DATA} from "../../utils/constants/action";
+import {IS_AUTH_USER} from "../../utils/constants/action";
 import {loginAPI} from "../../utils/api";
 import {stopSubmit} from "redux-form";
 
-export const setAuthUserData = () => ({type: SET_USER_DATA});
 export const isAuthUser = (flag, email, name, ava) => ({type: IS_AUTH_USER, flag, email, name, ava});
 
 
@@ -19,7 +18,7 @@ export const authUser = formData => async (dispatch) => {
   try {
 	const response = await loginAPI.checkLogin(formData);
 	if (response.status === 200) {
-	  dispatch(setAuthUserData())
+	  dispatch(checkToken())
 	}
   } catch (err) {
 	dispatch(stopSubmit('auth', {email: 'Ошибка', password: 'Ошибка', _error: err.response.data.error}));

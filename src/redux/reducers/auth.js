@@ -5,7 +5,6 @@ const initialState = {
   name: '',
   password: '',
   ava:''
-  // isAuth:false,
 };
 
 

@@ -12,6 +12,7 @@ import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 import Box from "@material-ui/core/Box";
 import {NavLink} from "react-router-dom";
+import IconButton from "@material-ui/core/IconButton";
 
 const PageServices = ({services, match}) => {
   return (
@@ -39,8 +40,12 @@ const PageServices = ({services, match}) => {
 				  <TableCell align="left" component="th" scope="row">{service.name}</TableCell>
 				  <TableCell align="left" component="th" scope="row">{service.text}</TableCell>
 				  <TableCell align="right">
-					<NavLink to={`${match.path}/${service.url}.html`}><EditIcon/></NavLink>
-					<DeleteIcon/>
+					<IconButton aria-label="edit" component={NavLink} to={`${match.path}/${service.url}.html`}>
+					  <EditIcon/>
+					</IconButton>
+					<IconButton aria-label="delete">
+					  <DeleteIcon/>
+					</IconButton>
 				  </TableCell>
 				</TableRow>
 			  ))}

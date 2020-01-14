@@ -10,9 +10,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import {Hidden} from "@material-ui/core";
 import Box from "@material-ui/core/Box";
 
-const Header = props => {
-  const {menuData} = props;
-  
+const Header = ({menuData}) => {
   return (
 	  <AppBar position="fixed" color="inherit">
 		<Container>

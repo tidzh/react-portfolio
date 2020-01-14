@@ -10,19 +10,13 @@ import {feedbackCount, getFeedback, getUserAva, getUserEmail, getUserName} from 
 
 class DashboardContainer extends Component {
   componentDidMount() {
-    this.props.setFeedbackCountRequest();
+	this.props.setFeedbackCountRequest();
   }
   
   render() {
+	const {userEmail, userName, userAva, feedbackCount} = this.props;
 	return (
-	  <UserContext.Provider value={(
-		{
-		  userEmail: this.props.userEmail,
-		  userName: this.props.userName,
-		  userAva: this.props.userAva,
-		  feedbackCount: this.feedbackCount,
-		}
-	  )}>
+	  <UserContext.Provider value={({userEmail, userName, userAva, feedbackCount})}>
 		<Dashboard {...this.props}/>
 	  </UserContext.Provider>
 	)
