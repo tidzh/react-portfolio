@@ -1,6 +1,6 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
-import style from './Menu.module.scss'
+import style from './MenuDashboard.module.scss'
 import Drawer from "@material-ui/core/Drawer";
 import clsx from "clsx";
 import IconButton from "@material-ui/core/IconButton";

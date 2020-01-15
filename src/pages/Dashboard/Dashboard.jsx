@@ -1,7 +1,7 @@
 import React from 'react';
 import {Route, Switch, useRouteMatch} from "react-router-dom";
 import style from "./Dashboard.module.scss";
-import AdminMenuContainer from "../../components/Menu/MenuDashboard/MenuContainer";
+import AdminMenuContainer from "../../components/Menu/MenuDashboard/MenuDashboardContainer";
 import AdminPagePortfolioContainer from "./PagePortfolio/PagePortfolioContainer";
 import HeaderAdmin from "../_layout/Header/HeaderAdmin/HeaderAdmin";
 import AdminPageMenuContainer from "./PageMenu/PageMenuContainer";

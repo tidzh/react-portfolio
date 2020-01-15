@@ -46,11 +46,9 @@ const useStyles = makeStyles(theme => ({
 }));
 
 
-const HeaderAdmin = props => {
-  const classes = useStyles(),
-	{feedbackCount} = props;
+const HeaderAdmin = ({feedbackCount, handleDrawerOpen, isOpen}) => {
   
-  const {handleDrawerOpen, isOpen} = props;
+  const classes = useStyles();
   
   return (
 	<AppBar

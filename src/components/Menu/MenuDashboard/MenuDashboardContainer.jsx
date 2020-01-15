@@ -8,11 +8,11 @@ const mapStateToProps = state => {
   }
 };
 
-const MenuContainer = ({isOpen, handleDrawerClose, adminSidebar}) => {
+const MenuDashboardContainer = ({isOpen, handleDrawerClose, adminSidebar}) => {
   
   return <MenuDashboard isOpen={isOpen}
 						handleDrawerClose={handleDrawerClose}
 						adminSidebar={adminSidebar}/>
 };
 
-export default connect(mapStateToProps)(MenuContainer);
+export default connect(mapStateToProps)(MenuDashboardContainer);

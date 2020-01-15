@@ -10,7 +10,7 @@ class PagePortfolioContainer extends Component{
     this.props.getPortfolioRequest(1, 10);
   }
   render() {
-    return <PagePortfolio portfolio={this.props.portfolio}/>
+    return <PagePortfolio {...this.props}/>
   }
 }
 

@@ -2,6 +2,9 @@ import React, {useState} from 'react';
 import style from './WidgetUser.module.scss'
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import EditIcon from '@material-ui/icons/Edit';
+import {getImg} from "../../../utils/functionHelper";
+import Box from "@material-ui/core/Box";
+import {ImageAvatars, BadgeAvatars} from "../../common/Avatars/Avatars";
 
 const WidgetUser = ({logout, userData: {userEmail, userName, userAva}}) => {
   
@@ -13,14 +16,15 @@ const WidgetUser = ({logout, userData: {userEmail, userName, userAva}}) => {
   };
   return (
 	<div className={style.menuItem}>
-	  <div className={style.profile} onClick={handlerDropdown}>
-		<img src={`/assets/img/ava/${userAva}`} alt={userName} className={style.profileAva}/>
-	  </div>
+	  <Box className={style.profile} onClick={handlerDropdown}>
+		<BadgeAvatars alt={userName} src={getImg(`ava/${userAva}`)}/>
+	  </Box>
 	  {isOpen &&
 	  <div className={style.dropdownMenu}>
 		<div className={style.dropdownMenuHeader}>
-		  <img src={`/assets/img/ava/${userAva}`} alt={userName}
-			   className={`${style.profileAva} ${style.profileAvaBig}`}/>
+		  <Box display="flex" justifyContent="center">
+			<ImageAvatars alt={userName} src={getImg(`ava/${userAva}`)} size="large"/>
+		  </Box>
 		  <div className={style.profileName}>{userName}</div>
 		  <div className={style.profileEmail}>{userEmail}</div>
 		</div>
