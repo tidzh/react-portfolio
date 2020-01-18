@@ -1,4 +1,4 @@
-import {ADD_MENU, DELETE_MENU, SET_MENU, UPDATE_MENU} from "../../utils/constants/action";
+import {ADD_MENU, DELETE_MENU, SET_MENU, UPDATE_MENU} from "../../constants/action";
 
 const initialState = {
   menuList: [],

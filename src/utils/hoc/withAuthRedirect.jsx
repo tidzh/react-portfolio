@@ -1,21 +1,20 @@
 import React from 'react';
 import {Redirect} from "react-router-dom";
 import {connect} from "react-redux";
-// import {checkToken} from "../actions/auth";
+import {AUTH} from "../../constants/routes";
+import {getIsAuth} from "../../redux/selectors/auth";
 
 const mapStateToPropsForRedirect = state => {
   return {
-	isAuth: state.auth.isAuth,
+	isAuth: getIsAuth(state),
   }
 };
 
-export const withAuthRedirect = (Component, url = '/auth') => {
+export const withAuthRedirect = (Component, url = `${AUTH}`) => {
   class RedirectComponent extends React.Component {
-	// componentDidMount() {
-	// this.props.checkToken();
-	// }
 	render() {
-	  if (!this.props.isAuth && this.props.isAuth !== undefined) return <Redirect to={`${url}`}/>
+	  const {isAuth} = this.props;
+	  if (!isAuth && isAuth !== undefined) return <Redirect to={`${url}`}/>
 	  return <Component {...this.props}/>
 	}
   }

@@ -14,9 +14,7 @@ const WidgetResume = ({skills}) => {
 	  </div>
 	</Grid>
   );
-  return (
-	<Grid container spacing={3}>{skillsResult}</Grid>
-  )
+  return <Grid container spacing={3}>{skillsResult}</Grid>
 };
 const WidgetResumeItem = ({skillsChild}) => {
   return (

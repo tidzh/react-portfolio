@@ -10,9 +10,11 @@ import AuthContainer from "./components/Auth/AuthContainer";
 import PageHomeContainer from "./pages/HomePage/HomePageContainer";
 import {connect} from "react-redux";
 import {initializeApp} from "./redux/actions/app";
-import CircularProgress from "@material-ui/core/CircularProgress";
-import {Box} from "@material-ui/core";
 import ServicesSingleContainer from "./pages/ServicesSinglePage/ServicesSingleContainer";
+import * as ROUTES from "./constants/routes";
+import {ProgressLine} from "./components/common/Progress/Progress";
+import AboutMePage from "./pages/AboutMePage/AboutMePage";
+
 
 class App extends Component {
   componentDidMount() {
@@ -20,23 +22,21 @@ class App extends Component {
   }
   
   render() {
-	if (!this.props.initialize) {
-	  return (
-		<Box display="flex" justifyContent="center">
-		  <CircularProgress size={70}/>
-		</Box>
-	  )
+    const {initialize} = this.props;
+	if (!initialize) {
+	  return <ProgressLine/>
 	}
 	return (
 	  <Router>
 		<Switch>
-		  <Route exact path='/' component={PageHomeContainer}/>
-		  <Route exact path='/portfolio' component={PortfolioPage}/>
-		  <Route path='/portfolio/:url.html' component={PortfolioSingleContainer}/>
-		  <Route path='/feedback' component={FeedbackContainer}/>
-		  <Route path='/services/:url.html' component={ServicesSingleContainer}/>
-		  <Route path='/auth/' component={AuthContainer}/>
-		  <Route path='/admin' component={AdminContainer}/>
+		  <Route exact path={ROUTES.HOME} component={PageHomeContainer}/>
+		  <Route exact path={ROUTES.PORTFOLIO} component={PortfolioPage}/>
+		  <Route path={ROUTES.PORTFOLIO_SINGLE} component={PortfolioSingleContainer}/>
+		  <Route path={ROUTES.FEEDBACK} component={FeedbackContainer}/>
+		  <Route path={ROUTES.SERVICES_SINGLE} component={ServicesSingleContainer}/>
+		  <Route path={ROUTES.AUTH} component={AuthContainer}/>
+		  <Route path={ROUTES.ADMIN} component={AdminContainer}/>
+		  <Route path={ROUTES.ABOUTME} component={AboutMePage}/>
 		  <Route path='*' component={Error404}/>
 		</Switch>
 	  </Router>

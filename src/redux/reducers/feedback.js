@@ -1,4 +1,4 @@
-import {FEEDBACK_LOADING} from "../../utils/constants/action";
+import {FEEDBACK_LOADING} from "../../constants/action";
 
 
 const initialState = {

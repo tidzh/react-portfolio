@@ -1,4 +1,4 @@
-import {INITIALIZATION_SUCCESS} from "../../utils/constants/action";
+import {INITIALIZATION_SUCCESS} from "../../constants/action";
 
 const initialState = {
   initialize: false

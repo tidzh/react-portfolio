@@ -1,4 +1,4 @@
-import {SET_FEEDBACK_COUNT} from "../../utils/constants/action";
+import {SET_FEEDBACK_COUNT} from "../../constants/action";
 
 const initialState = {
   adminSidebar: [
@@ -37,11 +37,11 @@ const initialState = {
   feedbackCount: ''
 };
 
-const adminPage = (state = initialState, action) => {
+const dashboardReducer = (state = initialState, action) => {
   if (action.type === SET_FEEDBACK_COUNT) {
 	return {...state, feedback:action.data};
   } else {
 	return state;
   }
 };
-export default adminPage;
+export default dashboardReducer;

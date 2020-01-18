@@ -1,19 +1,18 @@
 import React from 'react';
-import {Route, Switch, useRouteMatch} from "react-router-dom";
+import {Route, Switch} from "react-router-dom";
 import style from "./Dashboard.module.scss";
 import AdminMenuContainer from "../../components/Menu/MenuDashboard/MenuDashboardContainer";
 import AdminPagePortfolioContainer from "./PagePortfolio/PagePortfolioContainer";
 import HeaderAdmin from "../_layout/Header/HeaderAdmin/HeaderAdmin";
 import AdminPageMenuContainer from "./PageMenu/PageMenuContainer";
-import Typography from "@material-ui/core/Typography";
-import Box from "@material-ui/core/Box";
 import ServicesContainer from "./PageServices/PageServicesContainer";
 import ServicesSingleContainer from "./PageServices/ServicesSingle/ServicesSingleContainer";
-
+import * as ROUTES from "../../constants/routes";
+import Typography from "@material-ui/core/Typography";
+import Box from "@material-ui/core/Box";
 
 const Dashboard = ({feedbackCount}) => {
-  const {path} = useRouteMatch(),
-	[open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(false);
   
   const handleDrawerOpen = () => {
 	setOpen(true);
@@ -29,7 +28,7 @@ const Dashboard = ({feedbackCount}) => {
 	  <AdminMenuContainer handleDrawerClose={handleDrawerClose} isOpen={open}/>
 	  <main className={style.root}>
 		<Switch>
-		  <Route exact path={path}>
+		  <Route exact path={ROUTES.ADMIN}>
 			<Typography variant="h2" component="h1" gutterBottom={true}>
 			  Dashboard
 			</Typography>
@@ -37,10 +36,10 @@ const Dashboard = ({feedbackCount}) => {
 			  Рано или поздно здесь что-то будет
 			</Typography>
 		  </Route>
-		  <Route path={`${path}/menu`} component={AdminPageMenuContainer}/>
-		  <Route path={`${path}/portfolio`} component={AdminPagePortfolioContainer}/>
-		  <Route exact path={`${path}/services`} component={ServicesContainer}/>
-		  <Route path={`${path}/services/:url.html`} component={ServicesSingleContainer}/>
+		  <Route path={ROUTES.ADMIN_MENU} component={AdminPageMenuContainer}/>
+		  <Route path={ROUTES.ADMIN_PORTFOLIO} component={AdminPagePortfolioContainer}/>
+		  <Route exact path={ROUTES.ADMIN_SERVICES} component={ServicesContainer}/>
+		  <Route path={ROUTES.ADMIN_SERVICES_SINGLE} component={ServicesSingleContainer}/>
 		</Switch>
 	  </main>
 	  </Box>

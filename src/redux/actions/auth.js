@@ -1,4 +1,4 @@
-import {IS_AUTH_USER} from "../../utils/constants/action";
+import {IS_AUTH_USER} from "../../constants/action";
 import {loginAPI} from "../../utils/api";
 import {stopSubmit} from "redux-form";
 

@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
 import PortfolioList from "./PortfolioList";
-import Preloader from "../../common/Preloader/Preloader";
 import {compose} from "redux";
 import {getPortfolioRequest, setLikePortfolio} from "../../../redux/actions/portfolio";
 import {
@@ -11,6 +10,7 @@ import {
   getPortfolioList,
   getTotalPortfolio
 } from "../../../redux/selectors/portfolio";
+import {ProgressCircular} from "../../common/Progress/Progress";
 
 class PortfolioListContainer extends Component {
   
@@ -22,23 +22,16 @@ class PortfolioListContainer extends Component {
 	this.props.getPortfolioRequest(pageNumber)
   };
   
-  setPortfolioLike = (id, likes) => {
-	this.props.setLikePortfolio(id, likes);
-  };
-  
-  
   render() {
-	const {limit} = this.props;
+	const {limit, portfolioList, pageSize, totalPortfolio, currentPage, isFetching} = this.props;
 	return (
-	  <PortfolioList portfolioList={this.props.portfolioList}
-					 pageSize={this.props.pageSize}
-					 setPortfolioLike={this.setPortfolioLike}
-					 totalPortfolio={this.props.totalPortfolio}
-					 currentPage={this.props.currentPage}
+	  <PortfolioList portfolioList={portfolioList}
+					 pageSize={pageSize}
+					 totalPortfolio={totalPortfolio}
+					 currentPage={currentPage}
 					 handlerPagination={this.handlerPagination}
-					 isLike={this.props.likeInProgress}
 					 limit={limit}
-					 isFetching={this.props.isFetching ? <Preloader/> : null}
+					 isFetching={isFetching ? <ProgressCircular/> : null}
 	  />
 	)
   }

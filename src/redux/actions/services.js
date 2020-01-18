@@ -4,7 +4,7 @@ import {
   SET_SERVICE_SINGLE,
   UPDATE_SERVICE_SINGLE,
   CLEAR_SERVICE_SINGLE
-} from "../../utils/constants/action";
+} from "../../constants/action";
 
 export const setServices = services => ({type: SET_SERVICES, services});
 export const setServiceSingle = data => ({type: SET_SERVICE_SINGLE, data});

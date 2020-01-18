@@ -1,4 +1,4 @@
-import {IS_AUTH_USER, SET_USER_DATA} from "../../utils/constants/action";
+import {IS_AUTH_USER, SET_USER_DATA} from "../../constants/action";
 
 const initialState = {
   email: '',

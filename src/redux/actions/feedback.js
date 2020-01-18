@@ -1,4 +1,4 @@
-import {FEEDBACK_LOADING, SET_FEEDBACK_COUNT} from "../../utils/constants/action";
+import {FEEDBACK_LOADING, SET_FEEDBACK_COUNT} from "../../constants/action";
 import {feedbackApi} from "../../utils/api";
 import {reset} from "redux-form";
 

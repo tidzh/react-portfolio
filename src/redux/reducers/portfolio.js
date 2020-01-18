@@ -4,7 +4,7 @@ import {
   SET_PORTFOLIO,
   SET_PORTFOLIO_LIKE, SET_PORTFOLIO_SINGLE, TOGGLE_IS_FETCHING,
   UPDATE_PORTFOLIO
-} from "../../utils/constants/action";
+} from "../../constants/action";
 
 
 const initialState = {

@@ -1,4 +1,4 @@
-import {CLEAR_SERVICE_SINGLE, SET_SERVICE_SINGLE, SET_SERVICES} from "../../utils/constants/action";
+import {CLEAR_SERVICE_SINGLE, SET_SERVICE_SINGLE, SET_SERVICES} from "../../constants/action";
 
 const initialState = {
   services: [],

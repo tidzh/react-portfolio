@@ -4,7 +4,7 @@ import MenuDashboard from "./MenuDashboard";
 
 const mapStateToProps = state => {
   return {
-	adminSidebar: state.adminPage.adminSidebar
+	adminSidebar: state.dashboard.adminSidebar
   }
 };
 

@@ -1,4 +1,4 @@
-import {INITIALIZATION_SUCCESS} from "../../utils/constants/action";
+import {INITIALIZATION_SUCCESS} from "../../constants/action";
 import {checkToken} from "./auth";
 
 export const initializedSuccess = () => ({type: INITIALIZATION_SUCCESS});

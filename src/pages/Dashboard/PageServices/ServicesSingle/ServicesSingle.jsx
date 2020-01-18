@@ -6,10 +6,10 @@ import {Field} from "redux-form";
 import {Form, renderInput} from "../../../../components/common/Form/Form";
 import {required} from "../../../../utils/validators";
 import Button from "@material-ui/core/Button";
-// import style from './ServicesSinglePage.module.scss';
 import WYSIWYG from "../../../../components/common/WYSIWYG/WYSIWYG";
+import UploaderMedia from "../../../../components/common/UploaderMedia/UploaderMedia";
 
-const ServicesSingle = ({onSubmit, handleSubmit, breadcrumbs, initialValues: {name}}) => {
+const ServicesSingle = ({onSubmit, handleSubmit, breadcrumbs, initialValues: {name, img}}) => {
   return (
 	<Box>
       <Box mb={2}>{breadcrumbs}</Box>
@@ -38,6 +38,9 @@ const ServicesSingle = ({onSubmit, handleSubmit, breadcrumbs, initialValues: {na
                    validate={[required]}
                    multiline
                    rows="4"/>
+          </Box>
+          <Box mt={4}>
+            <UploaderMedia img={img}/>
           </Box>
           <Box mt={4}>
             <Field name='textFull'

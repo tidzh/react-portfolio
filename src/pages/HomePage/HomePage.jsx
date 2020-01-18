@@ -1,6 +1,5 @@
 import React from 'react';
 import PortfolioListContainer from "../../components/List/ListPortfolio/PortfolioListContainer";
-import WidgetResume from "../../components/Widget/WidgetResume/WidgetResume";
 import WidgetServices from "../../components/Widget/WidgetServices/WidgetServices";
 import Heading from "../../components/common/Heading/Heading";
 import Container from "@material-ui/core/Container";
@@ -10,9 +9,10 @@ import Button from "@material-ui/core/Button";
 import {NavLink} from "react-router-dom";
 import WidgetFeedback from "../../components/Widget/WidgetFeedback/WidgetFeedback";
 import WidgetReviews from "../../components/Widget/WidgetReviews/WidgetReviews";
+import WidgetResumeContainer from "../../components/Widget/WidgetResume/WidgetResumeContainer";
 
 
-const HomePage = ({services, skills, reviews}) => {
+const HomePage = ({services, reviews}) => {
   return (
 	<>
 	  <Hello/>
@@ -39,7 +39,7 @@ const HomePage = ({services, skills, reviews}) => {
 	  <Box component="section" pt={8} pb={8} bgcolor="bgGrey">
 		<Container>
 		  <Heading title={'Мое резюме'} subtitle='Что я умею' Tag={'h2'}/>
-		  <WidgetResume skills={skills}/>
+		  <WidgetResumeContainer/>
 		</Container>
 	  </Box>
 		<WidgetReviews reviews={reviews}/>

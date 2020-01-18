@@ -18,8 +18,8 @@ const PortfolioList = ({portfolioList, pageSize, totalPortfolio, currentPage, ha
   );
   return (
 	<>
+	  {isFetching}
 	  <Grid container spacing={3}>
-		{isFetching}
 		{portfolioLists}
 	  </Grid>
 	  {!limit &&
