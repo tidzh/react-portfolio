@@ -1,3 +1,4 @@
 export const getSkills = state => state.widget.skills.lists;
 export const getSkillsFetching = state => state.widget.skills.isFetching;
-export const getReviews = state => state.widget.reviews;
+export const getReviews = state => state.widget.reviews.lists;
+export const getReviewsFetching = state => state.widget.skills.isFetching;

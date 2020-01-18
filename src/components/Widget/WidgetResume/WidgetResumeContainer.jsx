@@ -13,7 +13,7 @@ class WidgetResumeContainer extends Component {
   
   render() {
     const {skills, isFetching} = this.props;
-    if(!isFetching) return <ProgressCircular/>;
+    if(isFetching) return <ProgressCircular/>;
 	return <WidgetResume skills={skills}/>
   }
 }

@@ -19,9 +19,7 @@ const WidgetReviews = ({reviews}) => {
   
   const reviewsList = reviews.map(review => (
 	<Box component="div" align="center" mb={5} key={review._id}>
-	  <p className={style.text}>
-		“{review.text}”
-	  </p>
+	  <p className={style.text}>“{review.text}”</p>
 	  <Box mt={3} mb={3} className={style.quote}><FormatQuoteIcon/></Box>
 	  <Box>{review.name}</Box>
 	</Box>

@@ -11,6 +11,7 @@ import LocationCityRoundedIcon from '@material-ui/icons/LocationCityRounded';
 import SchoolRoundedIcon from '@material-ui/icons/SchoolRounded';
 import HttpRoundedIcon from '@material-ui/icons/HttpRounded';
 import WidgetResumeContainer from "../../components/Widget/WidgetResume/WidgetResumeContainer";
+import WidgetReviewsContainer from "../../components/Widget/WidgetReviews/WidgetReviewsContainer";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -66,6 +67,7 @@ const AboutMePage = () => {
 		  <WidgetResumeContainer/>
 		</Container>
 	  </Box>
+	  <WidgetReviewsContainer/>
 	</Page>
   )
 };

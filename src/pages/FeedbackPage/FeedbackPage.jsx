@@ -1,6 +1,5 @@
 import React from "react";
 import style from './Feedback.module.scss'
-import styleForm from "../../components/common/Form/Form.module.scss";
 import {Field} from "redux-form";
 import Heading from "../../components/common/Heading/Heading";
 import {email, maxLength, required} from "../../utils/validators";
@@ -10,9 +9,12 @@ import Grid from '@material-ui/core/Grid';
 import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
+import SnackbarNotification from "../../components/common/Snackbar/SnackbarNotification";
+
 
 const FeedbackPage = ({onSubmit, handleSubmit, formLoading}) => {
   const maxLength1000 = maxLength(1000);
+  
   
   return (
 	<>
@@ -99,7 +101,12 @@ const FeedbackPage = ({onSubmit, handleSubmit, formLoading}) => {
 			  </Box>
 			</Form>
 			{formLoading &&
-			<div className={styleForm.successText}>Спасибо за ваше сообщение. Я свяжусь с вами в ближайшее время</div>}
+			<SnackbarNotification variant="success"
+								  vertical="bottom"
+								  horizontal="center"
+								  status={true}
+								  message="Спасибо за ваше сообщение. Я свяжусь с вами в ближайшее время"/>
+			  }
 		  </Box>
 		</Container>
 	  </Box>

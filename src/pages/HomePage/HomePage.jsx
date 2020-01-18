@@ -1,18 +1,18 @@
 import React from 'react';
-import PortfolioListContainer from "../../components/List/ListPortfolio/PortfolioListContainer";
 import WidgetServices from "../../components/Widget/WidgetServices/WidgetServices";
 import Heading from "../../components/common/Heading/Heading";
+import Hello from "../../components/Hello/Hello";
+import WidgetFeedback from "../../components/Widget/WidgetFeedback/WidgetFeedback";
+import PortfolioListContainer from "../../components/List/ListPortfolio/PortfolioListContainer";
+import WidgetResumeContainer from "../../components/Widget/WidgetResume/WidgetResumeContainer";
 import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
-import Hello from "../../components/Hello/Hello";
 import Button from "@material-ui/core/Button";
 import {NavLink} from "react-router-dom";
-import WidgetFeedback from "../../components/Widget/WidgetFeedback/WidgetFeedback";
-import WidgetReviews from "../../components/Widget/WidgetReviews/WidgetReviews";
-import WidgetResumeContainer from "../../components/Widget/WidgetResume/WidgetResumeContainer";
+import WidgetReviewsContainer from "../../components/Widget/WidgetReviews/WidgetReviewsContainer";
 
 
-const HomePage = ({services, reviews}) => {
+const HomePage = ({services}) => {
   return (
 	<>
 	  <Hello/>
@@ -42,7 +42,7 @@ const HomePage = ({services, reviews}) => {
 		  <WidgetResumeContainer/>
 		</Container>
 	  </Box>
-		<WidgetReviews reviews={reviews}/>
+		<WidgetReviewsContainer/>
 	</>
   )
 };

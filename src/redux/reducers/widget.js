@@ -3,9 +3,12 @@ import {SET_REVIEWS, SET_SKILLS} from "../../constants/action";
 const initialState = {
   skills: {
     lists: [],
-	isFetching:false
+	isFetching:true
   },
-  reviews: []
+  reviews: {
+	lists: [],
+	isFetching:true
+  }
 };
 
 const widgetReducer = (state = initialState, action) => {
@@ -13,10 +16,10 @@ const widgetReducer = (state = initialState, action) => {
 	case SET_SKILLS:
 	  return {...state, skills: {lists: action.data, isFetching:action.isFetching}};
 	case SET_REVIEWS:
-	  return {...state, reviews: action.data};
+	  return {...state, reviews: {lists: action.data, isFetching:action.isFetching}};
 	default:
 	  return state;
   }
-}
+};
 
 export default widgetReducer;
