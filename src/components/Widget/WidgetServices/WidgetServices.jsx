@@ -3,14 +3,7 @@ import Grid from '@material-ui/core/Grid';
 import style from "./WidgetServices.module.scss";
 import {NavLink} from "react-router-dom";
 
-const WidgetServices = props => {
-  
-  const servicesList = props.services.map(servicesItem =>
-	<WidgetServicesItem key={servicesItem._id} servicesItem={servicesItem}/>
-  );
-  return <Grid container spacing={3}>{servicesList}</Grid>
-};
-const WidgetServicesItem = ({servicesItem:{name, img, text, url}}) => {
+const WidgetServicesItem = ({servicesItem: {name, img, text, url}}) => {
   return (
 	<Grid item xs={12} sm={6} md={4}>
 	  <div className={style.servicesFlip}>
@@ -36,5 +29,12 @@ const WidgetServicesItem = ({servicesItem:{name, img, text, url}}) => {
 	  </div>
 	</Grid>
   )
+};
+const WidgetServices = ({services}) => {
+  
+  const servicesList = services.map(servicesItem =>
+	<WidgetServicesItem key={servicesItem._id} servicesItem={servicesItem}/>
+  );
+  return <Grid container spacing={3}>{servicesList}</Grid>
 };
 export default WidgetServices

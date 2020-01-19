@@ -6,7 +6,7 @@ import {
   CLEAR_SERVICE_SINGLE
 } from "../../constants/action";
 
-export const setServices = services => ({type: SET_SERVICES, services});
+export const setServices = (data, isFetching) => ({type: SET_SERVICES, data,isFetching});
 export const setServiceSingle = data => ({type: SET_SERVICE_SINGLE, data});
 export const updateServiceSingle = data => ({type: UPDATE_SERVICE_SINGLE, data});
 export const clearServiceSingle = () => ({type: CLEAR_SERVICE_SINGLE})
@@ -14,7 +14,7 @@ export const clearServiceSingle = () => ({type: CLEAR_SERVICE_SINGLE})
 export const setServicesRequest = () =>
   async (dispatch) => {
 	const data = await servicesApi.get();
-	dispatch(setServices(data));
+	dispatch(setServices(data, false));
   };
 export const setServiceSingleRequest = id =>
   async (dispatch) => {

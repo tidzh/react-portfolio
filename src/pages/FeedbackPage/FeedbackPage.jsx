@@ -14,8 +14,6 @@ import SnackbarNotification from "../../components/common/Snackbar/SnackbarNotif
 
 const FeedbackPage = ({onSubmit, handleSubmit, formLoading}) => {
   const maxLength1000 = maxLength(1000);
-  
-  
   return (
 	<>
 	  <Box component="section" pt={8} pb={8} bgcolor="bgGrey">

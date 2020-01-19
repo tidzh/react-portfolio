@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Component} from "react";
 import FeedbackPage from "./FeedbackPage";
 import {connect} from "react-redux";
 import {compose} from "redux";
@@ -6,7 +6,7 @@ import {reduxForm} from "redux-form";
 import {addFeedbackRequest} from "../../redux/actions/feedback";
 import Page from "../_layout/Page/Page";
 
-class FeedbackContainer extends React.Component {
+class FeedbackContainer extends Component {
   state = {
 	formLoading: false
   };
