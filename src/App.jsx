@@ -14,6 +14,8 @@ import {initializeApp} from "./redux/actions/app";
 import ServicesSingleContainer from "./pages/ServicesSinglePage/ServicesSingleContainer";
 import {ProgressLine} from "./components/common/Progress/Progress";
 import AboutMePage from "./pages/AboutMePage/AboutMePage";
+import ServicesPage from "./pages/ServicesPage/ServicesPage";
+import {getInitialize} from "./redux/selectors/app";
 
 
 class App extends Component {
@@ -23,9 +25,7 @@ class App extends Component {
   
   render() {
     const {initialize} = this.props;
-	if (!initialize) {
-	  return <ProgressLine/>
-	}
+	if (!initialize) return <ProgressLine/>;
 	return (
 	  <Router>
 		<Switch>
@@ -33,6 +33,7 @@ class App extends Component {
 		  <Route exact path={ROUTES.PORTFOLIO} component={PortfolioPage}/>
 		  <Route path={ROUTES.PORTFOLIO_SINGLE} component={PortfolioSingleContainer}/>
 		  <Route path={ROUTES.FEEDBACK} component={FeedbackContainer}/>
+		  <Route path={ROUTES.SERVICES} component={ServicesPage}/>
 		  <Route path={ROUTES.SERVICES_SINGLE} component={ServicesSingleContainer}/>
 		  <Route path={ROUTES.AUTH} component={AuthContainer}/>
 		  <Route path={ROUTES.ADMIN} component={AdminContainer}/>
@@ -46,8 +47,7 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-	initialize: state.app.initialize
+	initialize: getInitialize(state)
   }
 };
-
 export default connect(mapStateToProps, {initializeApp})(App);

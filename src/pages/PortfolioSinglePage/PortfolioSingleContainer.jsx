@@ -5,6 +5,7 @@ import Breadcrumbs from "../../components/common/Breadcrumbs/Breadcrumbs";
 import {getPortfolioSingleRequest} from "../../redux/actions/portfolio";
 import Page from "../_layout/Page/Page";
 import {getPortfolioSingle} from "../../redux/selectors/portfolio";
+import {PORTFOLIO} from "../../constants/routes";
 
 class PortfolioSingleContainer extends React.Component {
   
@@ -18,7 +19,7 @@ class PortfolioSingleContainer extends React.Component {
 	const breadcrumbsConstructor = [
 	  {
 		'name': 'Портфолио',
-		'url': '/PortfolioPage/'
+		'url': `${PORTFOLIO}`
 	  },
 	  {
 		'name': `${this.props.portfolioSingle.title}`,
