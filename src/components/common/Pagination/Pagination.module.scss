@@ -1,31 +1,47 @@
 .root {
   justify-content: center;
 }
+
 .item {
-  background: #ffffff;
-  border: 1px solid #dee2e6;
   text-align: center;
-  color: #007bff;
   cursor: pointer;
   font-size: 22px;
-  padding: 12px 22px;
+  margin-left: -1px;
+
   &:first-child {
-    border-radius: 4px 0 0 4px;
+    .href {
+      border-radius: 4px 0 0 4px;
+    }
   }
+
   &:last-child {
-    border-radius: 0 4px 4px 0;
+    .href {
+      border-radius: 0 4px 4px 0;
+    }
   }
+}
+
+.href {
+  background: #ffffff;
+  display: block;
+  padding: 12px 22px;
+  color: #007bff;
+  text-decoration: none;
+  border: 1px solid #dee2e6;
+
   &:hover {
     background: #e9ecef;
     border-color: #dee2e6;
   }
-  &_active {
+}
+
+.hrefActive {
+  background: #007bff;
+  border-color: #007bff;
+  color: #fff;
+
+  &:hover {
     background: #007bff;
     border-color: #007bff;
-    color: #fff;
-    &:hover {
-      background: #007bff;
-      border-color: #007bff;
-    }
   }
 }

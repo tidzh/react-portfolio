@@ -2,14 +2,19 @@
   position: relative;
   margin-bottom: 60px;
   &:after {
-    background: linear-gradient(to left,rgba(0,0,0,0),#a5a5a5,rgba(0,0,0,0));
+    background: linear-gradient(
+      to left,
+      rgba(0, 0, 0, 0),
+      #a5a5a5,
+      rgba(0, 0, 0, 0)
+    );
     position: absolute;
     left: 0;
     right: 0;
     height: 1px;
     width: 100%;
     content: "";
-    bottom: -30px
+    bottom: -30px;
   }
 }
 .subTitle {

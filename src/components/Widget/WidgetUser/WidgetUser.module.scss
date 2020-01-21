@@ -35,14 +35,14 @@
   border-radius: 0;
   margin-top: 0;
   border: 1px solid #f2f4f9;
-  box-shadow: 0 5px 10px 0 rgba(183,192,206,.2);
-  font-size: .875rem;
+  box-shadow: 0 5px 10px 0 rgba(183, 192, 206, 0.2);
+  font-size: 0.875rem;
   background: #ffffff;
   animation-name: dropdownAnimation;
-  animation-duration: .2s;
+  animation-duration: 0.2s;
   animation-fill-mode: both;
   &:after {
-    content: '';
+    content: "";
     width: 13px;
     height: 13px;
     background: #fff;
@@ -85,12 +85,12 @@
 @keyframes dropdownAnimation {
   from {
     opacity: 0;
-    transform: translate3d(0,20px,0)
+    transform: translate3d(0, 20px, 0);
   }
 
   to {
     opacity: 1;
     transform: none;
-    transform: translate3d(0,0,0)
+    transform: translate3d(0, 0, 0);
   }
 }

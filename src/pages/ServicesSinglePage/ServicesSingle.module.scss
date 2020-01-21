@@ -20,8 +20,8 @@
   ul {
     margin-top: 10px;
     li {
-      padding: 0 0 .85rem 2.3rem;
-      background: url('../../assets/img/marker-gray.svg') left 0.6rem no-repeat;
+      padding: 0 0 0.85rem 2.3rem;
+      background: url("../../assets/img/marker-gray.svg") left 0.6rem no-repeat;
     }
   }
   ol {
@@ -50,7 +50,7 @@
     color: #ff497c;
   }
   &:before {
-    content: '';
+    content: "";
     width: 4px;
     height: 4px;
     border-radius: 50%;

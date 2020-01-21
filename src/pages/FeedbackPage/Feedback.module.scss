@@ -1,15 +1,14 @@
-
 .contactDetailsItem {
   padding: 20px;
   background: #fff;
   border-radius: 2px;
   overflow: hidden;
   border: 1px solid #eee;
-  transition: all .3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
   text-align: center;
   &:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(134,151,168,.1);
+    box-shadow: 0 4px 8px rgba(134, 151, 168, 0.1);
   }
 }
 .contactDetailsItemImg {

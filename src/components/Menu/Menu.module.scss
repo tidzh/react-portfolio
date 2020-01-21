@@ -17,7 +17,8 @@
   transition: all 300ms ease;
   text-transform: uppercase;
   font-size: 14px;
-  &:hover, &Active {
+  &:hover,
+  &Active {
     color: #064aff;
   }
 }

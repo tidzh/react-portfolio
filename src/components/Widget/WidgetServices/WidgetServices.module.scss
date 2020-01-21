@@ -1,7 +1,7 @@
 .servicesListIcon {
   font-size: 30px;
   position: relative;
-  color: #fff
+  color: #fff;
 }
 .servicesFlip {
   display: flex;
@@ -16,15 +16,15 @@
   height: 100%;
   &:hover {
     .servicesList {
-      transform: rotate3d(1, 0, 0, 180deg)
+      transform: rotate3d(1, 0, 0, 180deg);
     }
   }
 }
 .servicesList {
   position: relative;
   transition-property: box-shadow, transform;
-  transition-duration: .6s;
-  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+  transition-duration: 0.6s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transform-style: inherit;
   perspective: inherit;
   height: 100%;
@@ -42,7 +42,7 @@
 }
 
 .flipContent {
-  transform: translate3d(0, 0, 60px) scale(.85);
+  transform: translate3d(0, 0, 60px) scale(0.85);
 }
 .flipContentTitle {
   padding: 11px 20px;
@@ -69,7 +69,7 @@
     background: #000;
     left: 0;
     height: 100%;
-    opacity: .2
+    opacity: 0.2;
   }
 }
 
@@ -87,7 +87,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center
+  text-align: center;
 }
 .link {
   position: absolute;
